@@ -30,15 +30,15 @@ public static class FileReader
         ProjectDirectory = projectDirectory;
     }
 
-    public static string GetFilePath(string filename, List<string> extensions)
+    public static string? GetFilePath(string filename, List<string> extensions)
     {
-        var plPath = ProjectDirectory;
+        var projectPath = ProjectDirectory;
 
         return
             Directory
-                .GetFiles(plPath, "*.*", SearchOption.AllDirectories)
+                .GetFiles(projectPath, "*.*", SearchOption.AllDirectories)
                 .Where(f => extensions.IndexOf(Path.GetExtension(f)) >= 0)
-                .First(f => f.Contains(Path.GetFileNameWithoutExtension(filename)));
+                .FirstOrDefault(f => f.Contains(Path.GetFileNameWithoutExtension(filename)));
     }
 
     /// <summary>
@@ -76,6 +76,10 @@ public static class FileReader
 
     public static IEnumerable<string> LoadTxt(string filename)
     {
-        return File.ReadAllLines(GetFilePath(filename, new List<string> { ".txt" })).ToList();
+        var path = GetFilePath(filename, new List<string> { ".txt" });
+        if (path == null)
+            return new List<string>();
+
+        return File.ReadAllLines(path).ToList();
     }
 }
