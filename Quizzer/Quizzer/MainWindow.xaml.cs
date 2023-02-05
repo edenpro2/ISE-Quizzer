@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Quizzer;
 
@@ -16,11 +17,13 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-    private void Quiz_0_Click(object sender, RoutedEventArgs e) => LoadQuiz(0);
-    private void Quiz_1_Click(object sender, RoutedEventArgs e) => LoadQuiz(1);
-    private void Quiz_2_Click(object sender, RoutedEventArgs e) => LoadQuiz(2);
-    private void Quiz_3_Click(object sender, RoutedEventArgs e) => LoadQuiz(3);
-
+    private void Quiz_BtnClick(object sender, RoutedEventArgs e)
+    {
+        // extract number from button content (Quiz * --> *) and load quiz
+        string s = ((Button)sender).Content.ToString();
+        LoadQuiz(int.Parse(s.Replace("Quiz", "")));
+    }
+    
     private void LoadQuiz(int quiz_num)
     {
         var quiz = quizzes[quiz_num];
@@ -38,7 +41,7 @@ public partial class MainWindow : Window
             total--;
         }
 
-        QuizPage = new QuizPage(questions);
+        QuizPage = new QuizPage(questions, _NavigationFrame);
         _NavigationFrame.Navigate(QuizPage);
     }
 }

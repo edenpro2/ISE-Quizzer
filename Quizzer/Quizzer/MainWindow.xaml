@@ -6,36 +6,97 @@
         xmlns:local="clr-namespace:Quizzer"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        WindowStyle="SingleBorderWindow"
+        Background="Transparent"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Width="1200"
         Height="700">
     <Window.Resources>
-        <Style x:Name="Button" TargetType="{x:Type Button}">
+        <Style x:Name="Button" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatAccentBgButton}">
             <Setter Property="FontSize" Value="28"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Width" Value="400"/>
-            <Setter Property="Height" Value="100"/>
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="Width" Value="350"/>
+            <Setter Property="Height" Value="80"/>
             <Setter Property="Background" Value="#ADD8E6"/>
+            <Setter Property="BorderBrush" Value="#ADD8E6"/>
             <Setter Property="Margin" Value="5" />
-            <Setter Property="materialDesign:ElevationAssist.Elevation" Value="Dp3"/>
+            <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="5"/>
+            <Setter Property="materialDesign:ElevationAssist.Elevation" Value="Dp4"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#88A8E6"/>
+                    <Setter Property="BorderBrush" Value="#88A8E6"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
     </Window.Resources>
     
+    
+    
     <Grid>
-        <StackPanel>
-            <Button
+        <Image 
+            Source="C:\Users\Eden\source\repos\ISE-Quizzer\Resources\ise_bg.jpg"
+            Stretch="Fill">
+            <Image.Effect>
+                <BlurEffect Radius="30"/>
+            </Image.Effect>
+        </Image>
+
+        <TextBlock
+            Margin="65 40 0 0"
+            Text="ISE QUIZLET APP"
+            FontFamily="Helvetica"
+            FontWeight="Bold"
+            Foreground="White"
+            FontSize="40">
+            
+        </TextBlock>
+        <DockPanel VerticalAlignment="Center"
+                   HorizontalAlignment="Center">
+            <StackPanel>
+                <Button
                 Content="Quiz 0"
-                Click="Quiz_0_Click"/>
-            <Button
+                Click="Quiz_BtnClick"/>
+                <Button
                 Content="Quiz 1"
-                Click="Quiz_1_Click"/>
-            <Button
+                Click="Quiz_BtnClick"/>
+                <Button
                 Content="Quiz 2"
-                Click="Quiz_2_Click"/>
-            <Button
+                Click="Quiz_BtnClick"/>
+                <Button
                 Content="Quiz 3"
-                Click="Quiz_3_Click"/>
-        </StackPanel>
+                Click="Quiz_BtnClick"/>
+            </StackPanel>
+            <StackPanel>
+                <Button
+                Content="Quiz 4"
+                Click="Quiz_BtnClick"/>
+                <Button
+                Content="Quiz 5"
+                Click="Quiz_BtnClick"/>
+                <Button
+                Content="Quiz 6"
+                Click="Quiz_BtnClick"/>
+                <Button
+                Content="Quiz 7"
+                Click="Quiz_BtnClick"/>
+            </StackPanel>
+            <StackPanel>
+                <Button
+                Content="Quiz 8"
+                Click="Quiz_BtnClick"/>
+                <Button
+                Content="Quiz 9"
+                Click="Quiz_BtnClick"/>
+                <Button
+                Content="Quiz 10"
+                Click="Quiz_BtnClick"/>
+                <Button
+                Content="Quiz 11"
+                Click="Quiz_BtnClick"/>
+            </StackPanel>
+        </DockPanel>
 
         <DockPanel>
             <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" />

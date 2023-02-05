@@ -1,0 +1,201 @@
+
+#Quiz 6
+
+$ The Non-Virtual Interface (NVI) design pattern is a private case of the Template Method design pattern
+@ True*
+@ False
+
+$ In the Template Method design pattern, a hook step is a type of abstract step, but the derived class doesn't have to implement it
+@ True
+@ False*
+
+$ In the Template Method design pattern, the optional step is implemented in the super class but can be overridden in the derived classes
+@ True*
+@ False
+
+$ What is incorrect regarding interface development recommendations and using the Non-Virtual Interface (NVI) design pattern?
+@ It is recommended that the destructor method in the parent class (for example, in C++) be either public and virtual (public virtual) or non-virtual with inheritance permission (protected)
+@ It is recommended that the protected permission for a virtual method be given only when it is necessary to call the
+method in inherited classes
+@ It is recommended to give protected permission to virtual methods*
+@ Preference is given to making interface methods non-virtual using the NVI design pattern
+@ A preference for giving private permission (where possible) to virtual methods is recommended
+
+$ The Template Method design pattern allows inherited classes to override implementations of certain steps of an algorithm without changing its skeleton
+@ True*
+@ False
+
+$ Using the Template Method design pattern reduces the code odors of rigidity
+@ True
+@ False*
+
+$ The Template Method design pattern is of the creational design pattern category
+@ True
+@ False*
+
+$ Using the Template method design pattern reduces the code odors of needless repetition
+@ True*
+@ False
+
+$ We defined a Spot Light to inherit from Point Light because the decision complies with the rules of inheritance - differential programming, being a type of Point Light, relating to the same domain, parent functionality needed in son, etc.
+@ True*
+@ False
+
+$ In the Light Propagation Model, we can give up the attenuation factor - kC - in the relevant light sources for realistic images
+@ True
+@ False*
+
+$ The light intensity coming from the Spot Light to the lighted light depends on the distance between the light source and the lighted light.
+@ True*
+@ False
+
+$ What type of lighting is NOT external to the geometries in the scene?
+@ Emission Light*
+@ Spot Light
+@ Ambient Light
+@ Point Light
+@ Directional Light
+
+$ The light intensity coming from Emission Light to a lighted point depends on the distance between the light source and the lighted point
+
+@ True
+@ False*
+
+$ The directional vector appears both in the Spot Light and in the Directional Light, but only in the Directional Light it is a basis for creating a vector towards the lighted point.
+@ True*
+@ False
+
+$ All parts of the Simple Phong Reflectance Model depend on the geometric body on which the point is located
+@ True
+@ False*
+
+$ We have added, in the LightSource interface in the Phong's model, a method to calculating the way that the light spreads and a method to calculate the (directional) vector from the light source to a point whose color we wish to calculate
+@ True*
+@ False
+
+$ In the Phong model, the sign of the scalar product between the normal vector and the directional vector (l) from the light source to the point for which the calculation is performed is important
+@ True
+@ False*
+
+$ The specular part of the Simple Phong Reflectance Model depends on the direction angle from the point of view (currently from the camera) to the point
+@ True*
+@ False
+
+$ The Simple Phong Reflectance Model and the Light Propagation Model are actually different names of the same model of lighting integration in a graphical scene
+@ True
+@ False*
+
+$ The diffusive part of the Simple Phong Reflectance Model depends on the angle of the light coming to the point
+@ True*
+@ False
+
+$ In the Phong model, for a realistic picture, we will limit the attenuation factors values of the diffusive and specular for the same material so that their sum will be less than or equal to 1
+@ True*
+@ False
+
+$ In the Simple Phong Reflectance Model, even for a realistic image, it only means that the attenuation coefficients are less than or equal to 1, but there are no relative limitations between the values of these coefficients
+@ True
+@ False*
+
+$ ALL light sources classes implement the LightSource interface
+@ True
+@ False*
+
+$ We have added a field of type Material in the Intersectable class
+@ True
+@ False*
+
+$ What is correct regarding the Phong Reflectance Model?
+@ The model is based on the physical model of light reflection
+@ The reflection of light from a Point Light fades with increasing distance between the light source and the point for which the calculation is being made
+@ The relation between all components of the model is multiplicative (The intensity contribution of each of the light sources to the point must be doubled)
+@ It is dismantled into two parts - Specular and Diffuse
+@ Increasing the value of the nSH (shininess) parameter in the model is intended to increase the concentration (decrease the size) of the shine (Specular effect) in the light reflection*
+
+$ For the diffusive component of the Phong model, we DON’T need the normal vector of the point on which the calculation is performed
+@ True
+@ False*
+
+$ The specular part of the Simple Phong Reflectance Model depends on the angle of the light coming to the point
+@ True*
+@ False
+
+$ The diffusive part of the Simple Phong Reflectance Model depends on the direction angle from the point of view (currently from the camera) to the point
+@ True
+@ False*
+
+$ The light intensity coming from the Point Light to the lighted light depends on the distance between the light source and the lighted light.
+@ True*
+@ False
+
+$ The Simple Phong Reflectance Model is an additive model
+@ True*
+@ False
+
+$ The Template Method design pattern is of the structural design pattern category
+@ True
+@ False*
+
+$ Light Propagation Model is an additive model
+@ True
+@ False*
+
+$ For the specular component of the Phong model, we don't need the normal vector of the point on which the calculation is performed
+@ True*
+@ False
+
+$ In the Template Method design pattern, the steps methods have public permission
+@ True
+@ False*
+
+$ What is correct regarding the Phong Reflectance Model?
+@ The light intensity returned from a point on the geometric body fades with distance
+@ For a realistic picture, there is no relationship between the attenuation factors in the model
+@ The model needs a normalized vector at the point for which the calculation is performed*
+@ The model requires the calculation of intersections between the reflected light from a light source and geometric bodies in the scene
+@ Ambient Light has no effect on the model
+
+$ What is incorrect regarding interface development recommendations and using the Non-Virtual Interface (NVI) design pattern?
+@ It is recommended that the destructor method in the parent class (for example, in C++) be either PRIVATE and VIRTUAL (public virtual) or non-virtual with inheritance permission (protected)*
+@ It is recommended that the protected permission for a virtual method be given only when it is necessary to call the method in inherited classes
+@ In languages where it is not possible to give private permissions to virtual methods, they will optionally be given an inherited permission (protected)
+@ Preference is given to making interface methods non-virtual using the NVI design pattern
+@ A preference for giving private permission (where possible) to virtual methods is recommended
+
+$ For the diffusive component of the Phong model, we need the directional vector from the light source to the point on which the calculation is performed
+@ True*
+@ False
+
+$ What is a type of lighting whose intensity reaching the illuminated point depends on the angle between the direction of the light and the direction from the light source to that point?
+@ Emission Light
+@ Spot Light*
+@ Ambient Light
+@ Point Light
+@ Directional Light
+
+$ In the Light Propagation Model, the linear attenuation factor - kL - in the relevant light sources, represents the weakening of the light intensity per unit area due to the law of conservation of energy 
+@ True
+@ False*
+
+$ What lighting type does NOT inherit from the Light class in our framework?
+@ Emission Light*
+@ Spot Light
+@ Ambient Light
+@ Point Light
+@ Directional Light
+
+$ What is correct about the Phong Reflectance Model?
+@ After adding the aspects of the local effects of the model, the picture still looks in two dimensions (flat)
+@ In the model, there is a dependence on the direction from the POV to the point for which the calculation is performed*
+@ In the model, there is a dependence on the direction from the source of emission to the point for which the calculation is performed
+@ It is a multiplicative model
+@ The model doesn’t depend on the material from which the geometric body, on which, the point is calculated on, is made
+
+$ The Phong Reflectance Model depends on the material of the geometric body, on which, the point, for which the calculation is performed, is located
+@ True*
+@ False
+
+$ After adding the diffusive and specular effects in the Phong Model, the pictures receive a 3-dimensional look
+@ True*
+@ False
+

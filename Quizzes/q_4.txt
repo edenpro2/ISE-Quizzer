@@ -1,0 +1,71 @@
+
+# Quiz 4
+
+$ How many equivalence partitions are in testing ray-triangle intersections (After finding the intersection with the plane containing this triangle)?
+@ 1
+@ 4
+@ 5
+@ 3*
+@ 2
+
+$ When calculating the point of intersection between a ray and a triangle we used an algebraic method (after the plane's calculations)
+@ True
+@ False*
+
+$ In calculating the point of intersection between a ray and a plane we used a geometric method
+@ True
+@ False*
+
+$ How many boundary test cases are in testing plane intersections when the ray is perpendicular to the plane?
+@ 5
+@ 1
+@ 4
+@ 2
+@ 3*
+
+$ When we decided to add "Intersectable" interface we based ourselves on the following object-oriented design principle out of SOLID:
+@ Liskov Substitution Principle (LSP)
+@ Dependency Inversion Principle (DIP)
+@ Single Responsibility Principle (SRP)
+@ Open Close Principle (OCP)
+@ Interface Separation Principle (ISP)*
+
+$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray class. We used the following principle:
+@ Principle of Least Knowledge 
+@ LoD - Law of Demeter
+@ KISS - Keep It Simple, Stupid
+@ DRY - Don't Repeat Yourself*
+@ YAGNI - You ain’t gonna need it
+
+$ How many tests which return a point (of all kinds, according to what we have learned) are in ray-plane intersections (Notice that the ray's head is not an intersection point)?
+@ 3
+@ 1
+@ 5
+@ 4
+@ 2*
+
+$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray Class, in order to remove the following code odour::
+@ Rigidity
+@ Viscosity
+@ Fragility
+@ Needless Repetition*
+@ Immobility
+
+$ When returning the intersection points between a ray and a sphere we are including the tangent points between the ray and the sphere
+@ True
+@ False*
+
+$ What is a correct statement regarding Composite Design Pattern and Iterator?
+@ Iterator is a behavioral design pattern and composite is creational
+@ We did not show any relationship between these two patterns
+@ In the implementation of the composite pattern, in the complex class, we based ourselves on the use of an iterator pattern*
+@ Iterator is a structural design pattern and composite is behavioral
+@ Both are related to same design pattern category
+
+$ What kind of type the parameters of the functions/methods in our framework should be?
+@ Collection<>
+@ LinkedList<>
+@ List<>*
+@ ArrayList<>
+@ Vector<>
+

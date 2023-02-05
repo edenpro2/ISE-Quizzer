@@ -1,0 +1,72 @@
+#Quiz 3
+
+$ The View Plane is an exact replica of both the camera's sensors as well as the eye's retina and therefore, in our project, we will place the View Plane in front of our camera.
+@ True 
+@ False*
+
+$ All of the light that is reflected off of all of the objects that are in the field of vision of the human eye is directly perceived by the eye.
+@ True
+@ False*
+
+$ In the context of RDD (Responsibility Driven Design), the responsibility of doing is represented by:
+@ 1. the object's constructors
+@ 2. the roles of the object
+@ 3. the object's attributes (fields)
+@ 4. calling other objects' methods
+@ 5. the object's methods*
+
+$ In the system we are building (the framework) we will use a Responsibility Driven Design approach for storing the data that defines the View Plane as follows:
+ 
+@ 1. Everything will be stored in the class Camera
+@ 2. Size and distance from the camera will be stored in the class Camera, resolution will be stored in the class ImageWriter*
+@ 3. Everything will be stored in the class ImageWriter
+@ 4. Size will be stored in the class ImageWriter, resolution and distance from the camera will be stored in the class Camera
+@ 5. Distance from the camera will be stored in the class Camera, size and resolution will be stored in the class ImageWriter
+
+$ We have decided to place the resolution in the ImageWriter class due to the following consideration:
+
+@ 1. Don't Repeat Yourself (DRY)
+@ 2. Principle of Least Knowledge
+@ 3. To avoid passing resolution as argument to the function that constructs rays from the camera through a center of pixel
+@ 4. Law of Demeter (LOD)
+@ 5. Responsibility Driven Design (RDD)*
+
+$ In RDD (Responsibility Driven Design), objects are seen as entities:
+@ 1. that have instances of classes
+@ 2. that are the framework for data sets
+@ 3. that have roles*
+@ 4. that have responsibilities
+@ 5. that have interacting objects
+
+$ In the graphical system (the framework) that we are building, we will work in the opposite direction from the direction that the light actually propagates because it will be both easier and more efficient to implement such a method.
+Select one:
+@ True*
+@ False
+
+$ What part of the human eye is most similar to the matrix of light sensors in a camera?
+@ Retina*
+@ Pupil
+@ Cornea
+@ Lens
+@ Iris
+
+$ In RDD (Responsibility Driven Design), an application is seen as a:
+@ a collection of interacting objects*
+@ a collection of roles
+@ a collection of responsibilities
+@ a collection of objects that have responsibilities
+@ a collection of objects that have roles
+
+$ In the context of RDD (Responsibility Driven Design), the responsibility of knowing is represented by:
+@ calling other objects' methods
+@ the object's attributes (fields)*
+@ the object's constructors
+@ the object's methods
+@ the roles of the object
+
+$ In class, we created tests for constructing a ray through the View Plane. Which of those tests represents Equivalence Partitioning?
+@ Corner point on 3x3 and 4x4 View Planes
+@ The two side points on a 3x3 View Plane
+@ An inner point on a 3x3 View Plane
+@ A side point on a 4x4 View Plane
+@ An inner point on a 4x4 View Plane*

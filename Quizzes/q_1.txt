@@ -12,20 +12,20 @@ $ You are given that the cross product of two vectors (each vector's length is g
 @ 4. The angle is 90 degrees
 @ 5. The angle is 270 degrees
 
-$ u = (-2,-5,-7), w = (2,7,0)
-Calculate the following expression (round your answer to 2 digits after the decimal point)
+$ u = (-2,-5,-7), w = (2,7,0) 
+Calculate the following expression (round your answer to 2 digits after the decimal point): 
 (uxw)*u
 
 ~ 0
 
-$ u = (-2,-5,-7), w = (2,7,0)
-Calculate the following expression (round your answer to 2 digits after the decimal point)
+$ u = (-2,-5,-7), w = (2,7,0) 
+Calculate the following expression (round your answer to 2 digits after the decimal point): 
 (u x w)^2
 
 ~ -3920 
 
-$ u=(-2,-5,-7),  w =(2,7,0)
-Calculate the following expression (round your answer to 2 digits after the decimal point)
+$ u=(-2,-5,-7),  w =(2,7,0) 
+Calculate the following expression (round your answer to 2 digits after the decimal point): 
 [w^2 - ((u /||u||) * w)^2] * u^2
 
 ~ 1838.46
@@ -64,7 +64,7 @@ public class C {
 The function calculate() violates which principle?
 @ You Ain't Gonna Need It (YAGNI)
 @ Keep It Short & Simple (KISS)
-@ Principle of Least Knowledge *
+@ Principle of Least Knowledge*
 @ Don't Repeat Yourself (DRY)
 @ Principle of Single Responsibility
 

@@ -1,5 +1,4 @@
 ﻿namespace Quizzer;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,23 +14,24 @@ public static class Database
             if (text == default)
                 continue;
 
-            var joined = string.Join(" ", text.Select(o => o.ToString()).ToArray());
+            var joined = string.Join("", text.Select(o => o.ToString()).ToArray());
             var blocks = joined.Split('$').ToArray();
             var q = new List<string>();
             var question_text = "";
             var possible_ans = new List<string>();
             var answer = "";
             var trimmed = "";
-            Question question;
             var quiz = new Quiz(quiz_num);
+            Question question;
 
             // questions inside each quiz
             foreach (var block in blocks)
             {
                 var index = block.IndexOf('~');
-                if (index != -1) // found (open question)
+                // if open question 
+                if (index != -1)
                 {
-                    question_text = new string(block.Take(index).ToArray());
+                    question_text = new string(block.Take(index).ToArray()).Trim();
                     trimmed = block.Remove(0, index);
                     possible_ans = new List<string>(trimmed.Remove(0, 1).Split('~'));
                     answer = possible_ans[0];
@@ -43,11 +43,12 @@ public static class Database
                 // find answer symbol
                 index = block.IndexOf('@');
                 // question will be 
-                question_text = new string(block.Take(index).ToArray());
+                question_text = new string(block.Take(index).ToArray()).Trim();
 
                 if (question_text.Count() < 1)
                     continue;
 
+                // remove text until first '@' 
                 trimmed = block.Remove(0, index);
                 possible_ans = new List<string>(trimmed.Remove(0, 1).Split('@'));
                 possible_ans.ForEach(s => s.Trim());

@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Quizzer"
+      xmlns:matd="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="QuizPage"
@@ -11,6 +12,11 @@
       Background="White">
 
     <Page.Resources>
+        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatAccentBgButton}">
+            <Setter Property="Background" Value="CornflowerBlue"/>
+            <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+        </Style>
+        
         <Style TargetType="{x:Type RadioButton}">
             <Setter Property="FontSize" Value="18" />
         </Style>
@@ -22,28 +28,33 @@
             VerticalAlignment="Top"
             Content="Main Page"
             Click="MainBtn_Click"
-            Margin="5" />
-        <Grid Margin="50 50 50 100">
+            Margin="50 16 0 0" />
+        <Grid Margin="50 70 50 80">
             <StackPanel>
-                <Border 
+                <matd:Card 
                     BorderThickness="1"
-                    BorderBrush="#333333"
-                    CornerRadius="5"
+                    matd:ElevationAssist.Elevation="Dp2"
+                    UniformCornerRadius="5"
+                    Background="{StaticResource MaterialDesignPaper}"
                     VerticalAlignment="Top">
                     <TextBlock 
+                        TextAlignment="Justify"
                         Margin="5"
                         TextWrapping="Wrap"
                         Text="{Binding CurrentQuestion._question}"
                         d:Text="Is the whole entire course really dumb?"
-                        FontWeight="Bold"
-                        FontSize="24"/>
-                </Border>
-                <StackPanel x:Name="RadioStackPanel" Margin="0 20 0 0" />
+                        FontWeight="SemiBold"
+                        FontSize="28"/>
+                </matd:Card>
+                <StackPanel
+                    x:Name="RadioStackPanel"
+                    Margin="0 20 0 0" />
             </StackPanel>
 
             <Button 
                 Click="NextBtn_Click"
                 VerticalAlignment="Bottom"
+                Height="50"
                 Content="Next"/>
         </Grid>
         

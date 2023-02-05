@@ -1,0 +1,163 @@
+#Quiz5
+
+$ The Builder Design Pattern is a structural design pattern.
+@ True
+@ False*
+
+$ In order to initialize the color/intensity of Emission Light we need to add:
+@ The constructor of the class Geometry will get a parameter of type Color
+@ Add an constructor to every geometrical class that will get a parameter of type Color
+@ A method in the class Geometry that will take care of the update*
+@ Every constructor of every geometrical class will get an extra parameter of type Color
+@ A method in each of the geometrical classes that will take care of the update
+
+$ The rods are less sensitive than the cones, but produce a stronger nerve signal to the brain, therefore they are mainly used for vision when the lighting is good.
+@ True
+@ False*
+
+$ Darkness is the absence of light
+@ True*
+@ False
+
+$ At least one builder class is required in the Builder Design Pattern
+@ True*
+@ False
+
+$ How is the original java.awt.Color class "wrapped" inside our class Color?
+
+@ We did not wrap the original class in our new class Color . We just created an object that was an instance of the original class
+@ We did not wrap the original class in our new class Color . We just created an object that was an instance of the original class
+@ By using inheritance - having our class Color inherit from the original class
+@ By using our own RGB values as well as our own methods that perform operations on these values. Also, we add a method called getColor that returns an instance of the original class*
+@ By using composition - having our class Color contain an attribute of the type of the original class
+
+$ After we finish the implementation of Emission Light, we will change the implementation of an existing method and update its implementation in all of the classes of geometric bodies (the simple ones and complex ones) in order to override the following method:
+@ getNormal
+@ findIntersections
+@ findGeoIntersections
+@ getEmissionColor
+@ findGeoIntersectionsHelper*
+
+$ A Builder Design Pattern transfers the responsibility of creating an object to a unique helper class
+@ True*
+@ False
+
+$ For the most part, the light that we see everyday of our lives is a linear function of wavelengths that make up the entire spectrum of light
+Select one:
+@ True
+@ False*
+
+$ Which of the following classes in our framework is a Passive Data Structure (PDS)?
+
+@ Camera
+@ AmgientLight
+@ Scene*
+@ RayTracerBasic
+@ RayTracerBase
+
+$ You are given below some statements about PDS (Passive Data Structure) and how it applies to our framework. Which of the statements below is false?
+
+@ It has the basic characteristics of object-oriented development (encapsulation, inheritance, and polymorphism)*
+@ It does not have getters
+@ It helps us not violate the Law of Demeter (LoD)
+@ It can have setters
+@ All of the fields are public
+
+$ Which one of the following statements about Ambient Light is false?
+@ We save its attenuation coefficient kA as a field in the class*
+@ The effect of ambient lighting does not depend on the position of the body in the scene
+@ The ambient light equally affects all bodies in the scene.
+@ The original intensity of the ambient light that is passed as a parameter to the class's constructor is multiplied by its attenuation factor.
+@ Ambient lighting represents light that spreads and is reflected off the walls many times and creates a uniform lighting.
+
+$ Infra-Red rays (IR) are among those rays that are considered to have long wavelengths.
+Select one:
+@ True*
+@ False
+
+$ How many different types of cells can be found in the retina of the human eye (we differentiate between different types of cells based upon which lights in the spectrum the cells react to)?
+
+@ 1
+@ 2
+@ 5
+@ 3
+@ 4*
+
+$ Ultraviolet rays (UV) are among those rays that are considered to have short wavelengths.
+Select one:
+@ True*
+@ False
+
+$ From a physical perspective, light is electromagnetic radiation 
+@ True*
+@ False
+
+$ The rods are sensitive to a large part of the light spectrum than the cones
+@ True
+@ False*
+
+$ Which of the following classes in our framework is a Passive Data Structure (PDS)?
+
+@ ImageWriter
+@ Camera
+@ AmbientLight
+@ RayTracerBasic
+@ GeoPoint*
+
+$ We decided to make the class Scene to be a PDS (Passive Data Structure) after we saw that the following principle was broken
+@ YAGNI - You Ain’t Gonna Need It
+@ KISS - Keep It Simple, Stupid
+@ Responsibility Driven Design
+@ LoD - Law of Demeter*
+@ DRY - Don’t Repeat Yourself
+
+$ Where do we add the helper class GeoPoint?
+@ Intersectable interface (now making the interface an abstract class)*
+@ In the Geometry class
+@ Directly in the primitives package
+@ Directly in the geometries package
+@ In the Scene class
+
+$ The Builder Design Pattern is a creational design pattern.
+@ True*
+@ False
+
+$ The human eye can react to the entire spectrum of light
+@ True 
+@ False*
+
+$ You are given below some statements about PDS (Passive Data Structure) and how it applies to our framework. Which of the statements below is false?
+@ It helps us not violate the Law of Demeter (LoD)
+@ All fields are public
+@ It doesn’t have getters
+@ It can have setters
+@ It has the basic characteristics of object-oriented development*
+
+$ Instead of changing existing methods in Intersectable and Ray, we added new methods. We did this in order to avoid which code smell
+@ Needless repetition
+@ Opacity
+@ Fragility
+@ Rigidity* 
+@ Viscosity
+
+$ In the Builder Design Pattern, the class’ method that returns the final object generally checks to make sure that the final object is intact (created without errors)
+@ True*
+@ False
+
+$ Essentially, how many different types of light-sensitive cells are there in the retina human eye?
+@ 2*
+@ 1
+@ 5
+@ 3
+@ 4
+
+$ The Builder Design Pattern requires a builder interface
+@ True
+@ False*
+
+$ When we refactor our code, we decided to move the method findClosestPoint (which given a single point and a list of points, finds the point in the list which is closest to the single point) from the class RayTracerBasic to the class Ray. This is an example of implementing the following principle
+@ KISS
+@ RDD*
+@ LoD
+@ DRY
+@ YAGNI
