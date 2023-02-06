@@ -1,0 +1,111 @@
+#Quiz 9
+
+$ In the improvement of Anti-Aliasing, it will be correct in terms of Responsibility Driven Design (RDD), to put the beam of ray's creation in the Camera class
+@ True*
+@ False
+
+$ Which of the FOLLOWING methods of generating points in a target area for a ray beam (super-sampling pattern) is the simplest to implement?
+@ Rotated grid
+@ Jittered
+@ Stochastic / Random grid*
+@ All the methods in the other sections are similar in their simplicity
+@ Poisson disc
+
+$ In this course, we presented a grid method for the creation of the beam of rays. In "real life" (without taking into account acceleration improvements) how many rays would be used in the beam to create a final image?
+@ From 17x17 to 33x33*
+@ 3x3
+@ 14x14
+@ 9x9
+@ 2x2
+
+$ In this course, we presented a grid method for the creation of the beam of rays. In "real life" (without taking into account acceleration improvements) how many rays would be used in the beam to create a final image?
+@ 3x3
+@ 65x65*
+@ 9x9
+@ 2x2
+@ 10x10
+
+Which of the following statements is “incorrect” regarding Depth of Field image improvement?
+@ It is recommended to place the aperture on the camera
+@ The purpose of the improvement is to create an entire image in focus*
+@ Aperture size affects the distance range of focus of the improvement (the range of distances where the bodies will be seen in focus)
+@ Focal distance is defined on the ray passes through the view plane
+@ The focal point is always on the focal plane
+
+$ In the implementation of the image improvement of soft shadows, we will perform a "same side" test (ln * vn > 0) on the central shadow ray, and if the test is negative, we will not have to create a beam of shading rays at all
+@ True
+@ False*
+
+$ When implementing the Soft Shadows improvement, we need to make changes in the code beside the required changes in the renderer package
+@ True*
+@ False
+
+$ When activating the Depth of Field improvement in our framework, activating simultaneously the Anti-Aliasing improvement will not be useful because all curves will be smoothed anyway by Depth of Field
+@ True
+@ False*
+
+$ The purpose of Anti-Aliasing improvement is to solve the hard shadows problem
+@ True
+@ False*
+
+$ In which of the image improvements have we learned using a beam of rays (super-sampling), the beam is created from a source surface to a target point and not from a source point to a target surface?
+@ Soft Shadows
+@ Depth of Field*
+@ Anti-Aliasing
+@ Blur/Diffuse Glass
+@ Glossy Surface
+
+$ In which of the image improvements we’ve studied which use a beam of rays (super-sampling) will require a change in the PointLight class?
+@ Anti-Aliasing
+@ Glossy Surface and Blur/Diffuse Glass
+@ Depth of Field
+@ Soft Shadows*
+@ No change to the PointLight class is required for any such improvement
+
+$ When we improved the picture by adding the Blur Glass & Glossy Surface algorithms, in order to create the beam of rays, we used a target area (BlackBoard) that was created on the basis of existing data and with that, we only added a target area size (like a radius or the size of the side of the rectangle/square) similar to the soft shadows improvement
+@ True
+@ False*
+
+$ Which of the following methods of creating points in a target area for a ray beam (super-sampling) is the best in terms of image quality and without side effects (regardless of performance)?
+@ Rotated grid
+@ Jittered
+@ Stochastic / Random grid
+@ Grid
+@ Poisson disc*
+
+$ In the Soft Shadows improvement, it will be correct in terms of Responsibility Driven Design (RDD) to put the beam of rays creation in the Camera class
+@ True
+@ False*
+
+$ Which of the problems is not solved by using a beam of rays (super sampling) instead of a single ray?
+@ The boundaries of a shadow are too sharp
+@ Boundaries between the objects look jagged (like a saw)
+@ All objects are seen in focus (in focus) - both near and far
+@ Glasses and mirrors look “ too clean"/perfect
+@ All shadows are full even though there are partially transparent objects in the image*
+
+$ The purpose of the Anti-Aliasing improvement is to solve the jagged edges problem
+@ True*
+@ False
+
+$ Which of the image improvements we learned does not calculate the average of the color of the rays in the beam?
+@ Anti-Aliasing
+@ Glossy Surface and Blur/Diffuse Glass
+@ No change in the Material class is required for any such improvement
+@ Soft Shadows*
+@ Depth of Field
+
+$ What is a correct statement regarding Soft Shadows improvement?
+@ The target area for Spot Light may appear from the point of intersection in the form of an ellipse*
+@ The improvement is relevant for all the external light bodies we studied (Point, Spot and Directional)
+@ The size of the target area of the improvement depends in the material of the body for which we calculate the shadow effect
+@ The target area of the improvement for point light is recommended to be defined as a sphere (that is, in the shape of a 3D body and not flat)
+@ The improvement will not require us to make changes in the calcLocalEffect method or its auxiliary methods (transparency for example)
+
+$ Which of the following methods of creating points in a target area for a ray beam (super-sampling) is relatively good in terms of image quality and without side effects and also relatively good in performance (in terms of speed)?
+@ Stochastic / Random
+@ Grid
+@ Poisson disc
+@ Jittered*
+@ Rotated grid
+

@@ -1,172 +1,200 @@
 #Quiz 7
 
-$ The "backlighting" phenomenon that we faced in the implementation of the Phong Model sometimes disappears in the sphere after the implementation of shading
+$ The Non-Virtual Interface (NVI) design pattern is a private case of the Template Method design pattern
 @ True*
 @ False
 
-$ Shadow rays are created for each point (that was calculated in the Phong Model) from the point to the external light source (directional/point/spot)
-@ True*
-@ False
-
-$ In our first attempt to deal with our distorted picture, we moved the shadow ray's head. This could cause all of the bodies in our picture (both flat and three dimensional) to lose the lighting effect (aka light no longer shines upon them)
-@ True*
-@ False
-
-$ The creation of shadow rays is identical to the creation of camera rays.
+$ In the Template Method design pattern, a hook step is a type of abstract step, but the derived class doesn't have to implement it
 @ True
 @ False*
 
-$ In our first attempt to deal with our distorted picture, we moved the shadow ray's head straight into the direction of the light (aka we already have a vector, which is the direction from the point to the light source; we now move the point up from its original position to another place on this vector, which is closer to the light source).
-@ True
-@ False*
-
-$ In the Phong Model, we add the effect of a light source if its shadow ray intersects geometric bodies in the scene (aka geometries between the light source and the point whose color is being calculated).
-Select one:
-@ True
-@ False*
-
-$ After our first implementation of unshaded, our picture was messed up. It seemed to be that the light source(s) was/were shaded in places that there should not be any shading and we see a spotted picture. This could be caused by the fact that the head of the ray was included in the list of intersection points.
-@ True
-@ False*
-
-$ In the implementation of the shading, after we discovered that flat bodies lost their lighting (they appear without any light shining on them even though light is clearly hitting them), we added in the unshaded method, a test to see if the geometric body (where we found the intersection point) is flat. (The test was carried out using the FlatGeometry "marking interface" that we created especially for this test). We then said that this test is still a BAD design. What was the main drawback?
-@ Law of Demeter - LoD
-@ Rigidity
-@ Fragility
-@ Low coupling*
-@ High cohesion
-
-$ Cash Cow is an antipattern in which an organization's profits are reliant on existing products, as well as existing customers and there's absolutely no interest in taking on new clients, new products or even improving existing products.
+$ In the Template Method design pattern, the optional step is implemented in the super class but can be overridden in the derived classes
 @ True*
 @ False
 
-$ Action at a Distance is the antipattern where there is code that is using specific data, and yet, that same data may change in other unexpected places and at unexpected times.
+$ What is incorrect regarding interface development recommendations and using the Non-Virtual Interface (NVI) design pattern?
+@ It is recommended that the destructor method in the parent class (for example, in C++) be either public and virtual (public virtual) or non-virtual with inheritance permission (protected)
+@ It is recommended that the protected permission for a virtual method be given only when it is necessary to call the
+method in inherited classes
+@ It is recommended to give protected permission to virtual methods*
+@ Preference is given to making interface methods non-virtual using the NVI design pattern
+@ A preference for giving private permission (where possible) to virtual methods is recommended
+
+$ The Template Method design pattern allows inherited classes to override implementations of certain steps of an algorithm without changing its skeleton
 @ True*
 @ False
 
-$ The antipattern Functional Decomposition is the remnant of an era when programming languages were imperative/procedural and that each class did only one thing and that class's name was similar to its method's name.
-@ True*
-@ False
-
-$ Which of the following statements about the Marker Interface pattern is most accurate?
-@ The Marker Interface pattern is a highly accepted design pattern and is widely used.
-@ The Marker Interface pattern does not break any Object Oriented design principles
-@ The Marker Interface pattern is an antipattern*
-@ The Marker Interface pattern represents and makes good use of the concept and goals of an interface in Object Oriented Development
-@ In the final solution for the framework that we built, we used the Marker Interface pattern to handle shading for flat objects(e.g. triangle, polygon, sphere)
-
-$ The Yo-Yo antipattern represents the usage of many small classes which results in a system structure that is both difficult to understand as well as difficult to navigate
-@ True*
-@ False
-
-$ The Agile Development Method can often lead to which antipattern
-@ None of the other antipatterns is correct
-@ Lava Flow - ancient code that nobody dares to touch
-@ BLOB - large classes with many superfluous attributes and methods
-@ Spaghetti Code – long and complicated
-@ Poltergeist - irrelevant classes will suddenly appear*
-
-$ The book on antipatterns (that was presented in the lecture) was inspired by the book on Design Patterns that was authored by the Gang of Four.
-@ True*
-@ False
-
-$ The Hard Code antipattern represents code that is hard to understand.
+$ Using the Template Method design pattern reduces the code odors of rigidity
 @ True
 @ False*
 
-$ In a scene where there is at least one body and at least one light source (and we have not yet added runtime improvement), for every primary ray, we need to create at least one secondary ray.
+$ The Template Method design pattern is of the creational design pattern category
 @ True
 @ False*
 
-$ When creating a reflective ray for an intersection point, we needed to create a new vector (a new direction) - we used the normal (vector) of the intersection point in order to create this new direction
+$ Using the Template method design pattern reduces the code odors of needless repetition
 @ True*
 @ False
 
-$ In the function calcColor, when we were calculating the color of an intersection point, we took into account the effect of shadowing (aka the intersection point was being blocked by another object in the scene from the light). We consider shadowing to be a global effect
-@ True
-@ False*
-
-$ If an intersection point lies on a mirrored object, then its color can be affected by other objects that are in the same scene. This is an example of a global effect
+$ We defined a Spot Light to inherit from Point Light because the decision complies with the rules of inheritance - differential programming, being a type of Point Light, relating to the same domain, parent functionality needed in son, etc.
 @ True*
 @ False
 
-$ In a scene which has bodies that are either reflective or transparent, we can right away calculate how many intersections there will be with other bodies in the scene without having to know where the other bodies are found in the scene
+$ In the Light Propagation Model, we can give up the attenuation factor - kC - in the relevant light sources for realistic images
 @ True
 @ False*
 
-$ The rays the we create in order to check shading (aka shadow rays) are secondary rays
+$ The light intensity coming from the Spot Light to the lighted light depends on the distance between the light source and the lighted light.
 @ True*
 @ False
 
-$ When we see a rainbow in front of us, it means that the sun (the light source) is also in front of us (obviously after the rain has subsided).
+$ What type of lighting is NOT external to the geometries in the scene?
+@ Emission Light*
+@ Spot Light
+@ Ambient Light
+@ Point Light
+@ Directional Light
+
+$ The light intensity coming from Emission Light to a lighted point depends on the distance between the light source and the lighted point
+
 @ True
 @ False*
 
-$ In any given material, the refractive index is the same for all wavelengths of light in the material.
-@ True
-@ False*
-
-$ The refractive index of any material falls within the following numerical range:
-@ All possible numbers (positive and negative)
-@ All positive numbers from 1.0 and up (only)*
-@ All numbers between 0 and 1 (only)
-@ All positive numbers (only)
-@ All negative numbers (only)
-
-$ The refractive index of a material is the ratio between the speed of light in the material and the speed of light in a vacuum.
-@ True
-@ False*
-
-$ A critical angle is defined as the angle in which - if the incidence of the light ray is smaller than the critical angle then there will be a refraction of light, and if the incidence of the light ray is greater than or equal to the critical angle then there will be a complete reflection of light.
+$ The directional vector appears both in the Spot Light and in the Directional Light, but only in the Directional Light it is a basis for creating a vector towards the lighted point.
 @ True*
 @ False
 
-$ In a realistic picture the sum of the following attenuation coefficients should not exceed 1: 
-kD + kR + kT ≤ 1
-@ True*
-@ False
-
-$ In the Phong Model, all of the global effects that we have studied required us to add a recursive calculation in the Phong model
-@ True*
-@ False
-
-$ In a realistic picture, we would need to set the attenuation factor for reflection (kR) to be 0 for the following material:
-@ Completely mirror
-@ Completely glass
-@ Completely non-transparent
-@ Completely matte*
-@ There is no material for which you should make the kR = 0
-
-$ After our first implementation of unshaded, our picture was messed up.It seemed that all of the external light sources disappeared. This could be caused by the fact that the head of the ray was included in the list of intersection points.
-@ True*
-@ False
-
-$ When we added the check to the function checkLocalEffects to see if the point whose color we are calculating is shaded from the light source or not, where did we add the check?
-@ Immediately AFTER checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)
-@ Immediately after we added the emission light
-@ Immediately BEFORE checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)
-@ Immediately before we added the emission light
-@ We did NOT do this check in the function calcLocalEffects
-
-$ The "backlighting" phenomenon that we faced in the implementation of the Phong Model COMPLETELY resolved after the implementation of shading
+$ All parts of the Simple Phong Reflectance Model depend on the geometric body on which the point is located
 @ True
 @ False*
 
-$ The Yo-Yo antipattern represents code that has unexpected complexity in all sorts of places
-@ True
-@ False*
-
-$ The antipattern BLOB is related to using large binary objects (aka Binary Large OBjects)
-@ True
-@ False*
-
-$ The term antipattern is a general term used for programming errors
-@ True
-@ False*
-
-$ The Hard Code antipattern represents code that uses multiple literals (explicit values, e.g. 3.14) instead of using a constant identifier (e.g. PI)
+$ We have added, in the LightSource interface in the Phong's model, a method to calculating the way that the light spreads and a method to calculate the (directional) vector from the light source to a point whose color we wish to calculate
 @ True*
 @ False
 
-$ 
+$ In the Phong model, the sign of the scalar product between the normal vector and the directional vector (l) from the light source to the point for which the calculation is performed is important
+@ True
+@ False*
+
+$ The specular part of the Simple Phong Reflectance Model depends on the direction angle from the point of view (currently from the camera) to the point
+@ True*
+@ False
+
+$ The Simple Phong Reflectance Model and the Light Propagation Model are actually different names of the same model of lighting integration in a graphical scene
+@ True
+@ False*
+
+$ The diffusive part of the Simple Phong Reflectance Model depends on the angle of the light coming to the point
+@ True*
+@ False
+
+$ In the Phong model, for a realistic picture, we will limit the attenuation factors values of the diffusive and specular for the same material so that their sum will be less than or equal to 1
+@ True*
+@ False
+
+$ In the Simple Phong Reflectance Model, even for a realistic image, it only means that the attenuation coefficients are less than or equal to 1, but there are no relative limitations between the values of these coefficients
+@ True
+@ False*
+
+$ ALL light sources classes implement the LightSource interface
+@ True
+@ False*
+
+$ We have added a field of type Material in the Intersectable class
+@ True
+@ False*
+
+$ What is correct regarding the Phong Reflectance Model?
+@ The model is based on the physical model of light reflection
+@ The reflection of light from a Point Light fades with increasing distance between the light source and the point for which the calculation is being made
+@ The relation between all components of the model is multiplicative (The intensity contribution of each of the light sources to the point must be doubled)
+@ It is dismantled into two parts - Specular and Diffuse
+@ Increasing the value of the nSH (shininess) parameter in the model is intended to increase the concentration (decrease the size) of the shine (Specular effect) in the light reflection*
+
+$ For the diffusive component of the Phong model, we DON’T need the normal vector of the point on which the calculation is performed
+@ True
+@ False*
+
+$ The specular part of the Simple Phong Reflectance Model depends on the angle of the light coming to the point
+@ True*
+@ False
+
+$ The diffusive part of the Simple Phong Reflectance Model depends on the direction angle from the point of view (currently from the camera) to the point
+@ True
+@ False*
+
+$ The light intensity coming from the Point Light to the lighted light depends on the distance between the light source and the lighted light.
+@ True*
+@ False
+
+$ The Simple Phong Reflectance Model is an additive model
+@ True*
+@ False
+
+$ The Template Method design pattern is of the structural design pattern category
+@ True
+@ False*
+
+$ Light Propagation Model is an additive model
+@ True
+@ False*
+
+$ For the specular component of the Phong model, we don't need the normal vector of the point on which the calculation is performed
+@ True*
+@ False
+
+$ In the Template Method design pattern, the steps methods have public permission
+@ True
+@ False*
+
+$ What is correct regarding the Phong Reflectance Model?
+@ The light intensity returned from a point on the geometric body fades with distance
+@ For a realistic picture, there is no relationship between the attenuation factors in the model
+@ The model needs a normalized vector at the point for which the calculation is performed*
+@ The model requires the calculation of intersections between the reflected light from a light source and geometric bodies in the scene
+@ Ambient Light has no effect on the model
+
+$ What is incorrect regarding interface development recommendations and using the Non-Virtual Interface (NVI) design pattern?
+@ It is recommended that the destructor method in the parent class (for example, in C++) be either PRIVATE and VIRTUAL (public virtual) or non-virtual with inheritance permission (protected)*
+@ It is recommended that the protected permission for a virtual method be given only when it is necessary to call the method in inherited classes
+@ In languages where it is not possible to give private permissions to virtual methods, they will optionally be given an inherited permission (protected)
+@ Preference is given to making interface methods non-virtual using the NVI design pattern
+@ A preference for giving private permission (where possible) to virtual methods is recommended
+
+$ For the diffusive component of the Phong model, we need the directional vector from the light source to the point on which the calculation is performed
+@ True*
+@ False
+
+$ What is a type of lighting whose intensity reaching the illuminated point depends on the angle between the direction of the light and the direction from the light source to that point?
+@ Emission Light
+@ Spot Light*
+@ Ambient Light
+@ Point Light
+@ Directional Light
+
+$ In the Light Propagation Model, the linear attenuation factor - kL - in the relevant light sources, represents the weakening of the light intensity per unit area due to the law of conservation of energy 
+@ True
+@ False*
+
+$ What lighting type does NOT inherit from the Light class in our framework?
+@ Emission Light*
+@ Spot Light
+@ Ambient Light
+@ Point Light
+@ Directional Light
+
+$ What is correct about the Phong Reflectance Model?
+@ After adding the aspects of the local effects of the model, the picture still looks in two dimensions (flat)
+@ In the model, there is a dependence on the direction from the POV to the point for which the calculation is performed*
+@ In the model, there is a dependence on the direction from the source of emission to the point for which the calculation is performed
+@ It is a multiplicative model
+@ The model doesn’t depend on the material from which the geometric body, on which, the point is calculated on, is made
+
+$ The Phong Reflectance Model depends on the material of the geometric body, on which, the point, for which the calculation is performed, is located
+@ True*
+@ False
+
+$ After adding the diffusive and specular effects in the Phong Model, the pictures receive a 3-dimensional look
+@ True*
+@ False
 

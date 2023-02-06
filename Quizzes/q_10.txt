@@ -1,0 +1,137 @@
+#Quiz 10
+
+$ In a picture that is comprised of billions of objects, despite the fact that the overhead in building the hierarchy that is needed for the BVH (Bound Volume Hierarchy) algorithm is relatively high, it is still worth using this algorithm, because as a general rule, the
+overhead will still be significantly less than the amount of time we will save by using this algorithm
+@ True*
+@ False
+
+$ Which of the following statements most accurately describes BVH (Bounding Volume Hierarchy)?
+@ You do not need to use a tree data structure to implement this algorithm*
+@ There is no need to circumscribe all of the bodies that are in the scene, together into just one box
+@ If the ray intersects a geometry, we need to also check the geometry that is closest to the ray
+@ There is no need to place individual objects (that are not part of a composite) inside the bounded box
+@ In order to save the box that circumscribes the objects, we need to use 3 points (Point)
+
+$ For the Regular Grid algorithm, it is necessary to implement the functionality of the CBR (Conservative Bounding Region) on the geometrical bodies, but we DON’T need to use the CBR in order to calculate the intersections between the ray and the geometrical bodies.
+@ True*
+@ False
+
+$ One of the methods for acceleration that doesn’t (or almost doesn't) affect the quality of the picture is to reduce the number of pixels in the picture.
+@ True
+@ False*
+
+$ Which of the following statements about Adaptive Supersampling is false?
+@ Can be used whether the target area is created by using a grid or whether the target area is created by using stochastic (random) generated points
+@ Hard to implement for target areas that are circular
+@ It is relevant for only some of the picture enhancements that have used a beam of rays (aka relevant for only some of the super sampling algorithms that we learned in class)*
+@ It is recommended to use recursion for calculations
+@ If there is no major difference in the color of the rays in the beam then there is no reason to look at all of the samples
+
+$ In a system, with one memory management component, in which the processors/cores use shared memory, when we use a fixed amount of threads (we will use threads in a "smart" way by making each thread calculate the color of an individual pixel, and of course have all of the threads work in parallel), the acceleration will be proportional to the amount of threads (and will not exceed the number of cores).
+@ True
+@ False*
+
+$ The Regular/Adaptive Grid algorithm would belong to which category of acceleration algorithms?
+@ None of the other answers are correct
+@ Acceleration in the amount of time it takes to compute intersections*
+@ Discrete Ray Tracing
+@ Using Generalized Rays
+@ Reduction in the number of rays that are used to compute intersections
+
+$ Which of the following is not a stage in the SDLC (Software Development Life Cycle)?
+@ Disposal*
+@ Evolving
+@ Initial Development
+@ Servicing
+@ Phase Out
+
+$ Which of the following concepts is not addressed by Lehman's Laws?
+@ Self-Regulation
+@ Growth Slowdown*
+@ Declining Quality
+@ Continuing Change
+@ Conservation of Familiarity
+
+$ SDLC (Software Delivery Life Cycle) and Staged-Model of Software Life Cycle (SMSLC) are two different models that portray the same process.
+@ True
+@ False*
+
+$ Which of the following requirements is not an external requirement in software engineering?
+@ Accounting
+@ Legislative
+@ Ethical
+@ Regulatory
+@ Operational*
+
+$ Which of the following is not an advantage of the Waterfall Design Methodology?
+@ Reinforces good programming habits
+@ Good documentation
+@ Clear milestones
+@ Prevents overlapping between the stages*
+@ Simple
+
+$ A system metaphor is when we describe a program, attributes or components of a system by using a common language so that everyone who is involved with the system, including developers, sales people, debuggers, customers, etc. can understand what we are talking about
+@ True*
+@ False
+
+$ We use Extreme Prototyping to develop web applications.
+@ True*
+@ False
+
+$ Feedback System is a one of the Lehman Laws that deals with gathering feedback from the clients in order to determine how satisfied the client is with the product as well as to determine the quality of the product
+@ True
+@ False*
+
+$ Which of the following activities is not a stage of the Software Servicing stage in the SDLC (Software Development Life Cycle)?
+@ Evaluation
+@ Maintenance
+@ Disposal
+@ Acceptance
+@ Integration*
+
+$ Lehman's Laws apply to E-type (evolving) programs
+@ True*
+@ False
+
+$ Lehman's Laws describe the phenomenon where, on the one hand, there are forces that push for new development and, on the other hand, there are other forces that slow down the development process
+@ True*
+@ False
+
+$ During the Close Out phase of the Staged-Model Software Life Cycle (SMSLC), basic support is still given to the customers.
+@ True
+@ False*
+
+$ During which stage(s) of the SDLC (Software Development Life Cycle) does the customer test the software?
+@ Development
+@ Integration
+@ Maintenance
+@ Acceptance*
+@ Evaluation
+
+$ Which of the following statements most accurately describes the Staged-Model Software Life Cycle (SMSLC) ?
+@ During the Close Out stage, there is no longer any debugging done on the system, but you can still get customer support
+@ During the Phase Out stage, support is no longer offered for the product; since , they are only working on developing the new products
+@ The second stage, Evolving, is the iterative stage that characterizes the main development of the entire system*
+@ The Staged Model is more suitable for Waterfall Methodology than it is for the Agile Methodology
+@ During the Servicing stage, functionalities can be added to the system as long as they are relatively small
+
+$ Which of the following is not a software development methodology?
+@ Extreme Programming
+@ Prototyping*
+@ Incremental Design
+@ Waterfall
+@ Agile
+
+$ Shared Understanding is a category in the Extreme Programming Design Methodology. Which of the following components does not belong to the Shared Understanding category?
+@ Simple design
+@ System metaphor
+@ Coding standards
+@ Pair programming*
+@ Collective ownership of code
+
+$ Which of the following is not a stage in the SDLC (Software Development Life Cycle)?
+@ Maintenance
+@ Integration*
+@ Evaluation
+@ Acceptance
+@ Disposal

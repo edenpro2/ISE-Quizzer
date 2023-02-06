@@ -8,7 +8,7 @@ public static class Database
     {
         var quizzes = new List<Quiz>();
 
-        for (var quiz_num = 0; quiz_num <= 12; quiz_num++)
+        for (var quiz_num = 1; quiz_num <= 12; quiz_num++)
         {
             var text = (List<string>)FileReader.LoadTxt($"/Quizzes/q_{quiz_num}.txt");
             if (text == default)
@@ -67,7 +67,7 @@ public static class Database
 
             quizzes.Add(quiz);
         }
-        
+
         return quizzes;
     }
 }

@@ -1,112 +1,172 @@
-
 #Quiz 8
 
-$ In the improvement of Anti-Aliasing, it will be correct in terms of Responsibility Driven Design (RDD), to put the beam of ray's creation in the Camera class
+$ The "backlighting" phenomenon that we faced in the implementation of the Phong Model sometimes disappears in the sphere after the implementation of shading
 @ True*
 @ False
 
-$ Which of the FOLLOWING methods of generating points in a target area for a ray beam (super-sampling pattern) is the simplest to implement?
-@ Rotated grid
-@ Jittered
-@ Stochastic / Random grid*
-@ All the methods in the other sections are similar in their simplicity
-@ Poisson disc
-
-$ In this course, we presented a grid method for the creation of the beam of rays. In "real life" (without taking into account acceleration improvements) how many rays would be used in the beam to create a final image?
-@ From 17x17 to 33x33*
-@ 3x3
-@ 14x14
-@ 9x9
-@ 2x2
-
-$ In this course, we presented a grid method for the creation of the beam of rays. In "real life" (without taking into account acceleration improvements) how many rays would be used in the beam to create a final image?
-@ 3x3
-@ 65x65*
-@ 9x9
-@ 2x2
-@ 10x10
-
-Which of the following statements is “incorrect” regarding Depth of Field image improvement?
-@ It is recommended to place the aperture on the camera
-@ The purpose of the improvement is to create an entire image in focus*
-@ Aperture size affects the distance range of focus of the improvement (the range of distances where the bodies will be seen in focus)
-@ Focal distance is defined on the ray passes through the view plane
-@ The focal point is always on the focal plane
-
-$ In the implementation of the image improvement of soft shadows, we will perform a "same side" test (ln * vn > 0) on the central shadow ray, and if the test is negative, we will not have to create a beam of shading rays at all
-@ True
-@ False*
-
-$ When implementing the Soft Shadows improvement, we need to make changes in the code beside the required changes in the renderer package
+$ Shadow rays are created for each point (that was calculated in the Phong Model) from the point to the external light source (directional/point/spot)
 @ True*
 @ False
 
-$ When activating the Depth of Field improvement in our framework, activating simultaneously the Anti-Aliasing improvement will not be useful because all curves will be smoothed anyway by Depth of Field
-@ True
-@ False*
-
-$ The purpose of Anti-Aliasing improvement is to solve the hard shadows problem
-@ True
-@ False*
-
-$ In which of the image improvements have we learned using a beam of rays (super-sampling), the beam is created from a source surface to a target point and not from a source point to a target surface?
-@ Soft Shadows
-@ Depth of Field*
-@ Anti-Aliasing
-@ Blur/Diffuse Glass
-@ Glossy Surface
-
-$ In which of the image improvements we’ve studied which use a beam of rays (super-sampling) will require a change in the PointLight class?
-@ Anti-Aliasing
-@ Glossy Surface and Blur/Diffuse Glass
-@ Depth of Field
-@ Soft Shadows*
-@ No change to the PointLight class is required for any such improvement
-
-$ When we improved the picture by adding the Blur Glass & Glossy Surface algorithms, in order to create the beam of rays, we used a target area (BlackBoard) that was created on the basis of existing data and with that, we only added a target area size (like a radius or the size of the side of the rectangle/square) similar to the soft shadows improvement
-@ True
-@ False*
-
-$ Which of the following methods of creating points in a target area for a ray beam (super-sampling) is the best in terms of image quality and without side effects (regardless of performance)?
-@ Rotated grid
-@ Jittered
-@ Stochastic / Random grid
-@ Grid
-@ Poisson disc*
-
-$ In the Soft Shadows improvement, it will be correct in terms of Responsibility Driven Design (RDD) to put the beam of rays creation in the Camera class
-@ True
-@ False*
-
-$ Which of the problems is not solved by using a beam of rays (super sampling) instead of a single ray?
-@ The boundaries of a shadow are too sharp
-@ Boundaries between the objects look jagged (like a saw)
-@ All objects are seen in focus (in focus) - both near and far
-@ Glasses and mirrors look “ too clean"/perfect
-@ All shadows are full even though there are partially transparent objects in the image*
-
-$ The purpose of the Anti-Aliasing improvement is to solve the jagged edges problem
+$ In our first attempt to deal with our distorted picture, we moved the shadow ray's head. This could cause all of the bodies in our picture (both flat and three dimensional) to lose the lighting effect (aka light no longer shines upon them)
 @ True*
 @ False
 
-$ Which of the image improvements we learned does not calculate the average of the color of the rays in the beam?
-@ Anti-Aliasing
-@ Glossy Surface and Blur/Diffuse Glass
-@ No change in the Material class is required for any such improvement
-@ Soft Shadows*
-@ Depth of Field
+$ The creation of shadow rays is identical to the creation of camera rays.
+@ True
+@ False*
 
-$ What is a correct statement regarding Soft Shadows improvement?
-@ The target area for Spot Light may appear from the point of intersection in the form of an ellipse*
-@ The improvement is relevant for all the external light bodies we studied (Point, Spot and Directional)
-@ The size of the target area of the improvement depends in the material of the body for which we calculate the shadow effect
-@ The target area of the improvement for point light is recommended to be defined as a sphere (that is, in the shape of a 3D body and not flat)
-@ The improvement will not require us to make changes in the calcLocalEffect method or its auxiliary methods (transparency for example)
+$ In our first attempt to deal with our distorted picture, we moved the shadow ray's head straight into the direction of the light (aka we already have a vector, which is the direction from the point to the light source; we now move the point up from its original position to another place on this vector, which is closer to the light source).
+@ True
+@ False*
 
-$ Which of the following methods of creating points in a target area for a ray beam (super-sampling) is relatively good in terms of image quality and without side effects and also relatively good in performance (in terms of speed)?
-@ Stochastic / Random
-@ Grid
-@ Poisson disc
-@ Jittered*
-@ Rotated grid
+$ In the Phong Model, we add the effect of a light source if its shadow ray intersects geometric bodies in the scene (aka geometries between the light source and the point whose color is being calculated).
+Select one:
+@ True
+@ False*
+
+$ After our first implementation of unshaded, our picture was messed up. It seemed to be that the light source(s) was/were shaded in places that there should not be any shading and we see a spotted picture. This could be caused by the fact that the head of the ray was included in the list of intersection points.
+@ True
+@ False*
+
+$ In the implementation of the shading, after we discovered that flat bodies lost their lighting (they appear without any light shining on them even though light is clearly hitting them), we added in the unshaded method, a test to see if the geometric body (where we found the intersection point) is flat. (The test was carried out using the FlatGeometry "marking interface" that we created especially for this test). We then said that this test is still a BAD design. What was the main drawback?
+@ Law of Demeter - LoD
+@ Rigidity
+@ Fragility
+@ Low coupling*
+@ High cohesion
+
+$ Cash Cow is an antipattern in which an organization's profits are reliant on existing products, as well as existing customers and there's absolutely no interest in taking on new clients, new products or even improving existing products.
+@ True*
+@ False
+
+$ Action at a Distance is the antipattern where there is code that is using specific data, and yet, that same data may change in other unexpected places and at unexpected times.
+@ True*
+@ False
+
+$ The antipattern Functional Decomposition is the remnant of an era when programming languages were imperative/procedural and that each class did only one thing and that class's name was similar to its method's name.
+@ True*
+@ False
+
+$ Which of the following statements about the Marker Interface pattern is most accurate?
+@ The Marker Interface pattern is a highly accepted design pattern and is widely used.
+@ The Marker Interface pattern does not break any Object Oriented design principles
+@ The Marker Interface pattern is an antipattern*
+@ The Marker Interface pattern represents and makes good use of the concept and goals of an interface in Object Oriented Development
+@ In the final solution for the framework that we built, we used the Marker Interface pattern to handle shading for flat objects(e.g. triangle, polygon, sphere)
+
+$ The Yo-Yo antipattern represents the usage of many small classes which results in a system structure that is both difficult to understand as well as difficult to navigate
+@ True*
+@ False
+
+$ The Agile Development Method can often lead to which antipattern
+@ None of the other antipatterns is correct
+@ Lava Flow - ancient code that nobody dares to touch
+@ BLOB - large classes with many superfluous attributes and methods
+@ Spaghetti Code – long and complicated
+@ Poltergeist - irrelevant classes will suddenly appear*
+
+$ The book on antipatterns (that was presented in the lecture) was inspired by the book on Design Patterns that was authored by the Gang of Four.
+@ True*
+@ False
+
+$ The Hard Code antipattern represents code that is hard to understand.
+@ True
+@ False*
+
+$ In a scene where there is at least one body and at least one light source (and we have not yet added runtime improvement), for every primary ray, we need to create at least one secondary ray.
+@ True
+@ False*
+
+$ When creating a reflective ray for an intersection point, we needed to create a new vector (a new direction) - we used the normal (vector) of the intersection point in order to create this new direction
+@ True*
+@ False
+
+$ In the function calcColor, when we were calculating the color of an intersection point, we took into account the effect of shadowing (aka the intersection point was being blocked by another object in the scene from the light). We consider shadowing to be a global effect
+@ True
+@ False*
+
+$ If an intersection point lies on a mirrored object, then its color can be affected by other objects that are in the same scene. This is an example of a global effect
+@ True*
+@ False
+
+$ In a scene which has bodies that are either reflective or transparent, we can right away calculate how many intersections there will be with other bodies in the scene without having to know where the other bodies are found in the scene
+@ True
+@ False*
+
+$ The rays the we create in order to check shading (aka shadow rays) are secondary rays
+@ True*
+@ False
+
+$ When we see a rainbow in front of us, it means that the sun (the light source) is also in front of us (obviously after the rain has subsided).
+@ True
+@ False*
+
+$ In any given material, the refractive index is the same for all wavelengths of light in the material.
+@ True
+@ False*
+
+$ The refractive index of any material falls within the following numerical range:
+@ All possible numbers (positive and negative)
+@ All positive numbers from 1.0 and up (only)*
+@ All numbers between 0 and 1 (only)
+@ All positive numbers (only)
+@ All negative numbers (only)
+
+$ The refractive index of a material is the ratio between the speed of light in the material and the speed of light in a vacuum.
+@ True
+@ False*
+
+$ A critical angle is defined as the angle in which - if the incidence of the light ray is smaller than the critical angle then there will be a refraction of light, and if the incidence of the light ray is greater than or equal to the critical angle then there will be a complete reflection of light.
+@ True*
+@ False
+
+$ In a realistic picture the sum of the following attenuation coefficients should not exceed 1: 
+kD + kR + kT ≤ 1
+@ True*
+@ False
+
+$ In the Phong Model, all of the global effects that we have studied required us to add a recursive calculation in the Phong model
+@ True*
+@ False
+
+$ In a realistic picture, we would need to set the attenuation factor for reflection (kR) to be 0 for the following material:
+@ Completely mirror
+@ Completely glass
+@ Completely non-transparent
+@ Completely matte*
+@ There is no material for which you should make the kR = 0
+
+$ After our first implementation of unshaded, our picture was messed up.It seemed that all of the external light sources disappeared. This could be caused by the fact that the head of the ray was included in the list of intersection points.
+@ True*
+@ False
+
+$ When we added the check to the function checkLocalEffects to see if the point whose color we are calculating is shaded from the light source or not, where did we add the check?
+@ Immediately AFTER checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)
+@ Immediately after we added the emission light
+@ Immediately BEFORE checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)
+@ Immediately before we added the emission light
+@ We did NOT do this check in the function calcLocalEffects
+
+$ The "backlighting" phenomenon that we faced in the implementation of the Phong Model COMPLETELY resolved after the implementation of shading
+@ True
+@ False*
+
+$ The Yo-Yo antipattern represents code that has unexpected complexity in all sorts of places
+@ True
+@ False*
+
+$ The antipattern BLOB is related to using large binary objects (aka Binary Large OBjects)
+@ True
+@ False*
+
+$ The term antipattern is a general term used for programming errors
+@ True
+@ False*
+
+$ The Hard Code antipattern represents code that uses multiple literals (explicit values, e.g. 3.14) instead of using a constant identifier (e.g. PI)
+@ True*
+@ False
+
+$ 
 

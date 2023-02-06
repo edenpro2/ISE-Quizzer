@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -48,7 +47,7 @@ public partial class QuizPage : Page, INotifyPropertyChanged
         foreach (var ans in question._possibleAnswers)
         {
             var txt = new TextBlock() { Text = ans, TextWrapping = TextWrapping.Wrap };
-            var rb = new RadioButton() { Content = txt, IsChecked = false, FontSize = 22, VerticalContentAlignment = VerticalAlignment.Center};
+            var rb = new RadioButton() { Content = txt, IsChecked = false, FontSize = 22, VerticalContentAlignment = VerticalAlignment.Center };
             var border = new Border();
             bool isFirstTry = true;
             border.Child = rb;
@@ -80,13 +79,15 @@ public partial class QuizPage : Page, INotifyPropertyChanged
                     rb.BorderBrush = _wrongColor;
                     rb.BorderThickness = new Thickness(2);
                 }
-            }; 
+            };
 
-            rb.Unchecked += (sender, args) => {
+            rb.Unchecked += (sender, args) =>
+            {
                 rb.FontWeight = FontWeights.Normal;
                 border.Background = (SolidColorBrush)new BrushConverter().ConvertFrom("#ffffff00");
-                rb.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#222222"); 
-                rb.BorderThickness = new Thickness(1); };
+                rb.BorderBrush = (SolidColorBrush)new BrushConverter().ConvertFrom("#222222");
+                rb.BorderThickness = new Thickness(1);
+            };
 
             RadioStackPanel.Children.Add(border);
         }
@@ -99,7 +100,7 @@ public partial class QuizPage : Page, INotifyPropertyChanged
         foreach (var bord in _border_refs) { bord.Visibility = Visibility.Collapsed; }
 
         if (current + 1 >= 10)
-        {  
+        {
             MainBtn_Click(sender, e);
             return;
         }

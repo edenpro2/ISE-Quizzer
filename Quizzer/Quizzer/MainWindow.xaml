@@ -30,9 +30,14 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontFamily" Value="Helvetica"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
     </Window.Resources>
-    
-    
     
     <Grid>
         <Image 
@@ -49,52 +54,64 @@
             FontFamily="Helvetica"
             FontWeight="Bold"
             Foreground="White"
-            FontSize="40">
-            
-        </TextBlock>
-        <DockPanel VerticalAlignment="Center"
-                   HorizontalAlignment="Center">
+            FontSize="40"/>
+
+        <DockPanel 
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
             <StackPanel>
+                <TextBlock Text="Introduction"/>
                 <Button
-                Content="Quiz 0"
+                Content="Quiz Week 1"
                 Click="Quiz_BtnClick"/>
+                <TextBlock Text="3D Modeling of Primitives"/>
                 <Button
-                Content="Quiz 1"
+                Content="Quiz Week 2"
                 Click="Quiz_BtnClick"/>
+                <TextBlock Text="Testing, TDD, normals"/>
                 <Button
-                Content="Quiz 2"
+                Content="Quiz Week 3"
                 Click="Quiz_BtnClick"/>
+                <TextBlock Text="Camera ray construction"/>
                 <Button
-                Content="Quiz 3"
+                Content="Quiz Week 4"
                 Click="Quiz_BtnClick"/>
             </StackPanel>
             <StackPanel>
+                <TextBlock Text="Ray-geometry intersections"/>
                 <Button
-                Content="Quiz 4"
+                Content="Quiz Week 5"
                 Click="Quiz_BtnClick"/>
+                <TextBlock Text="Color, Ambient, Scene + Lighting Source"/>
                 <Button
-                Content="Quiz 5"
+                Content="Quiz Week 6"
                 Click="Quiz_BtnClick"/>
+                <TextBlock Text="Lighting Source and Phong Model"/>
                 <Button
-                Content="Quiz 6"
+                Content="Quiz Week 7"
                 Click="Quiz_BtnClick"/>
+                <TextBlock Text="Shadows + Relfection/Refraction"/>
                 <Button
-                Content="Quiz 7"
+                Content="Quiz Week 8"
                 Click="Quiz_BtnClick"/>
             </StackPanel>
             <StackPanel>
+                <TextBlock Text="Distributed RT (Picture Improvements)"/>
                 <Button
-                Content="Quiz 8"
+                Content="Quiz Week 9"
                 Click="Quiz_BtnClick"/>
+                <TextBlock Text="Perf. Improvements + S.D. Methodolgies"/>
                 <Button
-                Content="Quiz 9"
+                Content="Quiz Week 10"
                 Click="Quiz_BtnClick"/>
+                <TextBlock Text="Testing, Reuse, Depe. and Sec., Soft. Mngmt "/>
                 <Button
-                Content="Quiz 10"
-                Click="Quiz_BtnClick"/>
+                Content="Quiz Week 11"
+                Click="Unimp_Click"/>
+                <TextBlock Text="Software Configuration (Ver. Control)"/>
                 <Button
-                Content="Quiz 11"
-                Click="Quiz_BtnClick"/>
+                Content="Quiz Week 12"
+                Click="Unimp_Click"/>
             </StackPanel>
         </DockPanel>
 

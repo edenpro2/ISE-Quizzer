@@ -1,71 +1,72 @@
+#Quiz 4
 
-# Quiz 4
+$ The View Plane is an exact replica of both the camera's sensors as well as the eye's retina and therefore, in our project, we will place the View Plane in front of our camera.
+@ True 
+@ False*
 
-$ How many equivalence partitions are in testing ray-triangle intersections (After finding the intersection with the plane containing this triangle)?
-@ 1
-@ 4
-@ 5
-@ 3*
-@ 2
-
-$ When calculating the point of intersection between a ray and a triangle we used an algebraic method (after the plane's calculations)
+$ All of the light that is reflected off of all of the objects that are in the field of vision of the human eye is directly perceived by the eye.
 @ True
 @ False*
 
-$ In calculating the point of intersection between a ray and a plane we used a geometric method
-@ True
-@ False*
+$ In the context of RDD (Responsibility Driven Design), the responsibility of doing is represented by:
+@ 1. the object's constructors
+@ 2. the roles of the object
+@ 3. the object's attributes (fields)
+@ 4. calling other objects' methods
+@ 5. the object's methods*
 
-$ How many boundary test cases are in testing plane intersections when the ray is perpendicular to the plane?
-@ 5
-@ 1
-@ 4
-@ 2
-@ 3*
+$ In the system we are building (the framework) we will use a Responsibility Driven Design approach for storing the data that defines the View Plane as follows:
+ 
+@ 1. Everything will be stored in the class Camera
+@ 2. Size and distance from the camera will be stored in the class Camera, resolution will be stored in the class ImageWriter*
+@ 3. Everything will be stored in the class ImageWriter
+@ 4. Size will be stored in the class ImageWriter, resolution and distance from the camera will be stored in the class Camera
+@ 5. Distance from the camera will be stored in the class Camera, size and resolution will be stored in the class ImageWriter
 
-$ When we decided to add "Intersectable" interface we based ourselves on the following object-oriented design principle out of SOLID:
-@ Liskov Substitution Principle (LSP)
-@ Dependency Inversion Principle (DIP)
-@ Single Responsibility Principle (SRP)
-@ Open Close Principle (OCP)
-@ Interface Separation Principle (ISP)*
+$ We have decided to place the resolution in the ImageWriter class due to the following consideration:
 
-$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray class. We used the following principle:
-@ Principle of Least Knowledge 
-@ LoD - Law of Demeter
-@ KISS - Keep It Simple, Stupid
-@ DRY - Don't Repeat Yourself*
-@ YAGNI - You ain’t gonna need it
+@ 1. Don't Repeat Yourself (DRY)
+@ 2. Principle of Least Knowledge
+@ 3. To avoid passing resolution as argument to the function that constructs rays from the camera through a center of pixel
+@ 4. Law of Demeter (LOD)
+@ 5. Responsibility Driven Design (RDD)*
 
-$ How many tests which return a point (of all kinds, according to what we have learned) are in ray-plane intersections (Notice that the ray's head is not an intersection point)?
-@ 3
-@ 1
-@ 5
-@ 4
-@ 2*
+$ In RDD (Responsibility Driven Design), objects are seen as entities:
+@ 1. that have instances of classes
+@ 2. that are the framework for data sets
+@ 3. that have roles*
+@ 4. that have responsibilities
+@ 5. that have interacting objects
 
-$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray Class, in order to remove the following code odour::
-@ Rigidity
-@ Viscosity
-@ Fragility
-@ Needless Repetition*
-@ Immobility
+$ In the graphical system (the framework) that we are building, we will work in the opposite direction from the direction that the light actually propagates because it will be both easier and more efficient to implement such a method.
+Select one:
+@ True*
+@ False
 
-$ When returning the intersection points between a ray and a sphere we are including the tangent points between the ray and the sphere
-@ True
-@ False*
+$ What part of the human eye is most similar to the matrix of light sensors in a camera?
+@ Retina*
+@ Pupil
+@ Cornea
+@ Lens
+@ Iris
 
-$ What is a correct statement regarding Composite Design Pattern and Iterator?
-@ Iterator is a behavioral design pattern and composite is creational
-@ We did not show any relationship between these two patterns
-@ In the implementation of the composite pattern, in the complex class, we based ourselves on the use of an iterator pattern*
-@ Iterator is a structural design pattern and composite is behavioral
-@ Both are related to same design pattern category
+$ In RDD (Responsibility Driven Design), an application is seen as a:
+@ a collection of interacting objects*
+@ a collection of roles
+@ a collection of responsibilities
+@ a collection of objects that have responsibilities
+@ a collection of objects that have roles
 
-$ What kind of type the parameters of the functions/methods in our framework should be?
-@ Collection<>
-@ LinkedList<>
-@ List<>*
-@ ArrayList<>
-@ Vector<>
+$ In the context of RDD (Responsibility Driven Design), the responsibility of knowing is represented by:
+@ calling other objects' methods
+@ the object's attributes (fields)*
+@ the object's constructors
+@ the object's methods
+@ the roles of the object
 
+$ In class, we created tests for constructing a ray through the View Plane. Which of those tests represents Equivalence Partitioning?
+@ Corner point on 3x3 and 4x4 View Planes
+@ The two side points on a 3x3 View Plane
+@ An inner point on a 3x3 View Plane
+@ A side point on a 4x4 View Plane
+@ An inner point on a 4x4 View Plane*

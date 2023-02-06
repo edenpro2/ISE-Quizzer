@@ -16,8 +16,8 @@ public class Quiz : IEnumerable<Question>, INotifyPropertyChanged
     }
 
     public void AddQuestion(Question question)
-    { 
-        Questions.Add(question); 
+    {
+        Questions.Add(question);
     }
 
     public IEnumerator<Question> GetEnumerator()

@@ -1,110 +1,70 @@
-# Quiz 1
+#Quiz1
 
-$ u = (-2,-5,-7) Calculate the x-coordinate value of vector û [that is - "unit vector" of u or normalized u vector] (round up to two digits after the decimal point)
+$ It is the job of a software engineer to plan the network configuration on which the software product will be used
 
-~ -0.23
+@ True
+@ False*
 
-$ You are given that the cross product of two vectors (each vector's length is greater than 0) creates a third vector whose length is 0 (zero).  You are also told that the order of the vectors played a factor when we measured the angle that was between them (in other words the angle could be anywhere between 0 - 360 degrees but not including 360 degrees). What can be said about the angle between the two vectors?
+$ It is most likely that the code odor of needless repetition accompanies the code odor of fragility since even when it is necessary it is hard to keep track of all of the places where code needs to be changed
 
-@ 1. There is not enough information to come to any conclusion about the angle
-@ 2. The angle is 180 degrees
-@ 3. The angle is 0 degrees*
-@ 4. The angle is 90 degrees
-@ 5. The angle is 270 degrees
+@ True*
+@ False
 
-$ u = (-2,-5,-7), w = (2,7,0) 
-Calculate the following expression (round your answer to 2 digits after the decimal point): 
-(uxw)*u
+$ Essential complexity in a software system is required as a response to the complexity of the problem that the system solves
 
-~ 0
+@ True*
+@ False
 
-$ u = (-2,-5,-7), w = (2,7,0) 
-Calculate the following expression (round your answer to 2 digits after the decimal point): 
-(u x w)^2
+$ It is most likely that the code odor of immobility is accompanied by the code odor of fragility since it represents many and sometimes unexpected connections of between different parts of code
 
-~ -3920 
+@ True*
+@ False
 
-$ u=(-2,-5,-7),  w =(2,7,0) 
-Calculate the following expression (round your answer to 2 digits after the decimal point): 
-[w^2 - ((u /||u||) * w)^2] * u^2
+$ It is the job of a software engineer is to handle all aspects of the production of software products
 
-~ 1838.46
+@ True*
+@ False 
 
-$ You are given that the dot product of two vectors (each vector's length is greater than 0) is equal to 0 (zero). You are also told that the order of the vectors played a factor when we measured the angle that was between them (in other words the angle could be anywhere between 0 - 360 degrees but not including 360 degrees). What can be said about the angle between the two vectors?
+$ A software engineer only enters the picture after he has been given an abstract model of the problem that was build by an 
+expert in the problem domain field
 
-@ The angle between them is 270 degrees
-@ There is not enough information to come to any conclusion about the angle.
-@ The angle between them is 90 degrees* 
-@ The angle between them is 0 degrees
-@ The angle between them is 180 degrees
+@ True
+@ False*
 
-$ Below is a list of different statements that can be found inside a method of a class. Which of the following is not allowed according to the Principle of Least Knowledge?
+$ The metaphor of technical debt refers to essential complexity in a software system
 
-@ 1. Calling other methods that are defined in the class
-@ 2. Accessing the object that the method created (including the object's attributes and methods)
-@ 3. Accessing the method's parameters (including the parameter's attributes and methods)
-@ 4. Accessing the class's attributes (fieldS) and calling other methods that are defined in the class
-@ 5. Accessing the object that was received as a return value from another method that belongs to a different class (including the object's attributes and methods)*
+@ True
+@ False*
 
-$ 
-public class A {
-	private int num;
-	public int getNum() { return num; }
-}
-public class B {
-	private A a;
-	public A getA(){ return a; }
-}
-public class C {
-	private int y;
-	private B b;
-	public int calculate { return y + b.getA().getNum(); }
-}
+$ In tasks that take a long time to develop, investing in design may be unnecessary, since, it may unnecessarily increase the amount of 
+time that it will take for the product to be ready
 
-The function calculate() violates which principle?
-@ You Ain't Gonna Need It (YAGNI)
-@ Keep It Short & Simple (KISS)
-@ Principle of Least Knowledge*
-@ Don't Repeat Yourself (DRY)
-@ Principle of Single Responsibility
+@ True
+@ False*
 
-$ In class we learned the following principles:
+$ Input and output of a system represents the transfer of data and information between different parts of the system (aka 
+between subsystems)
 
-- DRY (Don't Repeat Yourself)
-- YAGNI (You Ain’t Gonna Need It)
-- KISS (Keep It Short & Simple)
+@ True
+@ False*
 
-Which of the following statements most accurately describes the development principles that we studied?
+$ The role of a software engineer is to abstract models from the Problem Domain and turn them into models that can be 
+computerized
 
-@ An example of DRY is the class Point
-@ An example of YAGNI is the class Ray
-@ an example of YAGNI is the class Coordinate*
-@ The purpose of the class Util is to implement DRY
-@ An example of YAGNI is the class Point
+@ True*
+@ False
 
-$ Which feature of system software does the Law of Demeter improve?
+$ Investing time in the development planning stage (design) allows the software system to develop faster in the long run
 
-@ loоsе coupling*
-@ low rigidity
-@ low viscosity
-@ high cohesion
-@ mobility - aka it improves the issue of low immobility
+@ True*
+@ False
 
-$ Which of the following statements about the Law of Demeter is correct in regard to the Principle of Least Knowledge?
+$ Which principle from the following principles of the Manifesto for Agile Software Development is correct
 
-@ The principle of limited knowledge is concerned with hiding implementation details between the system components.
-@ The principle of limited knowledge is concerned with hiding implementation details between the system components that have a direct connection
-@ The Law of Demeter can be defined by the statement “Don't Talk to Strangers” since it doesn't allow components from one part of the system to communicate with other parts of the system.
-@ The goal of the Law of Demeter is that code should be written, as much as possible, in an organized manner.
-@ The principle of limited knowledge is known as the Law of Demeter*
+@ 1. Responding to Change over Negotiation
+@ 2. Working Software over Process and Tools
+@ 3. Individuals and Interactions over Following the Plan
+@ 4. Individuals and Interactions over Processes and Tools*
+@ 5. Working Software over Negotiation
 
-$ The principal of Separation of Concerns (SoC) is concerned with obtaining/improving the following attributes of software systems : (choose the main reason and not the side effects)
-
-@ low fragility
-@ low rigidity
-@ high cohesion and loose coupling*
-@ loose cohesion and high coupling
-@ low viscosity
-
-
-
+$

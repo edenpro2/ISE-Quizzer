@@ -21,12 +21,12 @@ public partial class MainWindow : Window
     {
         // extract number from button content (Quiz * --> *) and load quiz
         string s = ((Button)sender).Content.ToString();
-        LoadQuiz(int.Parse(s.Replace("Quiz", "")));
+        LoadQuiz(int.Parse(s.Replace("Quiz Week", "")));
     }
-    
+
     private void LoadQuiz(int quiz_num)
     {
-        var quiz = quizzes[quiz_num];
+        var quiz = quizzes[quiz_num - 1];
         var all_questions = quiz.Questions.ToList();
         var questions = new List<Question>(MAXQUESTIONS);
         var rand = new Random(DateTime.Now.Millisecond);
@@ -44,4 +44,7 @@ public partial class MainWindow : Window
         QuizPage = new QuizPage(questions, _NavigationFrame);
         _NavigationFrame.Navigate(QuizPage);
     }
+
+    private void Unimp_Click(object sender, RoutedEventArgs e) { /* noop */ }
+
 }

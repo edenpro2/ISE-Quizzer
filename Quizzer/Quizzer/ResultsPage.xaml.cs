@@ -8,8 +8,8 @@ namespace Quizzer;
 public partial class ResultsPage : Page, INotifyPropertyChanged
 {
     private int _totalCorrect;
-    public int totalCorrect 
-    { 
+    public int totalCorrect
+    {
         get => _totalCorrect;
         set
         {
