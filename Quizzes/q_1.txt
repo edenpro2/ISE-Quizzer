@@ -1,70 +1,87 @@
 #Quiz1
 
 $ It is the job of a software engineer to plan the network configuration on which the software product will be used
-
 @ True
 @ False*
 
 $ It is most likely that the code odor of needless repetition accompanies the code odor of fragility since even when it is necessary it is hard to keep track of all of the places where code needs to be changed
-
 @ True*
 @ False
 
 $ Essential complexity in a software system is required as a response to the complexity of the problem that the system solves
-
 @ True*
 @ False
 
 $ It is most likely that the code odor of immobility is accompanied by the code odor of fragility since it represents many and sometimes unexpected connections of between different parts of code
-
 @ True*
 @ False
 
 $ It is the job of a software engineer is to handle all aspects of the production of software products
-
 @ True*
 @ False 
 
-$ A software engineer only enters the picture after he has been given an abstract model of the problem that was build by an 
-expert in the problem domain field
-
+$ A software engineer only enters the picture after he has been given an abstract model of the problem that was built by an expert in the problem domain field
 @ True
 @ False*
 
 $ The metaphor of technical debt refers to essential complexity in a software system
-
 @ True
 @ False*
 
 $ In tasks that take a long time to develop, investing in design may be unnecessary, since, it may unnecessarily increase the amount of 
 time that it will take for the product to be ready
-
 @ True
 @ False*
 
-$ Input and output of a system represents the transfer of data and information between different parts of the system (aka 
-between subsystems)
-
+$ Input and output of a system represents the transfer of data and information between different parts of the system (aka between subsystems)
 @ True
 @ False*
 
-$ The role of a software engineer is to abstract models from the Problem Domain and turn them into models that can be 
-computerized
-
+$ The role of a software engineer is to abstract models from the Problem Domain and turn them into models that can be computerized
 @ True*
 @ False
 
-$ Investing time in the development planning stage (design) allows the software system to develop faster in the long run
-
+$ Investing time in the development planning stage (design) allows the software system to develop faster in the LONG run
 @ True*
 @ False
 
 $ Which principle from the following principles of the Manifesto for Agile Software Development is correct
-
 @ Responding to Change over Negotiation
 @ Working Software over Process and Tools
 @ Individuals and Interactions over Following the Plan
 @ Individuals and Interactions over Processes and Tools*
 @ Working Software over Negotiation
+
+$ In every software system, every instance of complex code is an example of technical debt
+@ True
+@ False*
+
+$ The challenge of a software engineer is to deal with the growing variety of requirements and expectations, while in the meantime dealing with the need to reduce development time and increase both quality and reliability of software products
+@ True*
+@ False
+
+$ The reductionist method is a method that is exclusively used in software engineering (and not used in any other field other than software engineering)
+@ True
+@ False*
+
+$ A software engineer needs to be capable of learning every area of the problem, for which, he is building a software solution 
+@ True*
+@ False
+
+$ Just like needless complexity leads to opacity, so to does code that suffers from opacity always leads to needless complexity
+@ True
+@ False*
+
+$ Most software systems have bad, unnecessarily complex and unwanted code segments (cruft) that make the code more difficult to understand
+@ True*
+@ False
+
+$ A requirement for software engineering is the ability to think on all levels of abstraction
+@ True*
+@ False
+
+$ Investing time in the development planning stage (design) allows the software system to develop faster in the SHORT run
+@ True
+@ False*
 
 $

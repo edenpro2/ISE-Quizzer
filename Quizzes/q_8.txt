@@ -4,7 +4,7 @@ $ The "backlighting" phenomenon that we faced in the implementation of the Phong
 @ True*
 @ False
 
-$ Shadow rays are created for each point (that was calculated in the Phong Model) from the point to the external light source (directional/point/spot)
+$ Shadow rays are created for each point for which the Phong model is calculated, for each of the external light sources (directional/point/spot)
 @ True*
 @ False
 
@@ -12,16 +12,19 @@ $ In our first attempt to deal with our distorted picture, we moved the shadow r
 @ True*
 @ False
 
+$ After our first attempt in moving the shadow ray’s head in order to deal with image distortions in the initial implementation of shading, ONLY flat bodies could lose the lighting effect on them 
+@ True
+@ False*
+
 $ The creation of shadow rays is identical to the creation of camera rays.
 @ True
 @ False*
 
-$ In our first attempt to deal with our distorted picture, we moved the shadow ray's head straight into the direction of the light (aka we already have a vector, which is the direction from the point to the light source; we now move the point up from its original position to another place on this vector, which is closer to the light source).
+$ In our first attempt to deal with our distorted picture, we moved the shadow ray's head towards the light (aka we already have a vector, which is the direction from the point to the light source; we now move the point up from its original position to another place on this vector, which is closer to the light source).
 @ True
 @ False*
 
 $ In the Phong Model, we add the effect of a light source if its shadow ray intersects geometric bodies in the scene (aka geometries between the light source and the point whose color is being calculated).
-Select one:
 @ True
 @ False*
 
@@ -44,7 +47,7 @@ $ Action at a Distance is the antipattern where there is code that is using spec
 @ True*
 @ False
 
-$ The antipattern Functional Decomposition is the remnant of an era when programming languages were imperative/procedural and that each class did only one thing and that class's name was similar to its method's name.
+$ The antipattern Functional Decomposition is the remnant of an era when programming languages were imperative-procedural and that each class did only one thing and that class's name was similar to its method's name.
 @ True*
 @ False
 
@@ -74,7 +77,11 @@ $ The Hard Code antipattern represents code that is hard to understand.
 @ True
 @ False*
 
-$ In a scene where there is at least one body and at least one light source (and we have not yet added runtime improvement), for every primary ray, we need to create at least one secondary ray.
+$ In a scene that has at least one body and one light source and without acceleration improvements, for an intersection point on a body that is both reflective and transparent, we will create exactly two secondary rays
+@ True
+@ False*
+
+$ In a scene that has at least one body and one light source (and we have not yet added runtime improvement), for every primary ray, we need to create at least one secondary ray
 @ True
 @ False*
 
@@ -90,7 +97,7 @@ $ If an intersection point lies on a mirrored object, then its color can be affe
 @ True*
 @ False
 
-$ In a scene which has bodies that are either reflective or transparent, we can right away calculate how many intersections there will be with other bodies in the scene without having to know where the other bodies are found in the scene
+$ In a scene which has bodies that are either reflective or transparent, we can right away calculate exactly how many intersections there will be with other bodies in the scene without having to know where the other bodies are found in the scene
 @ True
 @ False*
 
@@ -98,26 +105,31 @@ $ The rays the we create in order to check shading (aka shadow rays) are seconda
 @ True*
 @ False
 
-$ When we see a rainbow in front of us, it means that the sun (the light source) is also in front of us (obviously after the rain has subsided).
+$ When we see a rainbow in front of us, it means that the sun (the light source) is also in front of us (obviously after the rain has subsided)
 @ True
 @ False*
 
-$ In any given material, the refractive index is the same for all wavelengths of light in the material.
+$ In any given material, the refractive index is the same for all wavelengths of light in the material
 @ True
 @ False*
 
 $ The refractive index of any material falls within the following numerical range:
 @ All possible numbers (positive and negative)
-@ All positive numbers from 1.0 and up (only)*
+@ All positive numbers from 1 and up (only)*
 @ All numbers between 0 and 1 (only)
 @ All positive numbers (only)
 @ All negative numbers (only)
 
-$ The refractive index of a material is the ratio between the speed of light in the material and the speed of light in a vacuum.
-@ True
-@ False*
+$ The refractive index of a material is the ratio between the speed of light in the material and the speed of light in a vacuum
+@ True*
+@ False
 
-$ A critical angle is defined as the angle in which - if the incidence of the light ray is smaller than the critical angle then there will be a refraction of light, and if the incidence of the light ray is greater than or equal to the critical angle then there will be a complete reflection of light.
+$ A critical angle is defined as the angle in which - if the incidence of the light ray is smaller than the critical angle then there will be a refraction of light, and if the incidence of the light ray is greater than or equal to the critical angle then there will be a complete reflection of light
+@ True*
+@ False
+
+$ In a realistic picture the sum of the following attenuation coefficients should not exceed 1: 
+kD + kS + kT ≤ 1
 @ True*
 @ False
 
@@ -142,7 +154,7 @@ $ After our first implementation of unshaded, our picture was messed up.It seeme
 @ False
 
 $ When we added the check to the function checkLocalEffects to see if the point whose color we are calculating is shaded from the light source or not, where did we add the check?
-@ Immediately AFTER checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)
+@ Immediately AFTER checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)*
 @ Immediately after we added the emission light
 @ Immediately BEFORE checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)
 @ Immediately before we added the emission light
@@ -168,5 +180,74 @@ $ The Hard Code antipattern represents code that uses multiple literals (explici
 @ True*
 @ False
 
-$ 
+$ The Software Bloat antipattern represents writing classes and interfaces that are too large and bloated
+@ True
+@ False*
 
+$ Singleton is basically an antipattern
+@ True
+@ False*
+
+$ One of the solutions to dealing with Action at a Distance, is the use of immutable objects
+@ True*
+@ False
+
+$ The effect of light sources (diffusive and specular) on an intersection point is a local effect
+@ True*
+@ False
+
+$ The effect of the color of other bodies on the intersection point of a reflective body is a global effect (effect)
+@ True*
+@ False
+
+$ The rays we create from Camera are secondary rays
+@ True
+@ False*
+
+$ A critical angle is the largest angle, at which, a light ray can hit the boundary between two materials and there will still be refraction of light (that is, part of the light will pass from the first material to the second material) and at a greater angle of incidence there will be complete reflection of the light
+@ True
+@ False*
+
+$ According to Snell's law, when a ray passes from material 1 to material 2, the ratio between the sine of the ray angle (between the ray and the normal to the boundary between the materials) in material 1 and the sine of the ray angle in material 2 is equal to the ratio between the refractive index in material 1 and the refractive index in material 2
+@ True
+@ False*
+
+$ The phenomenon of the colored rainbow is a result (among other things) of the difference in the speed of light in the material for different wavelengths of light
+@ True*
+@ False
+ 
+$ The attenuation coefficient of transparency (kT) will be 0 in a realistic picture for the following material:
+@ In no material
+@ Perfect glass
+@ Completely matte material
+@ Perfect mirror
+@ Completely sealed material*
+
+$ Incorrect use of good design patterns (for example, Singleton) is actually the Golden Hammer anti-pattern 
+@ True*
+@ False
+
+$ The BLOB antipattern represents constructing a class with low cohesion
+@ True*
+@ False
+
+$ The Big Ball of Mud antipattern represents constructing large and bloated classes regardless of its parts (low cohesion)
+@ True
+@ False*
+
+$ The main reason for Snell's law is Fermat's principle, according to which, the path a light ray will travel between two points is the fastest path
+@ True*
+@ False
+ 
+$ The attenuation coefficient of transparency (kT) will be 1 in a realistic picture for the following material:
+@ Perfect glass
+@ Completely matte material
+@ Perfect mirror*
+@ Completely sealed material
+@ In no material
+
+$ In the Phong Model, not all the global effects we studied add a recursive calculation in the model
+@ True
+@ False*
+
+$

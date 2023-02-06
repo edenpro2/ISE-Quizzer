@@ -15,8 +15,14 @@ $ In the context of RDD (Responsibility Driven Design), the responsibility of do
 @ calling other objects' methods
 @ the object's methods*
 
+$ In the context of RDD (Responsibility Driven Design), the responsibility of communicating is represented by:
+@ the object's constructors
+@ the roles of the object
+@ the object's attributes (fields)
+@ calling other objects' methods*
+@ the object's methods
+
 $ In the system we are building (the framework) we will use a Responsibility Driven Design approach for storing the data that defines the View Plane as follows:
- 
 @ Everything will be stored in the class Camera
 @ Size and distance from the camera will be stored in the class Camera, resolution will be stored in the class ImageWriter*
 @ Everything will be stored in the class ImageWriter
@@ -24,7 +30,6 @@ $ In the system we are building (the framework) we will use a Responsibility Dri
 @ Distance from the camera will be stored in the class Camera, size and resolution will be stored in the class ImageWriter
 
 $ We have decided to place the resolution in the ImageWriter class due to the following consideration:
-
 @ Don't Repeat Yourself (DRY)
 @ Principle of Least Knowledge
 @ To avoid passing resolution as argument to the function that constructs rays from the camera through a center of pixel
@@ -69,3 +74,35 @@ $ In class, we created tests for constructing a ray through the View Plane. Whic
 @ An inner point on a 3x3 View Plane
 @ A side point on a 4x4 View Plane
 @ An inner point on a 4x4 View Plane*
+
+$ In the graphic system we built, we worked according to how we see, so we will use the method of "forward tracing” for the light rays
+@ True
+@ False*
+
+$ Which statement is not true about a camera?
+@ A camera's sensor matrix performs a role similar to that of the retina in the human eye
+@ The camera aperture functions like an iris in the human eye - increasing and decreasing the amount of light that enters
+@ A camera lens cover (which is put on the lens to protect it from dust and scratches) performs a function similar to the function of the cornea in a human eye*
+@ A pupil in a human eye is like a hole in the camera aperture
+@ The lens system in the camera functions like a lens in the human eye
+
+$ Which one of the values is calculated by the method of creating rays (constructRay)
+@ Dimensions of the ViewPlane
+@ Distance from camera to the ViewPlane
+@ Dimensions of a pixel*
+@ Resolution sizes
+@ Axis position of the camera’s direction
+
+$ In the graphical system (the framework) that we are building, the color of the pixel on the ViewPlane is calculated according to the color calculated for the ray that passes through the center of the pixel
+@ True*
+@ False
+
+$ In the human eye, the image reaches the retina inverted up-down and left-right, but in the camera, the image arrives in the original form (not inverted) to the camera sensor
+@ True
+@ False*
+
+$ In the graphic system (the framework) that we are building, we will use a rendering technique called rasterization, which originated from the method of building the image over old television and computer screens
+@ True
+@ False*
+
+$

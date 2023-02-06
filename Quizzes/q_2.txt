@@ -4,34 +4,54 @@ $ u = (-2,-5,-7) Calculate the x-coordinate value of vector û [that is - "unit 
 
 ~ -0.23
 
+$ u = (6, 9, -2) Calculate the x-coordinate value of vector û [that is - "unit vector" of u or normalized u vector] (round up to two digits after the decimal point)
+
+~ 0.55
+
 $ You are given that the cross product of two vectors (each vector's length is greater than 0) creates a third vector whose length is 0 (zero).  You are also told that the order of the vectors played a factor when we measured the angle that was between them (in other words the angle could be anywhere between 0 - 360 degrees but not including 360 degrees). What can be said about the angle between the two vectors?
+@ There is not enough information to come to any conclusion about the angle
+@ The angle is 45 degrees
+@ The angle is 0 or 180 degrees*
+@ The angle is 90 degrees
+@ The angle is 270 degrees
 
-@ 1. There is not enough information to come to any conclusion about the angle
-@ 2. The angle is 180 degrees
-@ 3. The angle is 0 degrees*
-@ 4. The angle is 90 degrees
-@ 5. The angle is 270 degrees
-
-$ u = (-2,-5,-7), w = (2,7,0) 
+$ u = (-2, -5, -7), w = (2, 7, 0) 
 Calculate the following expression (round your answer to 2 digits after the decimal point): 
 (uxw)*u
 
 ~ 0
 
-$ u = (-2,-5,-7), w = (2,7,0) 
+$ u = (-2, -5, -7), w = (2, 7, 0) 
 Calculate the following expression (round your answer to 2 digits after the decimal point): 
 (u x w)^2
 
-~ -3920 
+~ 2613
 
-$ u=(-2,-5,-7),  w =(2,7,0) 
+$ u = (-2, -5, -7),  w = (2, 7, 0) 
 Calculate the following expression (round your answer to 2 digits after the decimal point): 
 [w^2 - ((u /||u||) * w)^2] * u^2
 
-~ 1838.46
+~ 2613
+
+$ u = (6, 9 ,-2),  w = (2, -6, 3) 
+Calculate the following expression (round your answer to 2 digits after the decimal point): 
+[w^2 - ((u /||u||) * w)^2] * u^2
+
+~ 3625
+
+$ u = (6, 9 ,-2),  w = (2, -6, 3) 
+Calculate the following expression (round your answer to 2 digits after the decimal point): 
+(u x w)^2
+
+~ 3625
+
+$ u = (6, 9 ,-2),  w = (2, -6, 3) 
+Calculate the following expression (round your answer to 2 digits after the decimal point): 
+(uxw)*u
+
+~ 0
 
 $ You are given that the dot product of two vectors (each vector's length is greater than 0) is equal to 0 (zero). You are also told that the order of the vectors played a factor when we measured the angle that was between them (in other words the angle could be anywhere between 0 - 360 degrees but not including 360 degrees). What can be said about the angle between the two vectors?
-
 @ The angle between them is 270 degrees
 @ There is not enough information to come to any conclusion about the angle.
 @ The angle between them is 90 degrees* 
@@ -39,7 +59,6 @@ $ You are given that the dot product of two vectors (each vector's length is gre
 @ The angle between them is 180 degrees
 
 $ Below is a list of different statements that can be found inside a method of a class. Which of the following is not allowed according to the Principle of Least Knowledge?
-
 @ Calling other methods that are defined in the class
 @ Accessing the object that the method created (including the object's attributes and methods)
 @ Accessing the method's parameters (including the parameter's attributes and methods)
@@ -72,38 +91,135 @@ $ In class we learned the following principles:
 DRY (Don't Repeat Yourself)
 YAGNI (You Ain’t Gonna Need It) 
 KISS (Keep It Short & Simple) 
-
 Which of the following statements most accurately describes the development principles that we studied?
-
-@ An example of DRY is the class Point
+@ An example of DRY is the class Point*
 @ An example of YAGNI is the class Ray
-@ an example of YAGNI is the class Coordinate*
+@ An example of YAGNI is the class Coordinate
 @ The purpose of the class Util is to implement DRY
 @ An example of YAGNI is the class Point
 
-$ Which feature of system software does the Law of Demeter improve?
+$ In class we learned the following principles: 
+DRY (Don't Repeat Yourself)
+YAGNI (You Ain’t Gonna Need It) 
+KISS (Keep It Short & Simple) 
+Which of the following statements most accurately describes the development principles that we studied?
+@ An example of YAGNI is the class Point
+@ An example of DRY is the class Ray*
+@ An example of DRY is the class Coordinate
+@ The purpose of the class Util is to implement YAGNI
+@ An example of YAGNI is the class Coordinate
 
-@ loоsе coupling*
-@ low rigidity
-@ low viscosity
-@ high cohesion
-@ mobility - aka it improves the issue of low immobility
+$ Which of the decisions we made regarding the computer graphics system we started to build, stemmed from constraint and not from applying one of the design principles that we learned
+@ In writing the implementation of the equals method of the Vector class, we used the equals method of the Point class
+@ Using the Util class*
+@ Vector inherits from Point
+@ Removing the Coordinate class
+@ Adding an abstract class, RadialGeometry
+
+$ Which feature of system software does the Law of Demeter improve?
+@ Loоsе coupling*
+@ Low rigidity
+@ Low viscosity
+@ High cohesion
+@ Mobility - aka it improves the issue of low immobility
 
 $ Which of the following statements about the Law of Demeter is correct in regard to the Principle of Least Knowledge?
-
 @ The principle of limited knowledge is concerned with hiding implementation details between the system components.
 @ The principle of limited knowledge is concerned with hiding implementation details between the system components that have a direct connection
 @ The Law of Demeter can be defined by the statement “Don't Talk to Strangers” since it doesn't allow components from one part of the system to communicate with other parts of the system.
 @ The goal of the Law of Demeter is that code should be written, as much as possible, in an organized manner.
 @ The principle of limited knowledge is known as the Law of Demeter*
 
-$ The principal of Separation of Concerns (SoC) is concerned with obtaining/improving the following attributes of software systems (choose the main reason and not the side effects)
-
+$ The principal of Separation of Concerns (SoC) is concerned with obtaining/improving the following attributes of software systems : (choose the main reason and not the side effects)
 @ low fragility
 @ low rigidity
 @ high cohesion and loose coupling*
 @ loose cohesion and high coupling
 @ low viscosity
 
+$ Viscosity represents a problem in the planning and architecture of the system
+@ True*
+@ False*
 
+$ Problem areas are diverse, but well-characterized (formal)
+@ True
+@ False*
 
+$ In the programming courses of the first year of the degree, the exercises require an investment in planning in order to perform them and submit them more quickly
+@ True
+@ False*
+
+$ What is a true statement about design patterns?
+@ Design patterns from the structural category refer to solving repetitive and changing problems in programming with structural types
+@ Design patterns are a collection of solutions in specific programming languages for recurring programming problems
+@ Design templates gives us a code that realizes the solution of the template and it is mandatory to use this code
+@ Iterator - a design pattern in the behavioral category*
+@ Design patterns refer to solving recurring programming problems for object-oriented development only
+
+$ An example of fragility, for example, is after we added an additional parameter to the function in the code, the program stopped compiling
+@ True
+@ False*
+
+$ In the reductionist method, we go through a process from more abstract components to simpler and more detailed components
+@ True*
+@ False
+
+$ A software engineer is responsible for researching and finding development methods that will be efficient, high-quality and better than other methods for any type of software development project
+@ True
+@ False*
+
+$ What is the correct claim according to the Agile principle that “working software over comprehensive documentation”
+@ System rational and structure reflected from charts in documentation
+@ The scope of the documentation is dictated by the amount of code
+@ System rational and structure reflected from code itself*
+@ Training is carried out in an initial period before receiving practical development work
+@ Documentation must be comprehensive
+
+$ The interest of technical debts is a bigger investment in the further development of a software system
+@ True*
+@ False
+
+$ Increasing abstraction - its purpose is to get a simpler and more detailed model
+@ True
+@ False*
+
+$ A software engineer is responsible for the software domain only and should not deal with the field of reality (the problem domain) for which a software product is developed
+@ True
+@ False*
+
+$ Code that smells of rigidity will inevitably also be fragile
+@ True
+@ False*
+
+$ Which of the following principles is not a principle of agile development?
+@ Regular interaction with the customer
+@ Planning the near and not far future of the project
+@ Software documentation shall be concise
+@ The structure of the system is reflected in the code
+@ Progress is measured according to the schedule defined for the project*
+
+$ The essence of the reductionist method is to reduce the scope of development in order to allow a software product to be developed faster and with greater reliability
+@ True
+@ False*
+
+$ What is the correct statement about software design
+@ The primary methods of illustrating software design is with diagrams
+@ Working code is the main result of software design*
+@ The design of the software is expressed in the code documentation
+@ The term “software design” refers to the general structure and form of the software ONLY
+@ Software design is a simple process
+
+$ It was found that in the code of func1 in class A, there is a calling of func3 of an object of type C that was returned by func2 that was applied to one of the parameters of type B, thus breaking the Principle of Least Knowledge. We will use an adequate solution as follows, in order to comply with the principle of limited knowledge
+@ We will place the result of func2 in a local variable of type C in func1 and run func3 on the new variable
+@ We will reorganize the code in class B and add a new action to it that will activate func3 and return its result
+@ We will stop the development and redesign the entire system if, after evaluating the costs, the development will still be profitable
+@ In func1, we will create our own copy of an object of type C, with the help of a copy constructor that runs on the result of func2 and we will run func3 on it
+
+$ SoC (Separation of Concerns) is also represented by one of the principles of OOD, in SOLID. Select the appropriate principle of SOLID that aims to implement SoC
+@ Open/Closed Principle (OCP)
+@ Liskov Substitution Principle (LSP)
+@ Interface Separation Principle (ISP)
+@ Single Responsibility Principle (SRP)*
+@ Dependency Inversion Principle (DIP)
+
+$

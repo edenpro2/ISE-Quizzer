@@ -36,7 +36,7 @@ $ Using the Template method design pattern reduces the code odors of needless re
 @ True*
 @ False
 
-$ We defined a Spot Light to inherit from Point Light because the decision complies with the rules of inheritance - differential programming, being a type of Point Light, relating to the same domain, parent functionality needed in son, etc.
+$ We defined a Spot Light to inherit from Point Light because the decision complies with the rules of inheritance - differential programming, being a type of Point Light, relating to the same domain, parent functionality needed in child, etc.
 @ True*
 @ False
 
@@ -44,7 +44,7 @@ $ In the Light Propagation Model, we can give up the attenuation factor - kC - i
 @ True
 @ False*
 
-$ The light intensity coming from the Spot Light to the lighted light depends on the distance between the light source and the lighted light.
+$ The light intensity coming from the Spot Light to the illuminated point depends on the distance between the light source and the illuminated point.
 @ True*
 @ False
 
@@ -55,12 +55,11 @@ $ What type of lighting is NOT external to the geometries in the scene?
 @ Point Light
 @ Directional Light
 
-$ The light intensity coming from Emission Light to a lighted point depends on the distance between the light source and the lighted point
-
+$ The light intensity coming from Emission Light to a point depends on the distance between the light source and the illuminated point
 @ True
 @ False*
 
-$ The directional vector appears both in the Spot Light and in the Directional Light, but only in the Directional Light it is a basis for creating a vector towards the lighted point.
+$ The directional vector appears both in the Spot Light and in the Directional Light, but only in the Directional Light it is a basis for creating a vector towards the illuminated point.
 @ True*
 @ False
 
@@ -72,7 +71,11 @@ $ We have added, in the LightSource interface in the Phong's model, a method to 
 @ True*
 @ False
 
-$ In the Phong model, the sign of the scalar product between the normal vector and the directional vector (l) from the light source to the point for which the calculation is performed is important
+$ In the Phong model, the sign of the scalar product between the direction vector from the point of view (v)  and the reflection vector of the direction vector (r) from an external light source to the point for which the calculation is performed is important
+@ True*
+@ False
+
+$ In the Phong model, the sign of the scalar product between the normal vector (n) and the directional vector (l) from the light source to the point for which the calculation is performed is important
 @ True
 @ False*
 
@@ -100,7 +103,7 @@ $ ALL light sources classes implement the LightSource interface
 @ True
 @ False*
 
-$ We have added a field of type Material in the Intersectable class
+$ We added a field of type Material in the Intersectable class
 @ True
 @ False*
 
@@ -111,7 +114,7 @@ $ What is correct regarding the Phong Reflectance Model?
 @ It is dismantled into two parts - Specular and Diffuse
 @ Increasing the value of the nSH (shininess) parameter in the model is intended to increase the concentration (decrease the size) of the shine (Specular effect) in the light reflection*
 
-$ For the diffusive component of the Phong model, we DON’T need the normal vector of the point on which the calculation is performed
+$ For the diffusive component of the Phong model, we DO NOT need the normal vector of the point on which the calculation is performed
 @ True
 @ False*
 
@@ -123,7 +126,7 @@ $ The diffusive part of the Simple Phong Reflectance Model depends on the direct
 @ True
 @ False*
 
-$ The light intensity coming from the Point Light to the lighted light depends on the distance between the light source and the lighted light.
+$ The light intensity coming from the Point Light to the illuminated point depends on the distance between the light source and the illuminated point
 @ True*
 @ False
 
@@ -139,7 +142,11 @@ $ Light Propagation Model is an additive model
 @ True
 @ False*
 
-$ For the specular component of the Phong model, we don't need the normal vector of the point on which the calculation is performed
+$ For the specular component of the Phong Model, we DO NOT need the normal vector of the point on which the calculation is performed
+@ True
+@ False*
+
+$ For the specular component of the Phong Model, we DO need the normal vector of the point on which the calculation is performed
 @ True*
 @ False
 
@@ -198,3 +205,48 @@ $ After adding the diffusive and specular effects in the Phong Model, the pictur
 @ True*
 @ False
 
+$ In the Template Method design pattern, a hook step is a type of optional step, but its implementation in the parent class is empty
+@ True*
+@ False
+
+$ The Template Method design pattern allows for the definition of a algorithm’s in the parent class
+@ True*
+@ False
+
+$ Use of the Non-Virtual Interface (NVI) design pattern does NOT affect the code smell of fragility
+@ True
+@ False*
+
+$ In the Template Method design pattern, an optional step is implemented in the parent class, but can be overridden in the derived class
+@ True*
+@ False
+
+$ The intensity coming from Ambient Light to an illuminated point depends on the distance between the light source and the illuminated point
+@ True
+@ False*
+
+$ We added a field of type Material in the Geometry class
+@ True*
+@ False
+
+$ For ALL external light sources there are two components (diffusive and specular) in the Simple Phong Reflectance Model
+@ True
+@ False*
+
+$ The specular component of the Simple Phong Reflection Model represents the lack of smoothness of a surface, in terms of light reflection from external lighting sources (that is, the scattering of the reflected light in all directions)
+@ True
+@ False*
+
+$ In the Phong Model, we will add the diffusive and specular components of light reflection from each of the light sources in the scene
+@ True*
+@ False
+
+$ In the Simple Phong Reflectance Model, the law of conservation of energy affects the choice of attenuation coefficients of the specular and diffuse components for a realistic image
+@ True*
+@ False
+
+$ In the Light class, we have added methods for calculating the light propagation model and a direction vector from a light source to a point for which the Phong Reflectance Model is calculated
+@ True
+@ False*
+
+$

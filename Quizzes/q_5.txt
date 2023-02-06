@@ -11,9 +11,13 @@ $ When calculating the point of intersection between a ray and a triangle we use
 @ True
 @ False*
 
-$ In calculating the point of intersection between a ray and a plane we used a geometric method
+$ In calculating the point of intersection between a ray and a plane, we used a geometric method
 @ True
 @ False*
+
+$ In calculating the point of intersection between a ray and a sphere, we used a geometric method
+@ True*
+@ False
 
 $ How many boundary test cases are in testing plane intersections when the ray is perpendicular to the plane?
 @ 5
@@ -29,28 +33,28 @@ $ When we decided to add "Intersectable" interface we based ourselves on the fol
 @ Open Close Principle (OCP)
 @ Interface Separation Principle (ISP)*
 
-$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray class. We used the following principle:
+$ After developing geometric intersections, we refactored the code and decided to CREATE a new method getPoint(double t) in the Ray class. We used the following principle:
 @ Principle of Least Knowledge 
 @ LoD - Law of Demeter
 @ KISS - Keep It Simple, Stupid
 @ DRY - Don't Repeat Yourself*
 @ YAGNI - You ain’t gonna need it
 
-$ How many tests which return a point (of all kinds, according to what we have learned) are in ray-plane intersections (Notice that the ray's head is not an intersection point)?
+$ How many tests which return a point (of all kinds, according to what we have learned) are in ray-plane intersections (notice that the ray's head is not an intersection point)?
 @ 3
 @ 1
 @ 5
 @ 4
 @ 2*
 
-$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray Class, in order to remove the following code odour::
+$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray Class, in order to remove the following code odor::
 @ Rigidity
 @ Viscosity
 @ Fragility
 @ Needless Repetition*
 @ Immobility
 
-$ When returning the intersection points between a ray and a sphere we are including the tangent points between the ray and the sphere
+$ When returning the intersection points between a ray and a sphere, we are including the tangent point between the ray and the sphere
 @ True
 @ False*
 
@@ -61,10 +65,90 @@ $ What is a correct statement regarding Composite Design Pattern and Iterator?
 @ Iterator is a structural design pattern and composite is behavioral
 @ Both are related to same design pattern category
 
-$ What kind of type the parameters of the functions/methods in our framework should be?
+$ What type should the collection parameters be in the framework methods/functions we built?
 @ Collection<>
 @ LinkedList<>
 @ List<>*
 @ ArrayList<>
 @ Vector<>
 
+$ When returning the intersection point after checking if it's inside the triangle, we will include the intersection point if it is on one of the sides or one of the triangle vertices
+@ True
+@ False*
+
+$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray class. We used the following principle when we decided to put this method in the Ray class:
+@ Responsibility Driven Design*
+@ Agile Design
+@ Test Driven Design
+@ We did not use any method but decided that it was the most convenient
+@ Object Oriented Design
+
+$ How many boundary test cases are in ray-triangle intersections (after we found the intersection with the plane containing this triangle)?
+@ 2
+@ 5
+@ 3*
+@ 4
+@ 1
+
+$ In calculating the point of intersection between a ray and a plane - when the ray is INSIDE the plane - there will be 0 intersection points returned
+@ True*
+@ False
+
+$ When calculating the point of intersection between a ray and a sphere, we used an algebraic method
+@ True
+@ False*
+
+$ After we have tested the effectiveness of the various options, what type of collection will we use for the collection of geometric bodies in the object consisting of a group of geometric bodies (Composite)? P.S - the two operations we will perform on the collection of the geometric bodies are - addition and iterating on the entire collection
+@ ArrayList<>
+@ Vector<>
+@ List<>
+@ Collection<>
+@ LinkedList<>*
+
+$ How many boundary tests (according to what we have learned) are in ray-plane intersections tests
+@ 1
+@ 5
+@ 3
+@ 7*
+@ 0
+
+$ How many equivalence partitions are in ray-plane intersections?
+@ 3
+@ 4
+@ 2*
+@ 5
+@ 1
+
+$ What type of return value should the functions that return a collection in the framework be?
+@ Collection<>
+@ LinkedList<>
+@ List<>*
+@ ArrayList<>
+@ Vector<>
+
+$ How many equivalence partitions are in the testing of sphere-ray intersections?
+@ 3
+@ 4*
+@ 1
+@ 5
+@ 2
+
+$ Which one of the following tools does the Composite Design Pattern NOT use
+@ Composition
+@ Polymorphism
+@ Iterator
+@ Observer*
+@ Delegation
+
+$ In calculating the point of intersection between a ray and a plane, we used a algebraic method
+@ True*
+@ False
+ 
+$ Which statement is true about the integration tests of a developer who planned to integrate a camera class with a set of geometric bodies after performing beam intersection calculations with the bodies
+@ We designed the tests using the method of Equivalence Partitioning and edge cases
+@ We assumed that under no circumstances could the shape in the test be behind the camera
+@ In each test, we checked the total amount of intersection points we received from all the rays from the camera*
+@ In each test, we "shot" exactly one ray from the camera
+@ In every test, we checked that we got exactly the expected intersection point values 
+
+$

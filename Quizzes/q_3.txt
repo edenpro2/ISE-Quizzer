@@ -4,26 +4,21 @@ $ Usually, the test cases document an already checked component when its state c
 @ True
 @ False*
 
-
 $ EP tests (Equivalence Partitioning) are performed according to the White Box Testing method
 @ True
 @ False*
-
 
 $ The state of the tested component after the test (postconditions) is the type of information usually documented in the test case
 @ True*
 @ False
 
-
 $ Boundary Value Analysis (BVA) divides the data into groups of equivalent data for which it is sufficient to perform a single test
 @ True
 @ False*
 
-
 $ EP tests (Equivalence Partitioning) are performed according to the Black Box Testing method
 @ True*
 @ False
-
 
 $ In which of the tests the customers are usually involved in?
 @ Integration tests
@@ -31,7 +26,6 @@ $ In which of the tests the customers are usually involved in?
 @ Unit tests
 @ Acceptance tests*
 @ System tests
-
 
 $ TDD tests are related to component tests (unit tests)
 @ True*
@@ -50,57 +44,33 @@ Choose the answer with the correct order
 @ 1->2->3->5->4
 @ 1->2->3->4->5
 
-
-
-
 $ Boundary Value Analysis (BVA) includes regular equivalent cases
 @ True
 @ False*
-
-
-
 
 $ In TDD, tests are performed all the time, from the writing phase until after the code is reorganized (refactoring)
 @ True*
 @ False
 
-
-
-
 $ Boundary Value Analysis (BVA) includes extreme cases
 @ True*
 @ False
-
-
-
 
 $ In terms of TDD, there is no need to re-run tests after they have succeeded
 @ True
 @ False*
 
-
-
-
 $ EP tests (Equivalence Partitioning) sometimes include several tests for each equivalence class
 @ True
 @ False*
-
-
-
 
 $ EP (Equivalence Partitioning) tests divide the tests into groups of equivalent normal cases
 @ True*
 @ False
 
-
-
-
 $ EP (Equivalence Partitioning) tests divide the tests into groups of boundary cases
 @ True
 @ False*
-
-
-
 
 $ Which of the tests are performed ONLY by a test engineer (quality assurance)?
 @ Unit tests
@@ -109,16 +79,12 @@ $ Which of the tests are performed ONLY by a test engineer (quality assurance)?
 @ System tests*
 @ Quality assurance tests
 
-
-
 $ What is the correct statement about inheritance and\or composition?
 @ Inheritance allows more encapsulation than composition
 @ Composition is better than inheritance in terms of memory efficiency and runtime
 @ When one class requires the functionality of another class - we prefer inheritance
 @ Composition describes a class that has an object or a reference or pointer to an object of another class*
 @ Inheritance provides, among other things, the need for code reuse (software reuse), but composition does not 
-
-
 
 $ Which of the limitations can be provided or received when we use inheritance, on the condition that all requirements for inheritance preferences are met?
 @ The derived class extends or limits the functionalities of the parent class*
@@ -127,9 +93,6 @@ $ Which of the limitations can be provided or received when we use inheritance, 
 @ Keeping most of the SOLID principles
 @ We can change the parent class of some class in run time
 
-
-
-
 $ What is the correct statement about composition?
 @ Composition serves code reuse in a black box approach (black box software reuse)*
 @ Inheritance is usually preferred over composition
@@ -137,11 +100,9 @@ $ What is the correct statement about composition?
 @ Composition is suitable only when both classes are from the same domain
 @ Composition is required when the relationship between two classes is "class A is a type of class B"
 
-
 $ EP tests (Equivalence Partitioning) divides the tests into groups of extreme cases
 @ True
 @ False*
-
 
 $ Which of the tests are performed by the developer (programmer)?
 @ Unit tests*
@@ -150,16 +111,74 @@ $ Which of the tests are performed by the developer (programmer)?
 @ System tests
 @ Quality assurance tests
 
-
 $ Tracking the execution path in the code within the tested component is one of the types of information usually documented in the test case
 @ True
 @ False*
 
+$ What is the boundary/extreme case for tests of vector addition operation?
+@ Parallel vectors, different lengths and opposite directions
+@ Parallel vectors in the same direction and same length
+@ Parallel vectors of the same length in opposite directions*
+@ Parallel vectors, in the same direction, and different lengths
+@ Perpendicular vectors
 
+$ Usually, in development environments for programming languages, there is a dedicated library for building component tests
+@ True*
+@ False
 
+$ BVA (Boundary Value Analysis) tests are performed according to the White Box Testing method
+@ True
+@ False*
 
+$ TDD tests are performed by test engineers (quality assurance)
+@ True
+@ False*
 
+$ What is the boundary/extreme case for tests of vector cross products?
+@ Orthogonal vectors
+@ Vectors with an sharp angle between them
+@ Parallel vectors*
+@ Vectors with an obtuse angle between them
+@ Vectors with an (open) reflexive angle between them
 
+$ What answer does not represent a type of test
+@ Integration tests
+@ System tests
+@ Unit tests
+@ Quality assurance*
+@ Acceptance tests
 
+$ What is the boundary/extreme case for tests of vector dot products?
+@ Orthogonal vectors*
+@ Vectors with an sharp angle between them
+@ Parallel vectors
+@ Vectors with an obtuse angle between them
+@ Vectors with an (open) reflexive angle between them
 
+$ According to TDD, for each test, an expected numerical value result must be defined
+@ True
+@ False*
 
+$ Which of the following statements is not true for the Delegation design pattern?
+@ It is a creational pattern*
+@ Allows composition to achieve the same level of code reuse as inheritance
+@ It is a structural pattern
+@ Many other design patterns use it
+@ In the delegation pattern, an object handles a request by passing it to another object
+
+$ What is the correct statement about inheritance?
+@ Inheritance affects encapsulation to some extent*
+@ Inheritance reduces the code smell of fragility
+@ Inheritance reduces the code smell of rigidity
+@ Inheritance serves to reuse code in a black-box approach
+@ In order to enable reuse of inherited code, a delegation design pattern needs to be used
+
+$ The TDD tests of a particular component cannot be dependent on the results of another component’s TDD tests
+@ True
+@ False*
+
+$ According to TDD, we will define and implement tests even though we know that at the stage of their implementation, they will fail
+@ True*
+@ False
+
+$

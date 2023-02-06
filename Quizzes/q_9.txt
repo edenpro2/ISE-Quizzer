@@ -25,7 +25,7 @@ $ In this course, we presented a grid method for the creation of the beam of ray
 @ 2x2
 @ 10x10
 
-Which of the following statements is “incorrect” regarding Depth of Field image improvement?
+$ Which of the following statements is “incorrect” regarding Depth of Field image improvement?
 @ It is recommended to place the aperture on the camera
 @ The purpose of the improvement is to create an entire image in focus*
 @ Aperture size affects the distance range of focus of the improvement (the range of distances where the bodies will be seen in focus)
@@ -81,7 +81,7 @@ $ Which of the problems is not solved by using a beam of rays (super sampling) i
 @ The boundaries of a shadow are too sharp
 @ Boundaries between the objects look jagged (like a saw)
 @ All objects are seen in focus (in focus) - both near and far
-@ Glasses and mirrors look “ too clean"/perfect
+@ Glasses and mirrors look too clean/perfect
 @ All shadows are full even though there are partially transparent objects in the image*
 
 $ The purpose of the Anti-Aliasing improvement is to solve the jagged edges problem
@@ -109,3 +109,4 @@ $ Which of the following methods of creating points in a target area for a ray b
 @ Jittered*
 @ Rotated grid
 
+$

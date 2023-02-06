@@ -24,14 +24,13 @@ $ At least one builder class is required in the Builder Design Pattern
 @ False
 
 $ How is the original java.awt.Color class "wrapped" inside our class Color?
-
 @ We did not wrap the original class in our new class Color . We just created an object that was an instance of the original class
 @ We did not wrap the original class in our new class Color . We just created an object that was an instance of the original class
 @ By using inheritance - having our class Color inherit from the original class
 @ By using our own RGB values as well as our own methods that perform operations on these values. Also, we add a method called getColor that returns an instance of the original class*
 @ By using composition - having our class Color contain an attribute of the type of the original class
 
-$ After we finish the implementation of Emission Light, we will change the implementation of an existing method and update its implementation in all of the classes of geometric bodies (the simple ones and complex ones) in order to override the following method:
+$ After we finish the implementation of Emission Light, we will change the implementation of an existing method and update its implementation in all of the classes of geometric bodies (the simple and complex ones) in order to override the following method:
 @ getNormal
 @ findIntersections
 @ findGeoIntersections
@@ -48,7 +47,6 @@ Select one:
 @ False*
 
 $ Which of the following classes in our framework is a Passive Data Structure (PDS)?
-
 @ Camera
 @ AmgientLight
 @ Scene*
@@ -56,7 +54,6 @@ $ Which of the following classes in our framework is a Passive Data Structure (P
 @ RayTracerBase
 
 $ You are given below some statements about PDS (Passive Data Structure) and how it applies to our framework. Which of the statements below is false?
-
 @ It has the basic characteristics of object-oriented development (encapsulation, inheritance, and polymorphism)*
 @ It does not have getters
 @ It helps us not violate the Law of Demeter (LoD)
@@ -70,13 +67,17 @@ $ Which one of the following statements about Ambient Light is false?
 @ The original intensity of the ambient light that is passed as a parameter to the class's constructor is multiplied by its attenuation factor.
 @ Ambient lighting represents light that spreads and is reflected off the walls many times and creates a uniform lighting.
 
-$ Infra-Red rays (IR) are among those rays that are considered to have long wavelengths.
+$ Infra-Red rays (IR) are among those rays that are considered to have LONG wavelengths.
 Select one:
 @ True*
 @ False
 
-$ How many different types of cells can be found in the retina of the human eye (we differentiate between different types of cells based upon which lights in the spectrum the cells react to)?
+$ Infra-Red rays (IR) are among those rays that are considered to have SHORT wavelengths.
+Select one:
+@ True
+@ False*
 
+$ How many different types of cells can be found in the retina of the human eye (we differentiate between different types of cells based upon which lights in the spectrum the cells react to)?
 @ 1
 @ 2
 @ 5
@@ -97,14 +98,13 @@ $ The rods are sensitive to a large part of the light spectrum than the cones
 @ False*
 
 $ Which of the following classes in our framework is a Passive Data Structure (PDS)?
-
 @ ImageWriter
 @ Camera
 @ AmbientLight
 @ RayTracerBasic
 @ GeoPoint*
 
-$ We decided to make the class Scene to be a PDS (Passive Data Structure) after we saw that the following principle was broken
+$ We decided to make the class Scene a PDS (Passive Data Structure) after we saw that the following principle was broken
 @ YAGNI - You Ain’t Gonna Need It
 @ KISS - Keep It Simple, Stupid
 @ Responsibility Driven Design
@@ -112,7 +112,7 @@ $ We decided to make the class Scene to be a PDS (Passive Data Structure) after 
 @ DRY - Don’t Repeat Yourself
 
 $ Where do we add the helper class GeoPoint?
-@ Intersectable interface (now making the interface an abstract class)*
+@ Intersectable interface (which changes it from an interface to an abstract class)*
 @ In the Geometry class
 @ Directly in the primitives package
 @ Directly in the geometries package
@@ -162,9 +162,79 @@ $ When we refactor our code, we decided to move the method findClosestPoint (whi
 @ DRY
 @ YAGNI
 
+$ What is the correct statement about the Color class we built
+@ In the class we built, we save the RGB values in fields of type int
+@ The class is the only entity of our framework for operations on colors/light intensities*
+@ Most of the methods we added in the class we built, delegate their actions to appropriate methods in the class java.awt.Color
+@ In the class we built, we added the corresponding constructors to ALL existing constructors in the java.awt.Color class
+@ All class methods make sure that the RGB values of a color do not exceed the limit of 255
 
+$ Where do we add the emission attribute in the framework we are building? 
+@ In Scene
+@ In each of the classes of geometric bodies
+@ In Camera
+@ In Intersectable, which changes from an interface to an abstract class
+@ In Geometry, which changes from an interface to an abstract class*
 
+$ The cones can be considered as "color filters" in light absorption, due to their sensitivity to different ranges in the spectrum of light 
+@ True*
+@ False
 
+$ A class or classes of products of building are mandatory in the Builder Design Pattern
+@ True*
+@ False
 
+$ For the most part, the light we see in life is a linear function of wavelengths that make up the spectrum of light
+@ True
+@ False*
 
+$ Which of the following data is not included in the scene?
+@ 3D model - collection of geometric bodies
+@ Scene name
+@ Background color
+@ Ambient light
+@ ViewPlane size*
 
+$ Which entity did we define using a Wrapper?
+@ ImageWriter
+@ RayTracer
+@ Camera
+@ Scene
+@ Color*
+
+$ When we added support for emission lighting in the project, we made the following changes to the Intersectable interface: We added a findGeoIntersections method so that it returns a list of body-point pairs. We made the interface an abstract class. We implemented the old findIntersections method inside Intersectable and turned it into a non-virtual method (in order to prevent it from being overridden). 
+Which of the following principles did we want to implement with regards to the old method?
+@ YAGNI
+@ Principle of Least Knowledge
+@ RDD
+@ DRY*
+@ KISS
+
+$ The Director class is a required in the Builder Design Pattern
+@ True
+@ False*
+
+$ The Builder Design Pattern delegates the authority to create the object to a unique helper class
+@ True*
+@ False
+
+$ For emission light, we will add:
+@ a field in the Geometry class*
+@ a field in the Geometries
+@ an EmissionLight class in the Scene package
+@ an EmissionLight class in the Geometries package
+@ an EmissionLight class in the Lighting package
+
+$ In the Builder Design Pattern, in the creator class, there must be a method to return the final constructed object
+@ True*
+@ False
+
+$ The Builder Design Pattern is a behavioral design pattern.
+@ True
+@ False*
+
+$ Different colors of light correspond to different amplitudes of light
+@ True
+@ False*
+
+$
