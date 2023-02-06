@@ -32,7 +32,7 @@ $ Which of the following statements is “incorrect” regarding Depth of Field 
 @ Focal distance is defined on the ray passes through the view plane
 @ The focal point is always on the focal plane
 
-$ In the implementation of the image improvement of soft shadows, we will perform a "same side" test (ln * vn > 0) on the central shadow ray, and if the test is negative, we will not have to create a beam of shading rays at all
+$ In the implementation of the image improvement of Soft Shadows, we will perform a "same side" test (ln * vn > 0) on the central shadow ray, and if the test is negative, we will not have to create a beam of shading rays at all
 @ True
 @ False*
 
@@ -108,5 +108,144 @@ $ Which of the following methods of creating points in a target area for a ray b
 @ Poisson disc
 @ Jittered*
 @ Rotated grid
+
+$ In the implementation of Phong's Reflectance Model, after adding global effects, most (but not all) of the model's attenuation coefficients are in the material class
+@ True*
+@ False
+
+$ The calcColor method of the RayTracerBasic class is responsible for calculating the Phong Reflectance Model. After adding support for transparency and reflection, we made the method recursive and added a helper in the recursion with the same name calcColor, where the helper method is not recursive and is responsible for calling the recursive method with initial values of helper parameters of recursion. After these changes, in the final implementation of the calcColor methods, adding the effect of Ambient Light is in the recursive method (not a helper method)
+@ True
+@ False*
+
+$ The calcColor method of the RayTracerBasic class is responsible for calculating the Phong Reflectance Model. After adding support for transparency and reflection, we made the method recursive and added helper parameters for the recursion. A helper parameter for the stopping conditions of the cumulative attenuation coefficient is additive (we add the new attenuation coefficient to the attenuation coefficient accumulated in the recursion so far)
+@ True
+@ False* 
+
+$ After implementing transparency and reflection, in the code refactoring, we moved the construction of a secondary beam to a separate method (which calculates the point of the head of the ray by moving an original intersection point) and moved the method to be a constructor in the Ray class, because this method deals with building a ray (a little more complex) and does not deal with responsibilities related to ray tracing in rendering
+@ True*
+@ False
+
+$ When we implemented a combination of transparency and shadow, in the calculation of partial shadow in the transparency method, we calculated the cumulative transparency coefficient for each intersection point of the ray with the shadow until the origin of the light source. In the final implementation, when passing through these intersection points, sometimes we will finish the (exit from) loop before going through all these intersection points, and even then, we will get an accurate cumulative transparency coefficient
+@ True*
+@ False
+
+$ In order to combine transparency with shading, we did not make the following change:
+@ We switched from using a boolean method to a method that returns an actual value
+@ We dealt with a body that produces partial shade
+@ We made changes to the methods that handle global effects*
+@ We made changes to the methods that handle local effects
+@ We reduced the intensity of the light reaching the point depending on the material of the bodies that are between the point and the light source
+
+$ In the Soft Shadows improvement, it will be correct in terms of Responsibility Driven Design (RDD) to let the Camera class calculate the beam of rays
+@ True
+@ False*
+
+$ In the Anti-Aliasing improvement, it will be correct, in terms of Responsibility Driven Design (RDD), to let the Camera class calculate the beam of rays
+@ True*
+@ False
+
+$ In the Depth of Field improvement, it will be correct, in terms of Responsibility Driven Design (RDD), to let the Camera class calculate the beam of rays
+@ True*
+@ False
+
+$ The Soft Shadows improvement not only allows the creation of soft shadows, but can also add a light effect on the surface of a geometric body when the center of the light source is on a different side of the surface of the body than the point of view (for example a camera), for instance, an image that simulates a setting sun that is mostly below the horizon
+@ True*
+@ False
+
+$ Which of the following methods of creating points in a target area for a ray beam (super-sampling) is the best in terms of performance
+@ Rotated grid
+@ Jittered
+@ Stochastic/Random grid*
+@ All the methods in the other sections are similar in performance
+@ Poisson disc
+
+$ Which of the image improvements that we learned that use a beam of rays (supersampling) will require changes in the Material class?
+@ No change is required in the Material class in any such improvement
+@ Soft Shadows
+@ Glossy Surface and Blur/Diffuse Glass
+@ Depth of Field
+@ Anti-Aliasing
+
+$ In order to implement transparency and reflection, we turned the calcColor method into a recursive method. What is not true about the stopping conditions of said recursion?
+@ An increase in the value of the cumulative attenuation coefficient of transparency and reflection above a certain limit is a stopping condition in this recursion*
+@ A decrease in the value of the cumulative attenuation coefficient of transparency and reflection below a certain limit is a stopping condition in this recursion
+@ The cumulative attenuation coefficient of transparency and reflection is multiplicative
+@ We used two stopping conditions in this recursion
+@ We lowered the intensity of the light reaching the point depending on the material of the bodies between the point and the light source
+
+$ The calcColor method of the RayTracerBasic class is responsible for calculating the Phong Reflectance Model. After adding support for transparency and reflection, we made the method recursive and added a helper in the recursion with the same name calcColor, where the helper method is not recursive and is responsible for calling the recursive method with initial values of helper parameters of recursion. After these changes, in the final implementation of the calcColor methods, adding the effect of Ambient Light is in the helper method
+@ True
+@ False*
+
+$ The calcColor method of the RayTracerBasic class is responsible for calculating the Phong Reflectance Model. After adding support for transparency and reflection, we made the method recursive. Checking the stopping conditions of the maximum recursion depth is performed after adding local effects and before adding global effects.
+@ True*
+@ False
+
+$ The calcColor method of the RayTracerBasic class is responsible for calculating the Phong Reflectance Model. After adding support for transparency and reflection, we made the method recursive and added a helper in the recursion with the same name calcColor, where the helper method is not recursive and is responsible for calling the recursive method with initial values of helper parameters of recursion. After these changes, in the final implementation of calcColor, adding the effect of most of the components of the Phong Model are carried out in the recursive method (and some in the helper method)
+@ True*
+@ False 
+
+$ When we implemented a combination of transparency and shadow, in the calculation of partial shadow in the transparency method, we calculated the cumulative transparency coefficient for each intersection point of the ray with the shadow until the origin of the light source. We calculate the cumulative transparency coefficient for all intersection points of the shading ray up to the location of the light source. This cumulative transparency coefficient is calculated as the SUM of transparency coefficients of the body material at all these intersection points
+@ True
+@ False*
+
+$ In the Anti-Aliasing improvement, we created a beam of rays instead of a single reflection ray, so the objects closer to the point of reflection will receive a smaller spread of rays ("smearing") and their reflection will be sharper than objects further away
+@ True*
+@ False
+
+$ Which of the statements is true about the image improvements we learned that use a beam of rays
+@ The improvements to the Glossy Surface and Blur/Diffuse Glass will be implemented with a method that handles local effects
+@ For some of the improvements (not including adaptive supersampling) uniform coverage of the target surface is not required in order to create a beam of rays
+@ In all the improvements, all the rays in the same beam will start at the same point
+@ If we want to implement all improvements and maintain the DRY principle and also RDD in mind, it is worth creating a new class for dealing with a target surface*
+@ Both Anti-Aliasing and Soft Shadows will be implemented by creating a beam from the Camera
+
+$ In the Anti-Aliasing improvement, it would be correct, in terms of RDD, to let RayTracerBasic do the calculations for beam of rays
+@ True
+@ False*
+
+$ Which of the following components is not part of the solution model presented for the Depth of Field improvement
+@ View Plane
+@ Aperture
+@ Focal Point
+@ Focal Plane
+@ Camera shutter*
+
+$ In the Depth of Field improvement, it would be correct, in terms of RDD, to let RayTracerBasic do the calculations for beam of rays
+@ True
+@ False*
+
+$ After implementing transparency and reflection, we refactored the code. During the refactoring, we created a new method that constructs a beam while moving the head of the beam from an original point on the surface of the line (given in the vector parameter of the line) in the direction of the beam. In deciding on the location of the method (in which class to put the method) we based ourselves on the following principle or method
+@ RDD*
+@ Principle of Least Knowledge
+@ KISS
+@ DRY
+@ YAGNI
+
+$ When we implemented a combination of transparency and shadow, in the calculation of partial shadow in the transparency method, we calculated the cumulative transparency coefficient for each intersection point of the ray with the shadow until the origin of the light source. We calculate the cumulative transparency coefficient for all intersection points of the shading ray up to the location of the light source. This cumulative transparency coefficient is calculated as the PRODUCT of transparency coefficients of the body material at all these intersection points
+@ True*
+@ False
+
+$ After completing the implementation of Phong's Reflectance Model with the addition of global effects (but before improvements of supersampling), we defined some of the parameters of the model that we placed in the Material [attenuation factors and shininess] class to be of type Double3 (representing an algebraic vector of three numbers) in order to respond to the properties of the material according to its RGB color components, but not all
+@ True*
+@ False
+
+$ In the implementation of transparency and reflection, a secondary beam is constructed in the direction of transparency or reflection, in accordance with the point of the ray head, which is the result of moving the intersection point (in order to prevent the formation of a problem in displaying the effect of transparency or reflection in the image - similar to the problem that initially arose in the implementation of shading)
+@ True*
+@ False
+
+$ In the framework we built, after realizing the two models of light (propagation and reflection) and after adding the effect of shading, transparency and reflection - we saw that everything looks too perfect and therefore the image does not look real. In order to deal with this, we will use the following method
+@ We will reduce the amount of rays by reducing the resolution - reducing the amount of pixels in ViewPlane
+@ We will increase the amount of rays by increasing the resolution - increasing the amount of pixels in ViewPlane
+@ We will create a target area and create more rays towards the target area and less rays outside the target area
+@ We will disable Ambient Light, when there is more than one external light source
+@ We will increase the amount of rays by creating a ray beam and take the average of the color calculated for the original ray (in most improvements)*
+
+$ Which of the FOLLOWING methods of generating points in a target area for a ray beam (super-sampling pattern) is the simplest to implement?
+@ Rotated grid
+@ Jittered
+@ Grid*
+@ All the methods in the other sections are similar in their simplicity
+@ Poisson disc
 
 $

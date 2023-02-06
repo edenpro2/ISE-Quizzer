@@ -9,7 +9,6 @@ namespace Quizzer;
 public partial class MainWindow : Window
 {
     List<Quiz> quizzes = Database.loadQuizzes();
-    QuizPage QuizPage;
     const int MAXQUESTIONS = 10;
 
     public MainWindow()
@@ -41,8 +40,8 @@ public partial class MainWindow : Window
             total--;
         }
 
-        QuizPage = new QuizPage(questions, _NavigationFrame);
-        _NavigationFrame.Navigate(QuizPage);
+        new QuizWindow(questions, _NavigationFrame).Show();
+        Close(); // close this window
     }
 
     private void Unimp_Click(object sender, RoutedEventArgs e) { /* noop */ }

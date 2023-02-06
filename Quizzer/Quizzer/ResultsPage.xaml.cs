@@ -5,7 +5,7 @@ using System.Windows.Controls;
 
 namespace Quizzer;
 
-public partial class ResultsPage : Page, INotifyPropertyChanged
+public partial class ResultsWindow : Window, INotifyPropertyChanged
 {
     private int _totalCorrect;
     public int totalCorrect
@@ -18,7 +18,7 @@ public partial class ResultsPage : Page, INotifyPropertyChanged
         }
     }
 
-    public ResultsPage(int total_correct)
+    public ResultsWindow(int total_correct)
     {
         totalCorrect = total_correct;
         InitializeComponent();
@@ -26,7 +26,8 @@ public partial class ResultsPage : Page, INotifyPropertyChanged
 
     private void MainBtn_Click(object sender, RoutedEventArgs e)
     {
-        Visibility = Visibility.Collapsed;
+        new MainWindow().Show();
+        Close();
     }
 
     #region INotify

@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace Quizzer;
 
-public partial class QuizPage : Page, INotifyPropertyChanged
+public partial class QuizWindow : Window, INotifyPropertyChanged
 {
     // Public:
     public List<Question> _questions = new List<Question>();
@@ -35,7 +35,7 @@ public partial class QuizPage : Page, INotifyPropertyChanged
     // Red
     private SolidColorBrush? _wrongColor = new BrushConverter().ConvertFrom("#66DC143C") as SolidColorBrush;
 
-    public QuizPage(List<Question> questions, Frame nav_frame)
+    public QuizWindow(List<Question> questions, Frame nav_frame)
     {
         _questions = questions;
         CurrentQuestion = _questions[current];
@@ -103,15 +103,15 @@ public partial class QuizPage : Page, INotifyPropertyChanged
 
     }
 
-    public int GetValue() => totalCorrect;
-
     private void NextBtn_Click(object sender, RoutedEventArgs e)
     {
+        // check
         foreach (var bord in _border_refs) { bord.Visibility = Visibility.Collapsed; }
 
         if (current + 1 >= 10)
         {
-            MainBtn_Click(sender, e);
+            new ResultsWindow(totalCorrect).Show();
+            Close();
             return;
         }
 
@@ -122,8 +122,8 @@ public partial class QuizPage : Page, INotifyPropertyChanged
 
     private void MainBtn_Click(object sender, RoutedEventArgs e)
     {
-        Visibility = Visibility.Collapsed;
-        navFrame.Navigate(new ResultsPage(totalCorrect));
+        new MainWindow().Show();
+        Close();
     }
 
     #region INotify

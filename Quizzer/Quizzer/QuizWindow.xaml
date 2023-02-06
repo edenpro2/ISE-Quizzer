@@ -1,4 +1,4 @@
-﻿<Page x:Class="Quizzer.QuizPage"
+﻿<Window x:Class="Quizzer.QuizWindow"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,12 +6,14 @@
       xmlns:local="clr-namespace:Quizzer"
       xmlns:matd="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Width="1200"
+      Height="700"
       Title="QuizPage"
+      WindowStartupLocation="CenterScreen"
       DataContext="{Binding RelativeSource={RelativeSource Self}}"
       Background="White">
 
-    <Page.Resources>
+    <Window.Resources>
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatAccentBgButton}">
             <Setter Property="Background" Value="CornflowerBlue"/>
             <Setter Property="BorderBrush" Value="CornflowerBlue"/>
@@ -20,7 +22,7 @@
         <Style TargetType="{x:Type RadioButton}">
             <Setter Property="FontSize" Value="18" />
         </Style>
-    </Page.Resources>
+    </Window.Resources>
 
     <Grid>
         <Button 
@@ -59,4 +61,4 @@
         </Grid>
         
     </Grid>
-</Page>
+</Window>
