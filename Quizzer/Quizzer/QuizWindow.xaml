@@ -17,6 +17,7 @@
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatAccentBgButton}">
             <Setter Property="Background" Value="CornflowerBlue"/>
             <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+            <Setter Property="matd:ElevationAssist.Elevation" Value="Dp3"/>
         </Style>
         
         <Style TargetType="{x:Type RadioButton}">
