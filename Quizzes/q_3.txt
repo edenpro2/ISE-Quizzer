@@ -15,7 +15,7 @@ $ The state of the tested component after the test (postconditions) is the type 
 @ False
 
 
-$ Boundary Value Analysis (BVA) Divides the data into groups of equivalent data for which it is sufficient to perform a single test
+$ Boundary Value Analysis (BVA) divides the data into groups of equivalent data for which it is sufficient to perform a single test
 @ True
 @ False*
 
@@ -37,12 +37,12 @@ $ TDD tests are related to component tests (unit tests)
 @ True*
 @ False
 
-$ Test Driven Design includes several steps:
-1. Architecture planning
-2. Refactoring
-3. Statement of the function being tested (which only includes throwing an exception or returning a default value) - if the operation is new
-4. Implementing the tested operation
-5. Writing a test
+$ Test Driven Design includes several steps: 
+1. Architecture planning 
+2. Refactoring 
+3. Statement of the function being tested (which only includes throwing an exception or returning a default value) - if the operation is new 
+4. Implementing the tested operation 
+5. Writing a test 
 Choose the answer with the correct order
 @ 1->3->5->4->2*
 @ 1->3->4->5->2
@@ -102,44 +102,40 @@ $ EP (Equivalence Partitioning) tests divide the tests into groups of boundary c
 
 
 
-$ Which of the tests are performed only by a test engineer (quality assurance)?
-@ 1. unit tests
-@ 2. integration tests
-@ 3. acceptance tests
-@ 4. system tests*
-@ 5. quality assurance tests
-
+$ Which of the tests are performed ONLY by a test engineer (quality assurance)?
+@ Unit tests
+@ Integration tests
+@ Acceptance tests
+@ System tests*
+@ Quality assurance tests
 
 
 
 $ What is the correct statement about inheritance and\or composition?
-@ 1. Inheritance allows more encapsulation than composition
-@ 2. Composition is better than inheritance in terms of memory efficiency and runtime
-@ 3. When one class requires the functionality of another class - we prefer inheritance
-@ 4. Composition describes a class that has an object or a reference or pointer to an object of another class*
-@ 5. Inheritance provides, among other things, the need for code reuse (software reuse), but composition does not 
+@ Inheritance allows more encapsulation than composition
+@ Composition is better than inheritance in terms of memory efficiency and runtime
+@ When one class requires the functionality of another class - we prefer inheritance
+@ Composition describes a class that has an object or a reference or pointer to an object of another class*
+@ Inheritance provides, among other things, the need for code reuse (software reuse), but composition does not 
 
 
 
-
-$ Which of the limitations can be provided or received when we use inheritance, on the condition that all the requirements for inheritance preference are met?
-@ 1. The derived class expends or limits the functionalities of the parent class*
-@ 2. Any change in the parent class won't cause changes in the derived class
-@ 3. Non-disclosure of any internal details of the parent class to the derived class
-@ 4. Keeping most of the SOLID principles
-@ 5. We can change the parent class of some class in run time
+$ Which of the limitations can be provided or received when we use inheritance, on the condition that all requirements for inheritance preferences are met?
+@ The derived class extends or limits the functionalities of the parent class*
+@ Any change in the parent class won't cause changes in the derived class
+@ Non-disclosure of any internal details of the parent class to the derived class
+@ Keeping most of the SOLID principles
+@ We can change the parent class of some class in run time
 
 
 
 
 $ What is the correct statement about composition?
 @ Composition serves code reuse in a black box approach (black box software reuse)*
-@  Inheritance is usually preferred over composition
+@ Inheritance is usually preferred over composition
 @ Composition somewhat harms the encapsulation
 @ Composition is suitable only when both classes are from the same domain
 @ Composition is required when the relationship between two classes is "class A is a type of class B"
-
-
 
 
 $ EP tests (Equivalence Partitioning) divides the tests into groups of extreme cases
@@ -148,11 +144,11 @@ $ EP tests (Equivalence Partitioning) divides the tests into groups of extreme c
 
 
 $ Which of the tests are performed by the developer (programmer)?
-@ 1. unit tests*
-@ 2. development tests
-@ 3. acceptance tests
-@ 4. system tests
-@ 5. quality assurance tests
+@ Unit tests*
+@ Development tests
+@ Acceptance tests
+@ System tests
+@ Quality assurance tests
 
 
 $ Tracking the execution path in the code within the tested component is one of the types of information usually documented in the test case

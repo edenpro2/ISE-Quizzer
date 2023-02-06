@@ -40,11 +40,11 @@ $ You are given that the dot product of two vectors (each vector's length is gre
 
 $ Below is a list of different statements that can be found inside a method of a class. Which of the following is not allowed according to the Principle of Least Knowledge?
 
-@ 1. Calling other methods that are defined in the class
-@ 2. Accessing the object that the method created (including the object's attributes and methods)
-@ 3. Accessing the method's parameters (including the parameter's attributes and methods)
-@ 4. Accessing the class's attributes (fieldS) and calling other methods that are defined in the class
-@ 5. Accessing the object that was received as a return value from another method that belongs to a different class (including the object's attributes and methods)*
+@ Calling other methods that are defined in the class
+@ Accessing the object that the method created (including the object's attributes and methods)
+@ Accessing the method's parameters (including the parameter's attributes and methods)
+@ Accessing the class's attributes (fieldS) and calling other methods that are defined in the class
+@ Accessing the object that was received as a return value from another method that belongs to a different class (including the object's attributes and methods)*
 
 $ 
 public class A {
@@ -68,11 +68,10 @@ The function calculate() violates which principle?
 @ Don't Repeat Yourself (DRY)
 @ Principle of Single Responsibility
 
-$ In class we learned the following principles:
-
-- DRY (Don't Repeat Yourself)
-- YAGNI (You Ain’t Gonna Need It)
-- KISS (Keep It Short & Simple)
+$ In class we learned the following principles: 
+DRY (Don't Repeat Yourself)
+YAGNI (You Ain’t Gonna Need It) 
+KISS (Keep It Short & Simple) 
 
 Which of the following statements most accurately describes the development principles that we studied?
 
@@ -98,7 +97,7 @@ $ Which of the following statements about the Law of Demeter is correct in regar
 @ The goal of the Law of Demeter is that code should be written, as much as possible, in an organized manner.
 @ The principle of limited knowledge is known as the Law of Demeter*
 
-$ The principal of Separation of Concerns (SoC) is concerned with obtaining/improving the following attributes of software systems : (choose the main reason and not the side effects)
+$ The principal of Separation of Concerns (SoC) is concerned with obtaining/improving the following attributes of software systems (choose the main reason and not the side effects)
 
 @ low fragility
 @ low rigidity

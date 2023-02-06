@@ -61,10 +61,10 @@ $ Investing time in the development planning stage (design) allows the software 
 
 $ Which principle from the following principles of the Manifesto for Agile Software Development is correct
 
-@ 1. Responding to Change over Negotiation
-@ 2. Working Software over Process and Tools
-@ 3. Individuals and Interactions over Following the Plan
-@ 4. Individuals and Interactions over Processes and Tools*
-@ 5. Working Software over Negotiation
+@ Responding to Change over Negotiation
+@ Working Software over Process and Tools
+@ Individuals and Interactions over Following the Plan
+@ Individuals and Interactions over Processes and Tools*
+@ Working Software over Negotiation
 
 $

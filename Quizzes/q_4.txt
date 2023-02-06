@@ -9,37 +9,36 @@ $ All of the light that is reflected off of all of the objects that are in the f
 @ False*
 
 $ In the context of RDD (Responsibility Driven Design), the responsibility of doing is represented by:
-@ 1. the object's constructors
-@ 2. the roles of the object
-@ 3. the object's attributes (fields)
-@ 4. calling other objects' methods
-@ 5. the object's methods*
+@ the object's constructors
+@ the roles of the object
+@ the object's attributes (fields)
+@ calling other objects' methods
+@ the object's methods*
 
 $ In the system we are building (the framework) we will use a Responsibility Driven Design approach for storing the data that defines the View Plane as follows:
  
-@ 1. Everything will be stored in the class Camera
-@ 2. Size and distance from the camera will be stored in the class Camera, resolution will be stored in the class ImageWriter*
-@ 3. Everything will be stored in the class ImageWriter
-@ 4. Size will be stored in the class ImageWriter, resolution and distance from the camera will be stored in the class Camera
-@ 5. Distance from the camera will be stored in the class Camera, size and resolution will be stored in the class ImageWriter
+@ Everything will be stored in the class Camera
+@ Size and distance from the camera will be stored in the class Camera, resolution will be stored in the class ImageWriter*
+@ Everything will be stored in the class ImageWriter
+@ Size will be stored in the class ImageWriter, resolution and distance from the camera will be stored in the class Camera
+@ Distance from the camera will be stored in the class Camera, size and resolution will be stored in the class ImageWriter
 
 $ We have decided to place the resolution in the ImageWriter class due to the following consideration:
 
-@ 1. Don't Repeat Yourself (DRY)
-@ 2. Principle of Least Knowledge
-@ 3. To avoid passing resolution as argument to the function that constructs rays from the camera through a center of pixel
-@ 4. Law of Demeter (LOD)
-@ 5. Responsibility Driven Design (RDD)*
+@ Don't Repeat Yourself (DRY)
+@ Principle of Least Knowledge
+@ To avoid passing resolution as argument to the function that constructs rays from the camera through a center of pixel
+@ Law of Demeter (LOD)
+@ Responsibility Driven Design (RDD)*
 
 $ In RDD (Responsibility Driven Design), objects are seen as entities:
-@ 1. that have instances of classes
-@ 2. that are the framework for data sets
-@ 3. that have roles*
-@ 4. that have responsibilities
-@ 5. that have interacting objects
+@ that have instances of classes
+@ that are the framework for data sets
+@ that have roles*
+@ that have responsibilities
+@ that have interacting objects
 
-$ In the graphical system (the framework) that we are building, we will work in the opposite direction from the direction that the light actually propagates because it will be both easier and more efficient to implement such a method.
-Select one:
+$ In the graphical system (the framework) that we are building, we will work in the opposite direction from the direction that the light actually propagates because it will be both easier and more efficient to implement such a method
 @ True*
 @ False
 

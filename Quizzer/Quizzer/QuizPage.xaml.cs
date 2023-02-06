@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -44,6 +46,13 @@ public partial class QuizPage : Page, INotifyPropertyChanged
 
     public void SetQuestion(Question question)
     {
+        // reorder multiple choice questions
+        if (question._possibleAnswers.Count > 2)
+        {
+            var rand = new Random(DateTime.Now.Millisecond);
+            question._possibleAnswers = question._possibleAnswers.OrderBy(_ => rand.Next()).ToList();
+        }
+
         foreach (var ans in question._possibleAnswers)
         {
             var txt = new TextBlock() { Text = ans, TextWrapping = TextWrapping.Wrap };
@@ -91,6 +100,7 @@ public partial class QuizPage : Page, INotifyPropertyChanged
 
             RadioStackPanel.Children.Add(border);
         }
+
     }
 
     public int GetValue() => totalCorrect;
