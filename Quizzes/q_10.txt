@@ -52,11 +52,11 @@ $ Which of the following concepts is not addressed by Lehman's Laws?
 @ Continuing Change
 @ Conservation of Familiarity
 
-$ SDLC (Software Delivery Life Cycle) and Staged-Model of Software Life Cycle (SMSLC) are two different models that portray the same process.
+$ SDLC (Software Delivery Life Cycle) and Staged-Model Software Lifecycle are two different models that portray the same process.
 @ True
 @ False*
 
-$ Which of the following requirements is not an external requirement in software engineering?
+$ Which of the following requirements is not an external requirement in Requirement Engineering?
 @ Accounting
 @ Legislative
 @ Ethical
@@ -71,6 +71,10 @@ $ Which of the following is not an advantage of the Waterfall Design Methodology
 @ Simple
 
 $ A system metaphor is when we describe a program, attributes or components of a system by using a common language so that everyone who is involved with the system, including developers, sales people, debuggers, customers, etc. can understand what we are talking about
+@ True*
+@ False
+
+$ A system metaphor is the use of words or short phrases that express the features, characteristics or components of a system in order to create a concise and understandable language for everyone connected to the system - developers, marketers, testers, customers, etc.
 @ True*
 @ False
 
@@ -97,7 +101,7 @@ $ Lehman's Laws describe the phenomenon where, on the one hand, there are forces
 @ True*
 @ False
 
-$ During the Close Out phase of the Staged-Model Software Life Cycle (SMSLC), basic support is still given to the customers.
+$ During the Close Out stage of the Staged-Model Software Life Cycle (SMSLC), basic support is still given to the customers.
 @ True
 @ False*
 
@@ -108,7 +112,7 @@ $ During which stage(s) of the SDLC (Software Development Life Cycle) does the c
 @ Acceptance*
 @ Evaluation
 
-$ Which of the following statements most accurately describes the Staged-Model Software Life Cycle (SMSLC) ?
+$ Which of the following statements most accurately describes the Staged-Model Software Life Cycle
 @ During the Close Out stage, there is no longer any debugging done on the system, but you can still get customer support
 @ During the Phase Out stage, support is no longer offered for the product; since , they are only working on developing the new products
 @ The second stage, Evolving, is the iterative stage that characterizes the main development of the entire system*
@@ -122,7 +126,7 @@ $ Which of the following is not a software development methodology?
 @ Waterfall
 @ Agile
 
-$ Shared Understanding is a category in the Extreme Programming Design Methodology. Which of the following components does not belong to the Shared Understanding category?
+$ Shared Understanding is a category in the Extreme Programming design methodology. Which of the following components does not belong to the Shared Understanding category?
 @ Simple design
 @ System metaphor
 @ Coding standards
@@ -135,3 +139,155 @@ $ Which of the following is not a stage in the SDLC (Software Development Life C
 @ Evaluation
 @ Acceptance
 @ Disposal
+
+$ Which of the acceleration improvements we learned requires the implementation of said improvement (not including data preparation) by changing the code of the Intersectable abstract class only?
+@ Boundary Volume Hierarchy and Conservative Boundary Region*
+@ Regular Grid
+@ No acceleration method is given to such implementation
+@ Adaptive Grid
+@ Adaptive Supersampling 
+
+$ In the method of improving performance in Regular Grid : creating a box for the entire scene and dividing it into voxels, will always be effective as we increase the number of voxels
+@ True
+@ False*
+
+$ If our goal is to construct a boundary area as tight as possible, between an Oriented Bounding Box (OBB) and a Convex Hull/Arbitrary Convex Region (CH/ACR) built with up to 6 half-spaces, we choose the convex one
+@ True*
+@ False
+
+$ Which of the following methods is NOT an acceleration method
+@ Refactoring code including code improvement
+@ Smart reduction of number of rays
+@ Using parallel execution/parallel processing
+@ Modular architecture*
+@ Faster calculation of an ray-geometry intersection
+
+$ In a system with processors/cores that use shared memory with one memory management component, when we use a fixed amount of threads (a thread pool or by thread creation in a "smart" way - each thread works in rounds on pixel-by-pixel coloring), the acceleration will be proportional to the amount of threads (up to the number of cores in the system)
+@ True
+@ False*
+
+$ Which of the acceleration improvements we’ve studied required creating a new class that implements the abstract class RayTracerBasic
+@ No acceleration method we’ve studied requires such a new class
+@ Conservative Bounding Region
+@ Boundary Volume Hierarchy
+@ Regular and Adaptive Grid*
+@ Adaptive Supersampling
+
+$ Which of the activities in the framework of Extreme Programming is performed every few minutes or several tens of minutes usually?
+@ Acceptance tests
+@ Pair programming
+@ Stand-up meeting
+@ Iteration plan
+@ Unit tests*
+
+$ Which statement is not true for Extreme Prototyping?
+@ Postpone the realization of the services (Back-End) to the last stage
+@ Develop the screen display in the first step
+@ Suitable for developing a wide variety of applications*
+@ Divides the development into three stages
+@ Add reactivity to the display in the second step
+
+$ What is NOT a stage in the Staged-Model of Software Lifecycle
+@ Initial Development 
+@ Evolving
+@ Disposal*
+@ Phase Out
+@ Servicing 
+
+$ The prototype methods are only relevant for an evolving software system (E-type) and therefore cannot be integrated into the Waterfall development methodology
+@ True
+@ False*
+
+$ Each development cycle in the Extreme Programming methodology starts with refactoring the code in order to ease the addition of functionality in that cycle
+@ True
+@ False*
+
+$ Lehman's laws apply to P-type programs 
+@ True
+@ False* 
+
+$ In the Staged-Model Software Lifecycle, in the stage called Servicing, no new developments are carried out, but they still provide corrections to the code for software errors
+@ True*
+@ False
+
+$ Which of the actions does not belong to the Software Servicing provision phase of the Software Development Life Cycle (SDLC)?
+@ Integration*
+@ Disposal
+@ Maintenance
+@ Acceptance
+@ Evaluation
+
+$ Lehman's Law on Continuing Growth speaks of continuous growth regarding the size and complexity of a software system
+@ True
+@ False*
+
+$ Which of the following products is not a possible product of Design Processes
+@ Component specifications
+@ Database specifications 
+@ System Architecture
+@ Requirements specification*
+@ Interface specification
+
+$ The Software Delivery Life Cycle (SDLC) is a model that describes the development process of a particular software release version and the Staged-Model Software Lifecycle describes a general life cycle of a software system in all its versions
+@ True*
+@ False
+
+$ Which is not a stage in the Staged-Model Software Lifecycle
+@ Close out
+@ Initial Development
+@ Maintenance*
+@ Servicing 
+@ Phase Out
+
+$ Using threads in a basic way (for example, creating a thread for each pixel) may be ineffective due to the overhead of creating threads
+@ True*
+@ False
+
+$ To which category of acceleration methods does Adaptive Supersampling belong?
+@ Generalized Rays
+@ Faster Intersection
+@ None of the categories in the other answers
+@ Fewer Rays*
+@ Discrete Ray Tracing
+
+$ One of the performance improvements we made in the code even before the acceleration methods were implemented, was adding an option to limit, by the maximum distance from the beginning of the ray, the returned intersection points from the intersection calculations between geometric bodies and the ray
+@ True*
+@ False
+
+$ Which of the actions belong to the Software Validation phase of the Software Development Life Cycle (SDLC)?
+@ Acceptance
+@ Development
+@ Evaluation
+@ Integration*
+@ Maintenance
+
+$ Lehman's Law on Increasing Complexity, talks, among other things, about the obligation to allocate resources for code refactoring
+@ True*
+@ False
+
+$ In the Staged-Model Software Lifecycle, in the Phase Out stage, small corrections can be made in the code of the supported software
+@ True
+@ False*
+
+$ To what program type does Lehman’s Law belong to
+@ Practical (P-Type)
+@ Embedded/Evolving (E-Type)*
+@ Static (S-Type)
+@ Lehman’s Law is relevant to all program types
+@ Query (Q-Type)
+
+$ To which of the phases of the Staged-Model Software Lifecycle belongs the subject of Software Development Life Cycle management
+@ Initial Development and Evolving*
+@ Evolving and Servicing
+@ Initial Development
+@ Servicing
+@ Evolving
+
+$ Which category of prototyping divides the development into 3 stages
+@ There is no such prototyping category
+@ Evolutionary Prototyping
+@ Extreme Prototyping*
+@ Throwaway (Rapid) Prototyping
+@ Incremental Prototyping 
+
+$
