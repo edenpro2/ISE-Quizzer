@@ -34,4 +34,8 @@
 	  <Content Include="quiz.ico" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Page Include="App.xaml" />
+	</ItemGroup>
+
 </Project>
