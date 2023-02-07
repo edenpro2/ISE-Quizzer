@@ -5,15 +5,14 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Threading;
+using BL;
 
-namespace Quizzer;
+namespace Presentation;
 
 public partial class QuizWindow : Window, INotifyPropertyChanged
 {
-    public List<Question> _questions = new List<Question>();
+    public List<Question> _questions = new();
     public Question CurrentQuestion
     {
         get => _currentQuestion;
@@ -24,14 +23,14 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         }
     }
     public int totalCorrect = 0;
-    private const int ALLOTED_SEC = 30; 
+    private const int ALLOTED_SEC = 30;
 
     // Timer logic
     private Clock clock;
     private int _remainingSeconds = ALLOTED_SEC;
-    public int RemainingSeconds 
+    public int RemainingSeconds
     {
-        get => _remainingSeconds; 
+        get => _remainingSeconds;
         set
         {
             _remainingSeconds = value;
@@ -42,8 +41,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     private List<Border> _border_refs = new List<Border>();
     private Question? _currentQuestion;
     private int currentQuestionNumber = 0;
-   
-   
+
     // Green
     private SolidColorBrush? _correctColor = new BrushConverter().ConvertFrom("#6632CD32") as SolidColorBrush;
 
@@ -124,9 +122,9 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         clock.Stop();
         clock = new Clock(ALLOTED_SEC, this); //reset
         RemainingSeconds = ALLOTED_SEC;
-        
+
         // if 10 questions answered
-        if (currentQuestionNumber + 1 >= 10) 
+        if (currentQuestionNumber + 1 >= 10)
         {
             new ResultsWindow(totalCorrect).Show();
             Close();
@@ -140,13 +138,13 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         CurrentQuestion = _questions[++currentQuestionNumber];
         SetQuestion(CurrentQuestion);
     }
-    
+
     //avi's addition
     private void PrevBtn_Click(object sender, RoutedEventArgs e)
     {
         if (currentQuestionNumber - 1 < 0)
-            return; 
-        
+            return;
+
         else //dont go further back than the 1st question
         {
             foreach (var bord in _border_refs) { bord.Visibility = Visibility.Collapsed; }
@@ -170,54 +168,4 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     }
     #endregion
 
-
-    // Inner class 
-    public class Clock 
-    {
-        DispatcherTimer? timer;
-        QuizWindow quizWindow;
-        int elapsedSeconds = 0;
-        int allotedSeconds = 0;
-
-        public Clock(int allotedSec, QuizWindow quizWin) // circular dependency -- to fix
-        { 
-            allotedSeconds = allotedSec;
-            quizWindow = quizWin;
-        }
-        
-        public void Start()
-        {
-            // if Start() is being called for the first time
-            if (timer == null)
-            {
-                timer = new DispatcherTimer(DispatcherPriority.Normal, Application.Current.Dispatcher);
-                timer.Interval = new TimeSpan(0, 0, 1);
-                timer.Tick += new EventHandler(timer_Ticked);
-            }
-            timer.Start();
-        }
-
-        // delegate
-        public void Stop()
-        {
-            timer.Stop();
-            timer = null;
-            elapsedSeconds = 0; // give app enough time
-        }
-
-        private void timer_Ticked(object? sender, EventArgs e)
-        {
-            if (elapsedSeconds + 1 > allotedSeconds) 
-            {
-                Stop();
-            }
-
-            quizWindow.RemainingSeconds = allotedSeconds - ++elapsedSeconds;
-
-            // Forcing the CommandManager to raise the RequerySuggested event
-            CommandManager.InvalidateRequerySuggested();
-        }
-
-        public int EllapsedTime() => elapsedSeconds;
-    }
 }

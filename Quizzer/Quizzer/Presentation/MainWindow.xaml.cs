@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using BL;
 
-namespace Quizzer;
+namespace Presentation;
 
 public partial class MainWindow : Window
 {

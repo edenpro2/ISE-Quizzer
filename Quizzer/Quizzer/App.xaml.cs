@@ -1,8 +1,17 @@
 ﻿using System.Windows;
 
-namespace Quizzer
+namespace Presentation
 {
-    public partial class App : Application
+    public partial class App
     {
+        public App()
+        {
+            Startup += App_Startup;
+        }
+
+        private static void App_Startup(object sender, StartupEventArgs e)
+        {
+            new MainWindow().Show();
+        }
     }
 }

@@ -5,7 +5,6 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <StartupObject>Quizzer.App</StartupObject>
     <ApplicationIcon>quiz.ico</ApplicationIcon>
   </PropertyGroup>
 

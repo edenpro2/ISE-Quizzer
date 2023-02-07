@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Quizzer;
+namespace Presentation;
 
 public partial class ResultsWindow : Window, INotifyPropertyChanged
 {
