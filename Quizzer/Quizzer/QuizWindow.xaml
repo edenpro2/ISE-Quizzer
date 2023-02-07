@@ -60,13 +60,13 @@
                 VerticalAlignment="Bottom"
                 Height="50"
                 Margin="5"
-                Width="200"
+                Width="400"
                 Content="Next"/>
                 <Button 
                 Click="PrevBtn_Click"
                 VerticalAlignment="Bottom"
                 Height="50"
-                Width="200"
+                Width="400"
                 Margin="5"
                 Content="Previous"/>
             </StackPanel>

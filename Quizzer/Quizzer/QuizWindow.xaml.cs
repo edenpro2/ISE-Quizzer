@@ -122,18 +122,16 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     //avi's addition
     private void PrevBtn_Click(object sender, RoutedEventArgs e)
     {
-        // check - hide borders
-
-        if(current - 1< 0)
+        if(current - 1 < 0)  //dont go further back than the 1st question
         {
-            return; 
+            return;  //don't go to a negative index
         }
 
-        else //dont go further back than the 1st question
+        else 
         {
-            foreach (var bord in _border_refs) { bord.Visibility = Visibility.Collapsed; }
+            foreach (var bord in _border_refs) { bord.Visibility = Visibility.Collapsed; } //hide text
             CurrentQuestion = _questions[--current]; //go back 1 question
-            SetQuestion(CurrentQuestion);
+            SetQuestion(CurrentQuestion); //now show
             InvalidateVisual();
         }
 
