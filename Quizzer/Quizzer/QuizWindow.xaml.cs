@@ -123,6 +123,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     {
         clock.Stop();
         clock = new Clock(ALLOTED_SEC, this); //reset
+        RemainingSeconds = ALLOTED_SEC;
         
         // if 10 questions answered
         if (currentQuestionNumber + 1 >= 10) 
@@ -211,7 +212,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
                 Stop();
             }
 
-            quizWindow.RemainingSeconds = allotedSeconds - elapsedSeconds++;
+            quizWindow.RemainingSeconds = allotedSeconds - ++elapsedSeconds;
 
             // Forcing the CommandManager to raise the RequerySuggested event
             CommandManager.InvalidateRequerySuggested();
