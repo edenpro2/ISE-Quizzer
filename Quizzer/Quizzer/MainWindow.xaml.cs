@@ -40,8 +40,9 @@ public partial class MainWindow : Window
             total--;
         }
 
-        new QuizWindow(questions, _NavigationFrame).Show();
-        Close(); // close this window
+        new QuizWindow(questions).Show();
+        // close this window
+        Close(); 
     }
 
     private void Unimp_Click(object sender, RoutedEventArgs e) { /* noop */ }

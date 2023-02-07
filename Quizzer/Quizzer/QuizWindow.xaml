@@ -32,6 +32,23 @@
             Content="Main Page"
             Click="MainBtn_Click"
             Margin="50 16 0 0" />
+
+        <DockPanel
+            Margin="0 18 53 0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top">
+            <TextBlock
+                Name="SecondsDisplay"
+                Text="00:"
+                FontSize="24"
+                FontWeight="DemiBold"/>
+            <TextBlock 
+                Text="{Binding RemainingSeconds}"
+                d:Text="30"
+                FontSize="24"
+                FontWeight="DemiBold"/>
+        </DockPanel>
+
         <Grid Margin="50 70 50 80">
             <StackPanel>
                 <matd:Card 
@@ -54,22 +71,24 @@
                     Margin="0 20 0 0" />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <DockPanel HorizontalAlignment="Center">
                 <Button 
-                Click="NextBtn_Click"
-                VerticalAlignment="Bottom"
-                Height="50"
-                Margin="5"
-                Width="200"
-                Content="Next"/>
+                    Background="LightBlue"
+                    BorderBrush="LightBlue"
+                    Click="PrevBtn_Click"
+                    VerticalAlignment="Bottom"
+                    Height="50"
+                    Width="200"
+                    Margin="5"
+                    Content="Previous"/>
                 <Button 
-                Click="PrevBtn_Click"
-                VerticalAlignment="Bottom"
-                Height="50"
-                Width="200"
-                Margin="5"
-                Content="Previous"/>
-            </StackPanel>
+                    Click="NextBtn_Click"
+                    VerticalAlignment="Bottom"
+                    Height="50"
+                    Margin="5"
+                    Width="200"
+                    Content="Next"/>
+            </DockPanel>
         </Grid>
 
     </Grid>
