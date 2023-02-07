@@ -38,84 +38,122 @@
             <Setter Property="Foreground" Value="White"/>
         </Style>
     </Window.Resources>
-    
-    <Grid>
-        <Grid x:Name="MainGrid">
-            <Image 
-                Source="C:\Users\Eden\source\repos\ISE-Quizzer\Resources\ise_bg.jpg"
-                Stretch="Fill">
-                <Image.Effect>
-                    <BlurEffect Radius="30"/>
-                </Image.Effect>
-            </Image>
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3.6*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Image 
+            Grid.RowSpan="3"
+            Source="C:\Users\Eden\source\repos\ISE-Quizzer\Resources\ise_bg.jpg"
+            Stretch="Fill">
+            <Image.Effect>
+                <BlurEffect Radius="30"/>
+            </Image.Effect>
+        </Image>
+
+        <Grid 
+            Grid.Row="0"
+            Margin="60 40">
             <TextBlock
-                Margin="65 40 0 0"
+                Margin="0 0 0 0"
                 Text="ISE QUIZLET APP"
                 FontFamily="Helvetica"
                 FontWeight="Bold"
                 Foreground="White"
                 FontSize="40"/>
 
-            <DockPanel 
+            <Button 
+                Content="Search"
+                HorizontalContentAlignment="Left"
+                Width="250"
                 VerticalAlignment="Center"
-                HorizontalAlignment="Center">
-                <StackPanel>
-                    <TextBlock Text="Introduction"/>
-                    <Button
-                        Content="Quiz Week 1"
-                        Click="Quiz_BtnClick"/>
-                    <TextBlock Text="3D Modeling of Primitives"/>
-                    <Button
-                        Content="Quiz Week 2"
-                        Click="Quiz_BtnClick"/>
-                    <TextBlock Text="Testing, TDD, normals"/>
-                    <Button
-                        Content="Quiz Week 3"
-                        Click="Quiz_BtnClick"/>
-                    <TextBlock Text="Camera ray construction"/>
-                    <Button
-                        Content="Quiz Week 4"
-                        Click="Quiz_BtnClick"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="Ray-geometry intersections"/>
-                    <Button
-                        Content="Quiz Week 5"
-                        Click="Quiz_BtnClick"/>
-                    <TextBlock Text="Color, Ambient, Scene + Lighting Source"/>
-                    <Button
-                        Content="Quiz Week 6"
-                        Click="Quiz_BtnClick"/>
-                    <TextBlock Text="Lighting Source and Phong Model"/>
-                    <Button
-                        Content="Quiz Week 7"
-                        Click="Quiz_BtnClick"/>
-                    <TextBlock Text="Shadows + Relfection/Refraction"/>
-                    <Button
-                        Content="Quiz Week 8"
-                        Click="Quiz_BtnClick"/>
-                </StackPanel>
-                <StackPanel>
-                    <TextBlock Text="Distributed RT (Picture Improvements)"/>
-                    <Button
-                        Content="Quiz Week 9"
-                        Click="Quiz_BtnClick"/>
-                    <TextBlock Text="Perf. Improvements + S.D. Methodolgies"/>
-                    <Button
-                        Content="Quiz Week 10"
-                        Click="Quiz_BtnClick"/>
-                    <TextBlock Text="Testing, Reuse, Depe. and Sec., Soft. Mngmt "/>
-                    <Button
-                        Content="Quiz Week 11"
-                        Click="Unimp_Click"/>
-                    <TextBlock Text="Software Configuration (Ver. Control)"/>
-                    <Button
-                        Content="Quiz Week 12"
-                        Click="Unimp_Click"/>
-                </StackPanel>
-            </DockPanel>
+                HorizontalAlignment="Right"
+                Click="SearchBtn_Click">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatAccentBgButton}">
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="FontFamily" Value="Helvetica"/>
+                        <Setter Property="Width" Value="350"/>
+                        <Setter Property="Background" Value="{StaticResource MaterialDesignPaper}"/>
+                        <Setter Property="BorderBrush" Value="{StaticResource MaterialDesignPaper}"/>
+                        <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="13"/>
+                        <Setter Property="materialDesign:ElevationAssist.Elevation" Value="Dp0"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="LightGray"/>
+                                <Setter Property="BorderBrush" Value="LightGray"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
         </Grid>
+
+        <DockPanel 
+            Grid.Row="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center">
+            <StackPanel>
+                <TextBlock Text="Introduction"/>
+                <Button
+                    Content="Quiz Week 1"
+                    Click="Quiz_BtnClick"/>
+                <TextBlock Text="3D Modeling of Primitives"/>
+                <Button
+                    Content="Quiz Week 2"
+                    Click="Quiz_BtnClick"/>
+                <TextBlock Text="Testing, TDD, normals"/>
+                <Button
+                    Content="Quiz Week 3"
+                    Click="Quiz_BtnClick"/>
+                <TextBlock Text="Camera ray construction"/>
+                <Button
+                    Content="Quiz Week 4"
+                    Click="Quiz_BtnClick"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Ray-geometry intersections"/>
+                <Button
+                    Content="Quiz Week 5"
+                    Click="Quiz_BtnClick"/>
+                <TextBlock Text="Color, Ambient, Scene + Lighting Source"/>
+                <Button
+                    Content="Quiz Week 6"
+                    Click="Quiz_BtnClick"/>
+                <TextBlock Text="Lighting Source and Phong Model"/>
+                <Button
+                    Content="Quiz Week 7"
+                    Click="Quiz_BtnClick"/>
+                <TextBlock Text="Shadows + Relfection/Refraction"/>
+                <Button
+                    Content="Quiz Week 8"
+                    Click="Quiz_BtnClick"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Distributed RT (Picture Improvements)"/>
+                <Button
+                    Content="Quiz Week 9"
+                    Click="Quiz_BtnClick"/>
+                <TextBlock Text="Perf. Improvements + S.D. Methodolgies"/>
+                <Button
+                    Content="Quiz Week 10"
+                    Click="Quiz_BtnClick"/>
+                <TextBlock Text="Testing, Reuse, Depe. and Sec., Soft. Mngmt "/>
+                <Button
+                    Content="Quiz Week 11"
+                    Click="Unimp_Click"/>
+                <TextBlock Text="Software Configuration (Ver. Control)"/>
+                <Button
+                    Content="Quiz Week 12"
+                    Click="Unimp_Click"/>
+            </StackPanel>
+        </DockPanel>
     </Grid>
-    
+
 </Window>

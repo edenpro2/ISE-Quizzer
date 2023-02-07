@@ -1,0 +1,63 @@
+﻿<Window x:Class="Presentation.SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        xmlns:matd="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        Title="Search"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Height="650" Width="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <TextBox
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            Grid.Row="0"
+            Name="SearchBar"
+            matd:HintAssist.HelperText="Search"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Width="820"
+            FontSize="16"
+            TextChanged="searchChangedEventHandler"/>
+
+        <ListView
+            Margin="33 0 0 0"
+            Grid.Row="1"
+            ItemsSource="{Binding PossibleQuestions}"
+            d:ItemsSource="{d:SampleData ItemCount=10}"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock 
+                                Grid.Row="0"
+                                Text="{Binding _question}"
+                                TextWrapping="Wrap"
+                                TextAlignment="Justify"/>
+                            <TextBlock
+                                Grid.Row="1"
+                                Text="{Binding _answer}"
+                                FontWeight="Bold"
+                                TextWrapping="Wrap"
+                                TextAlignment="Justify"/> 
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+          
+            
+        </ListView>
+        
+
+    </Grid>
+</Window>

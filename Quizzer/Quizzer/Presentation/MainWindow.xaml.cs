@@ -48,4 +48,8 @@ public partial class MainWindow : Window
 
     private void Unimp_Click(object sender, RoutedEventArgs e) { /* noop */ }
 
+    private void SearchBtn_Click(object sender, RoutedEventArgs e)
+    {
+        new SearchWindow(quizzes).Show();
+    }
 }
