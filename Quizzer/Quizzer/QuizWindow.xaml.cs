@@ -28,7 +28,6 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     private Question? _currentQuestion;
     private int current = 0;
     private Frame navFrame;
-
     // Green
     private SolidColorBrush? _correctColor = new BrushConverter().ConvertFrom("#6632CD32") as SolidColorBrush;
 
@@ -108,7 +107,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         // check
         foreach (var bord in _border_refs) { bord.Visibility = Visibility.Collapsed; }
 
-        if (current + 1 >= 10)
+        if (current + 1 >= 10) //went passed the end
         {
             new ResultsWindow(totalCorrect).Show();
             Close();
@@ -119,7 +118,26 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         SetQuestion(CurrentQuestion);
         InvalidateVisual();
     }
+    
+    //avi's addition
+    private void PrevBtn_Click(object sender, RoutedEventArgs e)
+    {
+        // check - hide borders
 
+        if(current - 1< 0)
+        {
+            return; 
+        }
+
+        else //dont go further back than the 1st question
+        {
+            foreach (var bord in _border_refs) { bord.Visibility = Visibility.Collapsed; }
+            CurrentQuestion = _questions[--current]; //go back 1 question
+            SetQuestion(CurrentQuestion);
+            InvalidateVisual();
+        }
+
+    }
     private void MainBtn_Click(object sender, RoutedEventArgs e)
     {
         new MainWindow().Show();

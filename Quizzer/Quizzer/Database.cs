@@ -51,7 +51,7 @@ public static class Database
                 // remove text until first '@' 
                 trimmed = block.Remove(0, index);
                 possible_ans = new List<string>(trimmed.Remove(0, 1).Split('@'));
-                possible_ans.ForEach(s => s.Trim());
+                possible_ans.ForEach(s => s.Trim()); 
                 var possible_ans_edited = new List<string>();
 
                 foreach (var ans in possible_ans)
