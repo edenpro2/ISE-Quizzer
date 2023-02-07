@@ -12,6 +12,7 @@ public class Clock
     QuizWindow quizWindow;
     int elapsedSeconds = 0;
     int allotedSeconds = 0;
+    public bool isRunning { get; private set; } = false;
 
     public Clock(int allotedSec, QuizWindow quizWin) // circular dependency -- to fix
     {
@@ -29,6 +30,7 @@ public class Clock
             timer.Tick += new EventHandler(timer_Ticked);
         }
         timer.Start();
+        isRunning = true;
     }
 
     // delegate
@@ -36,7 +38,9 @@ public class Clock
     {
         timer.Stop();
         timer = null;
-        elapsedSeconds = 0; // give app enough time
+        elapsedSeconds = 0; 
+        isRunning = false;
+
     }
 
     private void timer_Ticked(object? sender, EventArgs e)

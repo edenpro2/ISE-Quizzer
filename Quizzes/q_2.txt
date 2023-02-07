@@ -211,7 +211,7 @@ $ What is the correct statement about software design
 
 $ It was found that in the code of func1 in class A, there is a calling of func3 of an object of type C that was returned by func2 that was applied to one of the parameters of type B, thus breaking the Principle of Least Knowledge. We will use an adequate solution as follows, in order to comply with the principle of limited knowledge
 @ We will place the result of func2 in a local variable of type C in func1 and run func3 on the new variable
-@ We will reorganize the code in class B and add a new action to it that will activate func3 and return its result
+@ We will refactor the code in class B and add a new action to it that will activate func3 and return its result*
 @ We will stop the development and redesign the entire system if, after evaluating the costs, the development will still be profitable
 @ In func1, we will create our own copy of an object of type C, with the help of a copy constructor that runs on the result of func2 and we will run func3 on it
 

@@ -24,6 +24,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     }
     public int totalCorrect = 0;
     private const int ALLOTED_SEC = 30;
+    
 
     // Timer logic
     private Clock clock;
@@ -91,6 +92,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
                         totalCorrect++;
                     }
 
+                    clock.Stop();
                     border.Background = _correctColor;
                     rb.BorderBrush = _correctColor;
                     rb.BorderThickness = new Thickness(2);
@@ -120,7 +122,9 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
 
     private void NextBtn_Click(object sender, RoutedEventArgs e)
     {
-        clock.Stop();
+        if (clock.isRunning)
+            clock.Stop();
+
         clock = new Clock(ALLOTED_SEC, this); //reset
         RemainingSeconds = ALLOTED_SEC;
 
@@ -144,6 +148,9 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     //avi's addition
     private void PrevBtn_Click(object sender, RoutedEventArgs e)
     {
+        if (clock.isRunning)
+            clock.Stop();
+
         if (currentQuestionNumber - 1 < 0)
             return;
 
