@@ -1,13 +1,13 @@
-﻿using BL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using QuizApp.BL;
 
-namespace Presentation;
+namespace QuizApp.Presentation;
 
 public partial class SearchWindow : Window, INotifyPropertyChanged
 {

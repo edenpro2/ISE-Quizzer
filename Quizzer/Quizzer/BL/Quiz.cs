@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace BL;
+namespace QuizApp.BL;
 
 public class Quiz : IEnumerable<Question>, INotifyPropertyChanged
 {

@@ -1,7 +1,8 @@
-﻿namespace BL;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+
+namespace QuizApp.BL;
 
 public class Question : INotifyPropertyChanged
 {

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace BL;
+namespace QuizApp.BL;
 
 public static class FileReader
 {

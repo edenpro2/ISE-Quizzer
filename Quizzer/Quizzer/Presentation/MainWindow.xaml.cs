@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using BL;
+using System.Windows.Controls.Primitives;
+using QuizApp.BL;
 
-namespace Presentation;
+namespace QuizApp.Presentation;
 
 public partial class MainWindow : Window
 {
-    List<Quiz> quizzes = Database.loadQuizzes();
-    const int MAXQUESTIONS = 10;
+    private List<Quiz> quizzes = Database.loadQuizzes();
+    private const int DEFUALTMAX = 10;
+    private int MaxQuestions = DEFUALTMAX;
+    private bool fullQuizMode;
 
     public MainWindow()
     {
@@ -20,36 +23,44 @@ public partial class MainWindow : Window
     private void Quiz_BtnClick(object sender, RoutedEventArgs e)
     {
         // extract number from button content (Quiz * --> *) and load quiz
-        string s = ((Button)sender).Content.ToString();
+        var s = ((Button)sender).Content.ToString();
         LoadQuiz(int.Parse(s.Replace("Quiz Week", "")));
     }
 
-    private void LoadQuiz(int quiz_num)
+    private void LoadQuiz(int quizNum)
     {
-        var quiz = quizzes[quiz_num - 1];
-        var all_questions = quiz.Questions.ToList();
-        var questions = new List<Question>(MAXQUESTIONS);
+        var quiz = quizzes[quizNum - 1];
+        var allQuestions = quiz.Questions.ToList();
+        var questions = new List<Question>();
         var rand = new Random(DateTime.Now.Millisecond);
-        var total = all_questions.Count;
+        var total = allQuestions.Count;
         int index;
 
-        for (int i = 0; i < MAXQUESTIONS; i++)
+        if (fullQuizMode)
+            MaxQuestions = allQuestions.Count;
+
+        for (var i = 0; i < MaxQuestions; i++)
         {
             index = rand.Next(total);
-            questions.Add(all_questions[index]);
-            all_questions.RemoveAt(index);
+            questions.Add(allQuestions[index]);
+            allQuestions.RemoveAt(index);
             total--;
         }
 
-        new QuizWindow(questions).Show();
+        new QuizWindow(questions, MaxQuestions).Show();
         // close this window
         Close(); 
     }
 
-    private void Unimp_Click(object sender, RoutedEventArgs e) { /* noop */ }
+    private void Unimplemented_Click(object sender, RoutedEventArgs e) { /* noop */ }
 
     private void SearchBtn_Click(object sender, RoutedEventArgs e)
     {
         new SearchWindow(quizzes).Show();
+    }
+
+    private void MaxQuizToggle_OnClick(object sender, RoutedEventArgs e)
+    {
+        fullQuizMode = (bool)((ToggleButton)sender).IsChecked;
     }
 }

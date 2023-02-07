@@ -1,4 +1,4 @@
-﻿<Window x:Class="Presentation.ResultsWindow"
+﻿<Window x:Class="QuizApp.Presentation.ResultsWindow"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -27,10 +27,13 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center">
                 <TextBlock
-                    Text="{Binding totalCorrect}"
+                    Text="{Binding TotalCorrect}"
                     d:Text="5"/>
                 <TextBlock
-                    Text="/10"/>
+                    Text="/"/>
+                <TextBlock
+                    d:Text="10"
+                    Text="{Binding TotalQuestions}"/>
             </DockPanel>
             <Button 
                 Width="200"

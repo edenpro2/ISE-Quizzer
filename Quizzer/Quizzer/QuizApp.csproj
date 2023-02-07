@@ -7,7 +7,7 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>quiz.ico</ApplicationIcon>
     <Platforms>AnyCPU;x64</Platforms>
-    <StartupObject>Presentation.App</StartupObject>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

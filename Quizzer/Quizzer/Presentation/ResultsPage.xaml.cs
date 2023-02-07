@@ -1,26 +1,16 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 
-namespace Presentation;
+namespace QuizApp.Presentation;
 
-public partial class ResultsWindow : Window, INotifyPropertyChanged
+public partial class ResultsWindow
 {
-    private int _totalCorrect;
-    public int totalCorrect
-    {
-        get => _totalCorrect;
-        set
-        {
-            _totalCorrect = value;
-            OnPropertyChanged();
-        }
-    }
+    public int TotalCorrect { get; set; }
+    public int TotalQuestions { get; set; }
 
-    public ResultsWindow(int total_correct)
+    public ResultsWindow(int totalCorrect, int totalQuestions)
     {
-        totalCorrect = total_correct;
+        TotalCorrect = totalCorrect;
+        TotalQuestions = totalQuestions;
         InitializeComponent();
     }
 
@@ -29,13 +19,4 @@ public partial class ResultsWindow : Window, INotifyPropertyChanged
         new MainWindow().Show();
         Close();
     }
-
-    #region INotify
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-    #endregion
 }

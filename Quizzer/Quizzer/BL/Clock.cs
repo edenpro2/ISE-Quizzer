@@ -2,9 +2,9 @@
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Presentation;
+using QuizApp.Presentation;
 
-namespace BL;
+namespace QuizApp.BL;
 
 public class Clock
 {
@@ -55,6 +55,4 @@ public class Clock
         // Forcing the CommandManager to raise the RequerySuggested event
         CommandManager.InvalidateRequerySuggested();
     }
-
-    public int EllapsedTime() => elapsedSeconds;
 }

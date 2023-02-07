@@ -1,9 +1,8 @@
-﻿<Window x:Class="Presentation.QuizWindow"
+﻿<Window x:Class="QuizApp.Presentation.QuizWindow"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:BL"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:matd="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       Width="1200"
@@ -32,6 +31,17 @@
             Content="Main Page"
             Click="MainBtn_Click"
             Margin="50 16 0 0" />
+
+        <DockPanel
+            Margin="0 21 140 0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top">
+            <ToggleButton Click="ToggleSound_Click"/>
+            <TextBlock
+                Text=" Sound"
+                FontWeight="SemiBold"
+                FontSize="20"/>
+        </DockPanel>
 
         <DockPanel
             Margin="0 18 53 0"

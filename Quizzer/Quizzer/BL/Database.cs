@@ -1,6 +1,7 @@
-﻿namespace BL;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+
+namespace QuizApp.BL;
 
 public static class Database
 {
