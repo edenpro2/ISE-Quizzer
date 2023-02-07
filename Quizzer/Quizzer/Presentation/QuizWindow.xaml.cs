@@ -35,6 +35,8 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         {
             _remainingSeconds = value;
             OnPropertyChanged();
+            if (_remainingSeconds == 0)
+                NextBtn_Click(this, null);
         }
     }
 
@@ -55,6 +57,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         clock = new Clock(ALLOTED_SEC, this);
         InitializeComponent();
         SetQuestion(CurrentQuestion);
+        clock.Start();
     }
 
     public void SetQuestion(Question question)
@@ -113,8 +116,6 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
 
             RadioStackPanel.Children.Add(border);
         }
-
-        clock.Start();
     }
 
     private void NextBtn_Click(object sender, RoutedEventArgs e)
@@ -137,6 +138,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
 
         CurrentQuestion = _questions[++currentQuestionNumber];
         SetQuestion(CurrentQuestion);
+        clock.Start();
     }
 
     //avi's addition
@@ -151,7 +153,6 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
             CurrentQuestion = _questions[--currentQuestionNumber]; //go back 1 question
             SetQuestion(CurrentQuestion);
         }
-
     }
     private void MainBtn_Click(object sender, RoutedEventArgs e)
     {
