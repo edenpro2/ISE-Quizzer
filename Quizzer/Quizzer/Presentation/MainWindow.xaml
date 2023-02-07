@@ -39,6 +39,8 @@
             <Setter Property="FontFamily" Value="Helvetica"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
+
+       
     </Window.Resources>
 
     <Grid>

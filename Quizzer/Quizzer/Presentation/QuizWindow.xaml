@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:matd="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:QuizApp.Presentation"
       mc:Ignorable="d" 
       Width="1200"
       Height="700"
@@ -16,12 +17,16 @@
         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatAccentBgButton}">
             <Setter Property="Background" Value="CornflowerBlue"/>
             <Setter Property="BorderBrush" Value="CornflowerBlue"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="200"/>
             <Setter Property="matd:ElevationAssist.Elevation" Value="Dp3"/>
         </Style>
 
         <Style TargetType="{x:Type RadioButton}">
             <Setter Property="FontSize" Value="18" />
         </Style>
+
+        <local:CompareAnswerConverter x:Key="CompareAnswerConverter"/>
     </Window.Resources>
 
     <Grid>
@@ -29,41 +34,67 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Main Page"
+            Width="120"
+            Height="35"
             Click="MainBtn_Click"
             Margin="50 16 0 0" />
 
-        <DockPanel
-            Margin="0 21 140 0"
+        <DockPanel 
+            VerticalAlignment="Top"
             HorizontalAlignment="Right"
-            VerticalAlignment="Top">
-            <ToggleButton Click="ToggleSound_Click"/>
-            <TextBlock
-                Text=" Sound"
-                FontWeight="SemiBold"
-                FontSize="20"/>
-        </DockPanel>
+            Margin="20 20 50 20">
+            <DockPanel Margin="0 3 0 0">
+                <ToggleButton Click="ToggleSound_Click"/>
+                <TextBlock
+                    Text=" Sound"
+                    FontWeight="SemiBold"
+                    FontSize="20"/>
+            </DockPanel>
 
-        <DockPanel
-            Margin="0 18 53 0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top">
-            <TextBlock
-                Name="SecondsDisplay"
-                Text="00:"
-                FontSize="24"
-                FontWeight="DemiBold"/>
-            <TextBlock 
-                Text="{Binding RemainingSeconds}"
-                d:Text="30"
-                FontSize="24"
-                FontWeight="DemiBold"/>
+            <Separator
+                Visibility="Hidden"
+                Width="20"/>
+
+            <DockPanel>
+                <TextBlock
+                    d:Text="0"
+                    Text="{Binding CurrentQuestionNum}"
+                    FontSize="24"
+                    FontWeight="Bold"/>
+                <TextBlock
+                    Text="/"
+                    FontSize="24"
+                    FontWeight="Bold"/>
+                <TextBlock 
+                    Text="{Binding MaxQuestions}"
+                    d:Text="10"
+                    FontSize="24"
+                    FontWeight="Bold"/>
+            </DockPanel>
+
+            <Separator
+                Visibility="Hidden"
+                Width="20"/>
+
+            <DockPanel>
+                <TextBlock
+                    Name="SecondsDisplay"
+                    Text="00:"
+                    FontSize="24"
+                    FontWeight="DemiBold"/>
+                <TextBlock 
+                    Text="{Binding RemainingSeconds}"
+                    d:Text="30"
+                    FontSize="24"
+                    FontWeight="DemiBold"/>
+            </DockPanel>
         </DockPanel>
 
         <Grid Margin="50 70 50 80">
-            <StackPanel>
+            <StackPanel VerticalAlignment="Top">
                 <matd:Card 
                     BorderThickness="1"
-                    matd:ElevationAssist.Elevation="Dp2"
+                    matd:ElevationAssist.Elevation="Dp3"
                     UniformCornerRadius="5"
                     Background="{StaticResource MaterialDesignPaper}"
                     VerticalAlignment="Top">
@@ -79,25 +110,26 @@
                 <StackPanel
                     x:Name="RadioStackPanel"
                     Margin="0 20 0 0" />
+
+                
             </StackPanel>
 
-            <DockPanel HorizontalAlignment="Center">
+            <DockPanel
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Center">
                 <Button 
+                    Content="Previous"
+                    Click="PrevBtn_Click"
                     Background="LightBlue"
                     BorderBrush="LightBlue"
-                    Click="PrevBtn_Click"
                     VerticalAlignment="Bottom"
-                    Height="50"
-                    Width="200"
-                    Margin="5"
-                    Content="Previous"/>
+                    Margin="5">
+                </Button>
                 <Button 
+                    Content="Next"
                     Click="NextBtn_Click"
                     VerticalAlignment="Bottom"
-                    Height="50"
-                    Margin="5"
-                    Width="200"
-                    Content="Next"/>
+                    Margin="5"/>
             </DockPanel>
         </Grid>
 
