@@ -64,6 +64,11 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         }
     }
 
+    private bool[,] correctAnswers;
+
+    const int firstTimeRow = 0;
+    const int questionRow = 1;
+
     private const int DefaultAllottedSec = 30;
 
     public QuizWindow(List<Question> questions, int maxQuestions, bool isTimed)
@@ -71,6 +76,13 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         _questions = questions;
         MaxQuestions = maxQuestions;
         CurrentQuestion = _questions[CurrentQuestionNum];
+        correctAnswers = new bool[2, MaxQuestions];
+
+        for (var i = 0; i < correctAnswers.GetLength(0); i++)
+        {
+            correctAnswers[firstTimeRow, i] = true;
+        }
+
         _isTimed = isTimed;
         if (_isTimed)
             _clock = new Clock();
@@ -150,10 +162,11 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
                 // answer is correct
                 if (possibleAnswer.Contains(CorrectAns))
                 {
-                    if (isFirstTry)
+                    // first row will be 
+                    if (correctAnswers[firstTimeRow, CurrentQuestionNum])
                     {
-                        isFirstTry = false;
-                        _totalCorrect++;
+                        correctAnswers[firstTimeRow, CurrentQuestionNum] = false;
+                        correctAnswers[questionRow, CurrentQuestionNum] = true;
                     }
 
                     if (_soundToggled)
@@ -169,8 +182,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
                 // answer incorrect
                 else
                 {
-                    if (isFirstTry)
-                        isFirstTry = false;
+                    correctAnswers[firstTimeRow, CurrentQuestionNum] = false;
 
                     if (_soundToggled)
                         WrongSoundPlayer.Play();
@@ -204,7 +216,14 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         // if done
         if (CurrentQuestionNum + 1 >= MaxQuestions)
         {
-            new ResultsWindow(_totalCorrect, _questions.Count).Show();
+            var totalCorrect = 0;
+            for(var i = 0; i < MaxQuestions; i++)
+            {
+                if (correctAnswers[questionRow, i])
+                    totalCorrect++;
+            }
+           
+            new ResultsWindow(totalCorrect, _questions.Count).Show();
             Close();
             return;
         }
