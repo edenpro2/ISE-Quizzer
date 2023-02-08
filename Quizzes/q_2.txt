@@ -62,24 +62,14 @@ $ Below is a list of different statements that can be found inside a method of a
 @ Calling other methods that are defined in the class
 @ Accessing the object that the method created (including the object's attributes and methods)
 @ Accessing the method's parameters (including the parameter's attributes and methods)
-@ Accessing the class's attributes (fieldS) and calling other methods that are defined in the class
+@ Accessing the class's attributes (fields) and calling other methods that are defined in the class
 @ Accessing the object that was received as a return value from another method that belongs to a different class (including the object's attributes and methods)*
 
 $ 
-public class A {
-	private int num;
-	public int getNum() { return num; }
-}
-public class B {
-	private A a;
-	public A getA(){ return a; }
-}
-public class C {
-	private int y;
-	private B b;
-	public int calculate { return y + b.getA().getNum(); }
-}
-
+public class A { private int num; public int getNum() { return num; }}  
+public class B { private A a; public A getA(){ return a; }}   
+public class C { private int y; private B b; public int calculate { return y + b.getA().getNum(); }  
+}  
 The function calculate() violates which principle?
 @ You Ain't Gonna Need It (YAGNI)
 @ Keep It Short & Simple (KISS)
@@ -88,8 +78,8 @@ The function calculate() violates which principle?
 @ Principle of Single Responsibility
 
 $ In class we learned the following principles: 
-DRY (Don't Repeat Yourself)
-YAGNI (You Ain’t Gonna Need It) 
+DRY (Don't Repeat Yourself) 
+YAGNI (You Ain’t Gonna Need It)  
 KISS (Keep It Short & Simple) 
 Which of the following statements most accurately describes the development principles that we studied?
 @ An example of DRY is the class Point*
@@ -99,7 +89,7 @@ Which of the following statements most accurately describes the development prin
 @ An example of YAGNI is the class Point
 
 $ In class we learned the following principles: 
-DRY (Don't Repeat Yourself)
+DRY (Don't Repeat Yourself) 
 YAGNI (You Ain’t Gonna Need It) 
 KISS (Keep It Short & Simple) 
 Which of the following statements most accurately describes the development principles that we studied?
@@ -171,7 +161,7 @@ $ A software engineer is responsible for researching and finding development met
 $ What is the correct claim according to the Agile principle that “working software over comprehensive documentation”
 @ System rational and structure reflected from charts in documentation
 @ The scope of the documentation is dictated by the amount of code
-@ System rational and structure reflected from code itself*
+@ System rational and structure reflected in code itself*
 @ Training is carried out in an initial period before receiving practical development work
 @ Documentation must be comprehensive
 
@@ -211,7 +201,7 @@ $ What is the correct statement about software design
 
 $ It was found that in the code of func1 in class A, there is a calling of func3 of an object of type C that was returned by func2 that was applied to one of the parameters of type B, thus breaking the Principle of Least Knowledge. We will use an adequate solution as follows, in order to comply with the principle of limited knowledge
 @ We will place the result of func2 in a local variable of type C in func1 and run func3 on the new variable
-@ We will refactor the code in class B and add a new action to it that will activate func3 and return its result*
+@ We will refactor the code in class B and add a new function to it that will activate func3 and return its result*
 @ We will stop the development and redesign the entire system if, after evaluating the costs, the development will still be profitable
 @ In func1, we will create our own copy of an object of type C, with the help of a copy constructor that runs on the result of func2 and we will run func3 on it
 
