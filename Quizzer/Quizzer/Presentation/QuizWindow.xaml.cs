@@ -19,6 +19,9 @@ public partial class QuizWindow : INotifyPropertyChanged
     private readonly SolidColorBrush? _transparent = new BrushConverter().ConvertFrom("#00000000") as SolidColorBrush;
     private static readonly SoundPlayer CorrectSoundPlayer = new(FileReader.GetFilePath("right_answer.wav"));
     private static readonly SoundPlayer WrongSoundPlayer = new(FileReader.GetFilePath("wrong_answer.wav"));
+    private static readonly SoundPlayer LowScorePlayer = new(FileReader.GetFilePath("scoreunder10.wav"));
+    private static readonly SoundPlayer MediumScorePlayer = new(FileReader.GetFilePath("scorebetween10and23.wav"));
+    private static readonly SoundPlayer PassedScorePlayer = new(FileReader.GetFilePath("passedscoreabove24.wav"));
     private bool _soundToggled;
     private readonly Thickness _highlightThickness = new(2);
 
@@ -191,6 +194,16 @@ public partial class QuizWindow : INotifyPropertyChanged
         if (CurrentQuestionNum + 1 >= MaxQuestions)
         {
             var totalCorrect = _questions.Sum(q => q.AnsweredCorrectly);
+
+            if (_soundToggled && MaxQuestions == 35)
+            {
+                if (totalCorrect < 10)
+                    LowScorePlayer.Play();
+                else if (totalCorrect < 24)
+                    MediumScorePlayer.Play();
+                else 
+                    PassedScorePlayer.Play();
+            }
             new ResultsWindow(totalCorrect, _questions.Count).Show();
             Close();
             return;

@@ -15,13 +15,13 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <TextBox
-            Name="SearchBar"
             Style="{StaticResource MaterialDesignOutlinedTextBox}"
             Margin="20 0"
             FontSize="22"
             VerticalAlignment="Center"
             HorizontalAlignment="Stretch"
-            TextChanged="searchChangedEventHandler" Height="61"  >
+            TextChanged="searchChangedEventHandler" 
+            Height="Auto">
             <matd:HintAssist.Hint>
                 <DockPanel 
                     VerticalAlignment="Center" 
@@ -41,7 +41,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <Grid>
+                        <Grid ToolTip="{Binding QuizNum}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>

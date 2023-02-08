@@ -33,7 +33,7 @@ public static class Database
                     trimmed = block.Remove(0, index);
                     possibleAns = new List<string>(trimmed.Remove(0, 1).Split('~'));
                     answer = possibleAns[0];
-                    question = new Question(questionText, possibleAns, answer);
+                    question = new Question(questionText, possibleAns, answer, quizNum);
                     quiz.AddQuestion(question);
                     continue;
                 }
@@ -59,7 +59,7 @@ public static class Database
                         answer = ans.Replace("*", " ").Trim();
                 }
 
-                question = new Question(questionText, possibleAnsEdited, answer);
+                question = new Question(questionText, possibleAnsEdited, answer, quizNum);
                 quiz.AddQuestion(question);
             }
 

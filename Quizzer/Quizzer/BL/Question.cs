@@ -37,14 +37,17 @@ public class Question : AbstractViewModel
         }
     }
 
+    public int QuizNum { get; }
+
     public int AnsweredCorrectly { get; set; } 
     public bool IsFirstTry { get; set; } = true;
 
-    public Question(string questionText, IEnumerable<string> possibleAnswers, string correctAnswer)
+    public Question(string questionText, IEnumerable<string> possibleAnswers, string correctAnswer, int quizNum)
     {
         QuestionText = questionText;
         CorrectAnswer = correctAnswer;
         PossibleAnswers = possibleAnswers.ToList();
+        QuizNum = quizNum;
     }
 
     public override string ToString()
