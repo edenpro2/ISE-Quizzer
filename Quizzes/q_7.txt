@@ -59,7 +59,7 @@ $ The light intensity coming from Emission Light to a point depends on the dista
 @ True
 @ False*
 
-$ The directional vector appears both in the Spot Light and in the Directional Light, but only in the Directional Light it is a basis for creating a vector towards the illuminated point.
+$ The directional vector appears both in SpotLight and in DirectionalLight, but only in DirectionalLight it is a basis for creating a vector towards the illuminated point.
 @ True*
 @ False
 
@@ -67,15 +67,15 @@ $ All parts of the Simple Phong Reflectance Model depend on the geometric body o
 @ True
 @ False*
 
-$ We have added, in the LightSource interface in the Phong's model, a method to calculating the way that the light spreads and a method to calculate the (directional) vector from the light source to a point whose color we wish to calculate
+$ We have added, in the LightSource interface in the Phong Model, a method for calculating the way that light spreads and a method for calculating the (direction) vector from the light source to a point whose color we wish to calculate
 @ True*
 @ False
 
-$ In the Phong model, the sign of the scalar product between the direction vector from the point of view (v)  and the reflection vector of the direction vector (r) from an external light source to the point for which the calculation is performed is important
+$ In the Phong Model, the sign of the scalar product between the direction vector from the point of view (→v) and the reflection vector of the direction vector (→r) [from an external light source to the point, for which the calculation is performed] is important
 @ True*
 @ False
 
-$ In the Phong model, the sign of the scalar product between the normal vector (n) and the directional vector (l) from the light source to the point for which the calculation is performed is important
+$ In the Phong Model, the sign of the scalar product between the normal vector (→n) and direction vector (→l) [from the light source to the point, for which the calculation is performed] is important
 @ True
 @ False*
 
@@ -83,13 +83,33 @@ $ The specular part of the Simple Phong Reflectance Model depends on the directi
 @ True*
 @ False
 
-$ The Simple Phong Reflectance Model and the Light Propagation Model are actually different names of the same model of lighting integration in a graphical scene
-@ True
-@ False*
-
 $ The diffusive part of the Simple Phong Reflectance Model depends on the angle of the light coming to the point
 @ True*
 @ False
+
+$ The diffusive part of the Simple Phong Reflectance Model depends on the direction angle from the point of view (currently from the camera) to the point
+@ True
+@ False*
+
+$ For the diffusive component of the Phong model, we DO NOT need the normal vector of the point on which the calculation is performed
+@ True
+@ False*
+
+$ The specular part of the Simple Phong Reflectance Model depends on the angle of the light coming to the point
+@ True*
+@ False
+
+$ For the specular component of the Phong Model, we DO NOT need the normal vector of the point on which the calculation is performed
+@ True
+@ False*
+
+$ For the specular component of the Phong Model, we DO need the normal vector of the point on which the calculation is performed
+@ True*
+@ False
+
+$ The Simple Phong Reflectance Model and the Light Propagation Model are actually different names of the same model of lighting integration in a graphical scene
+@ True
+@ False*
 
 $ In the Phong model, for a realistic picture, we will limit the attenuation factors values of the diffusive and specular for the same material so that their sum will be less than or equal to 1
 @ True*
@@ -114,18 +134,6 @@ $ What is correct regarding the Phong Reflectance Model?
 @ It is dismantled into two parts - Specular and Diffuse
 @ Increasing the value of the nSH (shininess) parameter in the model is intended to increase the concentration (decrease the size) of the shine (Specular effect) in the light reflection*
 
-$ For the diffusive component of the Phong model, we DO NOT need the normal vector of the point on which the calculation is performed
-@ True
-@ False*
-
-$ The specular part of the Simple Phong Reflectance Model depends on the angle of the light coming to the point
-@ True*
-@ False
-
-$ The diffusive part of the Simple Phong Reflectance Model depends on the direction angle from the point of view (currently from the camera) to the point
-@ True
-@ False*
-
 $ The light intensity coming from the Point Light to the illuminated point depends on the distance between the light source and the illuminated point
 @ True*
 @ False
@@ -141,14 +149,6 @@ $ The Template Method design pattern is of the structural design pattern categor
 $ Light Propagation Model is an additive model
 @ True
 @ False*
-
-$ For the specular component of the Phong Model, we DO NOT need the normal vector of the point on which the calculation is performed
-@ True
-@ False*
-
-$ For the specular component of the Phong Model, we DO need the normal vector of the point on which the calculation is performed
-@ True*
-@ False
 
 $ In the Template Method design pattern, the steps methods have public permission
 @ True
@@ -217,9 +217,13 @@ $ Use of the Non-Virtual Interface (NVI) design pattern does NOT affect the code
 @ True
 @ False*
 
-$ In the Template Method design pattern, an optional step is implemented in the parent class, but can be overridden in the derived class
+$ In the Template Method design pattern, an OPTIONAL step is implemented in the parent class, but can be overridden in the derived class
 @ True*
 @ False
+
+$ In the Template Method design pattern, an ABSTRACT step is implemented in the parent class, but can be overridden in the derived class
+@ True
+@ False*
 
 $ The intensity coming from Ambient Light to an illuminated point depends on the distance between the light source and the illuminated point
 @ True
@@ -248,5 +252,9 @@ $ In the Simple Phong Reflectance Model, the law of conservation of energy affec
 $ In the Light class, we have added methods for calculating the light propagation model and a direction vector from a light source to a point for which the Phong Reflectance Model is calculated
 @ True
 @ False*
+
+$ The Non-Virtual Interface (NVI) is the main determiner of the Interface Separation Principle (ISP) by separating the client interface and the subclass interface
+@ True*
+@ False
 
 $
