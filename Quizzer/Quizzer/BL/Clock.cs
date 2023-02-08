@@ -14,7 +14,7 @@ public class Clock : AbstractViewModel
     public int RemainingSeconds
     {
         get => _remainingSeconds;
-        private set
+        set
         {
             _remainingSeconds = value;
             OnPropertyChanged();

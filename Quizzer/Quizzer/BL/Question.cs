@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace QuizApp.BL;
 
 public class Question : AbstractViewModel
 {
-    private string _questionText = string.Empty;
+    private readonly string _questionText = string.Empty;
     public string QuestionText
     {
         get => _questionText;
-        set
+        private init
         {
             _questionText = value;
             OnPropertyChanged();
         }
     }
 
-    private List<string>? _possibleAnswers;
-    public List<string>? PossibleAnswers
+    private List<string> _possibleAnswers = new();
+    public List<string> PossibleAnswers
     {
         get => _possibleAnswers;
         set
@@ -26,27 +26,25 @@ public class Question : AbstractViewModel
             OnPropertyChanged();
         }
     }
-    private string _correctAnswer = string.Empty;
+    private readonly string _correctAnswer = string.Empty;
     public string CorrectAnswer
     {
         get => _correctAnswer;
-        set
+        private init
         {
             _correctAnswer = value;
             OnPropertyChanged();
         }
     }
 
-    public override int GetHashCode()
-    {
-        return _questionText.GetHashCode() + _correctAnswer.GetHashCode();
-    }
+    public int AnsweredCorrectly { get; set; } 
+    public bool IsFirstTry { get; set; } = true;
 
-    public Question(string questionText = "", List<string>? possibleAnswers = null, string correctAnswer = "")
+    public Question(string questionText, IEnumerable<string> possibleAnswers, string correctAnswer)
     {
         QuestionText = questionText;
-        PossibleAnswers = possibleAnswers;
         CorrectAnswer = correctAnswer;
+        PossibleAnswers = possibleAnswers.ToList();
     }
 
     public override string ToString()

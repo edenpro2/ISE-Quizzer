@@ -11,7 +11,7 @@ using System.Windows.Media;
 
 namespace QuizApp.Presentation;
 
-public partial class QuizWindow : Window, INotifyPropertyChanged
+public partial class QuizWindow : INotifyPropertyChanged
 {
     // Ui/Ux Related
     private readonly SolidColorBrush? _correctColorGreen = new BrushConverter().ConvertFrom("#6632CD32") as SolidColorBrush;
@@ -23,7 +23,6 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     private readonly Thickness _highlightThickness = new(2);
 
     // Backend Related
-    private readonly List<Border> _borders = new();
     private readonly List<Question> _questions;
 
     private Question _currentQuestion;
@@ -51,65 +50,53 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
 
     // Timer logic
     private readonly bool _isTimed;
-    private readonly Clock _clock;
-
-    private readonly bool[,] _correctAnswers;
-
-    private const int FirstTimeRow = 0;
-    private const int QuestionRow = 1;
-
+    public Clock Clock { get; }
     private const int DefaultAllottedSec = 30;
+
 
     public QuizWindow(List<Question> questions, int maxQuestions, bool isTimed)
     {
         _questions = questions;
         MaxQuestions = maxQuestions;
         CurrentQuestion = _questions[CurrentQuestionNum];
-        _correctAnswers = new bool[2, MaxQuestions];
-
-        for (var i = 0; i < _correctAnswers.GetLength(0); i++)
-        {
-            _correctAnswers[FirstTimeRow, i] = true;
-        }
 
         _isTimed = isTimed;
+
         if (_isTimed)
-            _clock = new Clock();
+            Clock = new Clock();
+
         InitializeComponent();
-        SetQuestion(CurrentQuestion);
+        ConfigureQuestion(CurrentQuestion);
     }
 
     private void SetClock(Question question)
     {
         if (question.QuestionText.Count() > 130)
         {
-            _clock.SetAllotted(40);
+            Clock.SetAllotted(40);
 
             if (question.PossibleAnswers.Count > 2)
             {
-                _clock.SetAllotted(50);
+                Clock.SetAllotted(50);
             }
         }
-        else _clock.SetAllotted(DefaultAllottedSec);
+        else Clock.SetAllotted(DefaultAllottedSec);
 
         if (question.PossibleAnswers.Count == 1)
         {
-            _clock.SetAllotted(80);
+            Clock.SetAllotted(80);
         }
     }
 
-    public void SetQuestion(Question? question)
+    private void ConfigureQuestion(Question question)
     {
-        if (question == null)
-            return;
-
         if (_isTimed)
         {
             SetClock(question);
-            _clock.Start();
+            Clock.Start();
         }
 
-        var CorrectAns = _questions[CurrentQuestionNum].CorrectAnswer;
+        var correctAns = _questions[CurrentQuestionNum].CorrectAnswer;
 
         // reorder multiple choice questions
         if (question.PossibleAnswers.Count > 2)
@@ -122,109 +109,101 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         // can highlight it when right or wrong answer
         foreach (var possibleAnswer in question.PossibleAnswers)
         {
-            var txt = new TextBlock
+            var answerTextBlock = new TextBlock
             {
                 Text = possibleAnswer,
                 TextWrapping = TextWrapping.Wrap
             };
 
-            var rb = new RadioButton
+            var answerRadioButton = new RadioButton
             {
-                Content = txt,
+                Content = answerTextBlock,
+                Margin = new Thickness(0, 3, 0, 0),
                 FontSize = 26,
                 VerticalContentAlignment = VerticalAlignment.Center,
                 GroupName = question.GetHashCode().ToString()
             };
 
-            var border = new Border
+            var radioButtonDecoration = new Border
             {
-                Child = rb
+                Child = answerRadioButton
             };
-            _borders.Add(border);
 
-            var isFirstTry = true;
-
-            rb.Checked += (_, _) =>
+            answerRadioButton.Checked += (_, _) =>
             {
-                rb.FontWeight = FontWeights.Bold;
+                answerRadioButton.FontWeight = FontWeights.Bold;
 
                 // answer is correct
-                if (possibleAnswer.Contains(CorrectAns))
+                if (possibleAnswer.Contains(correctAns))
                 {
                     // first row will be 
-                    if (_correctAnswers[FirstTimeRow, CurrentQuestionNum])
+                    if (question.IsFirstTry)
                     {
-                        _correctAnswers[FirstTimeRow, CurrentQuestionNum] = false;
-                        _correctAnswers[QuestionRow, CurrentQuestionNum] = true;
+                        question.IsFirstTry = false;
+                        question.AnsweredCorrectly = 1;
                     }
 
                     if (_soundToggled)
                         CorrectSoundPlayer.Play();
 
-                    if (_clock is { IsRunning: true })
-                        _clock.Pause();
+                    if (Clock is { IsRunning: true })
+                        Clock.Pause();
 
-                    border.Background = _correctColorGreen;
-                    rb.BorderBrush = _correctColorGreen;
-                    rb.BorderThickness = _highlightThickness;
+                    radioButtonDecoration.Background = _correctColorGreen;
+                    answerRadioButton.BorderBrush = _correctColorGreen;
+                    answerRadioButton.BorderThickness = _highlightThickness;
                 }
                 // answer incorrect
                 else
                 {
-                    _correctAnswers[FirstTimeRow, CurrentQuestionNum] = false;
+                    question.IsFirstTry = false;
 
                     if (_soundToggled)
                         WrongSoundPlayer.Play();
 
-                    border.Background = _wrongColorRed;
-                    rb.BorderBrush = _wrongColorRed;
-                    rb.BorderThickness = _highlightThickness;
+                    radioButtonDecoration.Background = _wrongColorRed;
+                    answerRadioButton.BorderBrush = _wrongColorRed;
+                    answerRadioButton.BorderThickness = _highlightThickness;
                 }
             };
 
-            rb.Unchecked += (_, _) =>
+            answerRadioButton.Unchecked += (_, _) =>
             {
-                rb.FontWeight = FontWeights.Normal;
-                border.Background = _transparent;
-                border.BorderBrush = _transparent;
+                answerRadioButton.FontWeight = FontWeights.Normal;
+                radioButtonDecoration.Background = _transparent;
+                radioButtonDecoration.BorderBrush = _transparent;
             };
 
             // add to stack-panel
-            RadioStackPanel.Children.Add(border);
+            RadioStackPanel.Children.Add(radioButtonDecoration);
         }
     }
 
     private void NextBtn_Click(object sender, RoutedEventArgs e)
     {
-        if (_clock is { IsRunning: true })
+        if (Clock is { IsRunning: true })
         {
-            _clock.Pause();
-            _clock.Rewind();
+            Clock.Pause();
+            Clock.Rewind();
         }
 
         // if done
         if (CurrentQuestionNum + 1 >= MaxQuestions)
         {
-            var totalCorrect = 0;
-            for (var i = 0; i < MaxQuestions; i++)
-            {
-                if (_correctAnswers[QuestionRow, i])
-                    totalCorrect++;
-            }
-
+            var totalCorrect = _questions.Sum(q => q.AnsweredCorrectly);
             new ResultsWindow(totalCorrect, _questions.Count).Show();
             Close();
             return;
         }
 
-        foreach (var border in _borders) border.Visibility = Visibility.Collapsed;
+        RadioStackPanel.Children.Clear();
 
         CurrentQuestion = _questions[++CurrentQuestionNum];
-        SetQuestion(CurrentQuestion);
+        ConfigureQuestion(CurrentQuestion);
 
         if (_isTimed)
         {
-            _clock.Start();
+            Clock.Start();
         }
     }
 
@@ -234,19 +213,19 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         if (CurrentQuestionNum - 1 < 0)
             return;
 
-        if (_clock is { IsRunning: true })
+        if (Clock is { IsRunning: true })
         {
-            _clock.Pause();
-            _clock.Rewind();
+            Clock.Pause();
+            Clock.Rewind();
         }
 
-        foreach (var border in _borders) border.Visibility = Visibility.Collapsed;
+        RadioStackPanel.Children.Clear();
         CurrentQuestion = _questions[--CurrentQuestionNum]; //go back 1 question
-        SetQuestion(CurrentQuestion);
+        ConfigureQuestion(CurrentQuestion);
 
         if (_isTimed)
         {
-            _clock.Start();
+            Clock.Start();
         }
     }
 
@@ -262,13 +241,10 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     }
 
     #region INotify
-
     public event PropertyChangedEventHandler? PropertyChanged;
-
-    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
-
     #endregion
 }
