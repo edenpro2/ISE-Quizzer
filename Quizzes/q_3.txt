@@ -60,7 +60,7 @@ $ In terms of TDD, there is no need to re-run tests after they have succeeded
 @ True
 @ False*
 
-$ EP tests (Equivalence Partitioning) sometimes include several tests for each equivalence class
+$ EP (Equivalence Partitioning) tests sometimes include several tests for each equivalence class
 @ True
 @ False*
 
@@ -100,7 +100,7 @@ $ What is the correct statement about composition?
 @ Composition is suitable only when both classes are from the same domain
 @ Composition is required when the relationship between two classes is "class A is a type of class B"
 
-$ EP tests (Equivalence Partitioning) divides the tests into groups of extreme cases
+$ EP (Equivalence Partitioning) tests divides the tests into groups of extreme cases
 @ True
 @ False*
 
