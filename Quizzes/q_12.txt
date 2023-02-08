@@ -29,7 +29,7 @@ $ You can build a distributed version control system by using Git
 @ True*
 @ False
 
-$ Avi and Baruch need to work together on a project. Since the onset of COVID, they work from home. Because they live in different time zones, sometimes they are working at the same time and sometimes they work at different times. Their work server is large and powerful as opposed to Avi and Baruch's computers that are relatively weak and have very limited memory (disk). Which type of version control system best meets their needs
+$ Avi and Baruch are both hired to work on a project. Since COVID they generally work from their homes. Since they are in different time zones, they sometimes work on the project at the same time and sometimes work on the project at different times. While the company’s server is state of the art, Avi and Baruch both have simple computers with little memory. Which type of version management system/systems would best fit their needs
 @ centralized*
 @ local
 @ local and distributed
