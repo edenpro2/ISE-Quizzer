@@ -279,13 +279,6 @@ $ The Survivability attribute is a part of the Safety System
 @ True
 @ False*
 
-$ What is the correct statement regarding scheduling in Agile methodology projects?
-@ Task planning is done before release planning
-@ Release planning is done before iteration planning *
-@ Initial estimation is done before story identification
-@ Release planning is done before initial estimation
-@ Task planning is done before story identification
-
 $ Which of the following steps is not part of Risk-Driven security requirement engineering
 @ Risk identification*
 @ Exposure assessment
