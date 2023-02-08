@@ -1,5 +1,9 @@
 #Quiz 8
 
+$ In the framework that we built this semester, the only secondary rays that we considered were the rays that were used for reflection and refraction.
+@ True
+@ False*
+
 $ The "backlighting" phenomenon that we faced in the implementation of the Phong Model sometimes disappears in the sphere after the implementation of shading
 @ True*
 @ False
