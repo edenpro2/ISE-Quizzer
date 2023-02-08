@@ -12,4 +12,4 @@ How to run it:
 * Now, select Properties, and de-select "read only"
 * Click on Security (tab) and then Edit -> Add -> now type EVERYONE 
 * Give it modify permissions and then click Apply. 
-* now open it as a project in Visual Studio
+* Open it as a project in Visual Studio
