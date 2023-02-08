@@ -25,7 +25,6 @@ $ At least one builder class is required in the Builder Design Pattern
 
 $ How is the original java.awt.Color class "wrapped" inside our class Color?
 @ We did not wrap the original class in our new class Color . We just created an object that was an instance of the original class
-@ We did not wrap the original class in our new class Color . We just created an object that was an instance of the original class
 @ By using inheritance - having our class Color inherit from the original class
 @ By using our own RGB values as well as our own methods that perform operations on these values. Also, we add a method called getColor that returns an instance of the original class*
 @ By using composition - having our class Color contain an attribute of the type of the original class
@@ -40,11 +39,6 @@ $ After we finish the implementation of Emission Light, we will change the imple
 $ A Builder Design Pattern transfers the responsibility of creating an object to a unique helper class
 @ True*
 @ False
-
-$ For the most part, the light that we see everyday of our lives is a linear function of wavelengths that make up the entire spectrum of light
-Select one:
-@ True
-@ False*
 
 $ Which of the following classes in our framework is a Passive Data Structure (PDS)?
 @ Camera
