@@ -159,7 +159,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
                     if (_soundToggled)
                         CorrectSoundPlayer.Play();
 
-                    if (_clock.IsRunning)
+                    if (_clock is { IsRunning: true})
                         _clock.Pause();
 
                     border.Background = _correctColorGreen;
@@ -226,7 +226,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         if (CurrentQuestionNum - 1 < 0)
             return;
 
-        if (_clock.IsRunning)
+        if (Clock is { IsRunning:true})
         {
             _clock.Pause();
             _clock.Rewind();
