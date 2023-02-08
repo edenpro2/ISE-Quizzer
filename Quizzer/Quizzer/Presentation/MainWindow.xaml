@@ -151,7 +151,8 @@
                     Click="Quiz_BtnClick"/>
                 <TextBlock Text="Testing, Reuse, Dpndcy. and Sec., Soft. Mngmt "/>
                 <Button
-                    Content="Quiz Week 11"/>
+                    Content="Quiz Week 11"
+                    Click="Quiz_BtnClick"/>
                 <TextBlock Text="Software Configuration (Ver. Control)"/>
                 <Button
                     Content="Quiz Week 12"
