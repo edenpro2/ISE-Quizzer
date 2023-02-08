@@ -132,9 +132,9 @@ $ Which of the claims does is not a present advantage of Software Reuse
 @ Decreased maintenance costs*
 
 $ Which of the following steps is not part of Risk-Driven Design for Safety-Critical Systems
-@ Risk avoidance
+@ Risk avoidance*
 @ Risk reduction
-@ Risk identification*
+@ Risk identification
 @ Risk analysis
 @ Risk decomposition
 
@@ -231,7 +231,7 @@ $ Which of the charts is a graphical representation of the project schedule that
 @ None of the charts in other sections show the relationships between activities clearly
 @ Spreadsheet
 
-$ The Resources Allocation Chart is one of the charts that show the project phases and the dependencies between them
+$ The Resource Allocation Chart is one of the charts that show the project phases (tasks) and the dependencies between them
 @ True
 @ False*
 
@@ -287,7 +287,7 @@ $ What is the correct statement regarding scheduling in Agile methodology projec
 @ Release planning is done before initial estimation
 @ Task planning is done before story identification
 
-$ Which of the following steps is not part of risk-driven security requirement engineering
+$ Which of the following steps is not part of Risk-Driven security requirement engineering
 @ Risk identification*
 @ Exposure assessment
 @ Threat identification
@@ -298,6 +298,23 @@ $ In the context of Dependability, with an emphasis on the characteristic of Sec
 @ True
 @ False*
 
-$ 
+$ What is not part of the Dependability Means software system
+@ Tolerance
+@ Removal
+@ Avoidance*
+@ Forecasting
+@ Prevention
 
+$ In systems with critical requirements for safety in the risk triangle, the risk area called ALARP is not tolerant of any type of risk
+@ True
+@ False*
 
+$ A milestone is a point in the schedule in which products are shipped to the customer
+@ True
+@ False*
+
+$ A system with perfect Reliability does not necessarily suffer from security problems
+@ True
+@ False*
+
+$
