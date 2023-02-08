@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
+using MaterialDesignColors;
 using QuizApp.BL;
 
 namespace QuizApp.Presentation;
@@ -74,9 +75,13 @@ public partial class SearchWindow : INotifyPropertyChanged
         _worker.CancelAsync();
     }
 
+    private bool Found(Question que, string searchText)
+    {
+        return (que.QuestionText.ToLower().Contains(searchText.ToLower()) || que.CorrectAnswer.ToLower().Contains(searchText.ToLower()));
+    }
     private List<Question>? Search(string searchText)
     {
-        return _questions.Where(que => que.QuestionText.ToLower().Contains(searchText.ToLower())).ToList();
+        return _questions.Where(que => Found(que, searchText)).ToList();
     }
 
     public SearchWindow(IEnumerable<Quiz> quizzes)

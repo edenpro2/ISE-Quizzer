@@ -25,9 +25,11 @@ public static class Database
             // questions inside each quiz
             foreach (var block in blocks)
             {
-                var index = block.IndexOf('~');
-                // if open question 
-                if (index != -1)
+                var index = block.IndexOf('~'); //index of the tilda (open answer solution)
+                //  skip the trouble-some question for week 12
+
+                // if open question
+                if (index != -1 && quizNum != 12)
                 {
                     questionText = new string(block.Take(index).ToArray()).Trim();
                     trimmed = block.Remove(0, index);
@@ -38,7 +40,7 @@ public static class Database
                     continue;
                 }
 
-                // find answer symbol
+                // find answer symbol (T/F or multiple choice)
                 index = block.IndexOf('@');
                 // question will be 
                 questionText = new string(block.Take(index).ToArray()).Trim();

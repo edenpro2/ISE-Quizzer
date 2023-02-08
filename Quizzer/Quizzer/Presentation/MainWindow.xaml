@@ -154,7 +154,8 @@
                     Content="Quiz Week 11"/>
                 <TextBlock Text="Software Configuration (Ver. Control)"/>
                 <Button
-                    Content="Quiz Week 12"/>
+                    Content="Quiz Week 12"
+                    Click="Quiz_BtnClick"/>
             </StackPanel>
         </DockPanel>
 
