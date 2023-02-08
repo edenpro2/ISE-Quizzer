@@ -70,7 +70,7 @@ $ Which of the following statements about conflict resolution in Git is false
 @ Problems of conflicts arise when it is updating different files that are on the same branch*
 @ You can directoy edit the content of the components when trying to resolve conflicts
 
-$ A security company has purchased a system that will only allow certain (predefined) people to enter their building. The syste includes a facial recognition system. Now the police are considering creating a system to monitor people who should be in isolation and this system will include the facial recognition system that is used by the security company. To which category of software reuse does this example belong to
+$ A security company has purchased a system that will only allow certain (predefined) people to enter their building. The system includes a facial recognition system. Now the police are considering creating a system to monitor people who should be in isolation and this system will include the facial recognition system that is used by the security company. To which category of software reuse does this example belong to
 @ Component Reuse*
 @ Function Reuse
 @ Library Reuse
