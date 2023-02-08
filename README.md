@@ -3,6 +3,8 @@
 Intro to software engineering quiz application
 
 Quiz Files: https://drive.google.com/drive/u/0/folders/14H_UQtInb8nTOb5P0Hh4Cq1L7eX4oNaN
+Or better yet, feel free to look here, add or fix a question and submit a pull request ;) 
+https://github.com/edenpro2/ISE-Quizzer/tree/master/Quizzes
 
 How to run it:
 
