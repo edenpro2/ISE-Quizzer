@@ -240,9 +240,9 @@ $ The main reason for Snell's law is Fermat's principle, according to which, the
 @ False
  
 $ The attenuation coefficient of transparency (kT) will be 1 in a realistic picture for the following material:
-@ Perfect glass
+@ Perfect glass*
 @ Completely matte material
-@ Perfect mirror*
+@ Perfect mirror
 @ Completely sealed material
 @ In no material
 
