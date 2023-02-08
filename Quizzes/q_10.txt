@@ -38,12 +38,6 @@ $ The Regular/Adaptive Grid algorithm would belong to which category of accelera
 @ Using Generalized Rays
 @ Reduction in the number of rays that are used to compute intersections
 
-$ Which of the following is not a stage in the SDLC (Software Development Life Cycle)?
-@ Disposal*
-@ Evolving
-@ Initial Development
-@ Servicing
-@ Phase Out
 
 $ Which of the following concepts is not addressed by Lehman's Laws?
 @ Self-Regulation
@@ -133,13 +127,6 @@ $ Shared Understanding is a category in the Extreme Programming design methodolo
 @ Pair programming*
 @ Collective ownership of code
 
-$ Which of the following is not a stage in the SDLC (Software Development Life Cycle)?
-@ Maintenance
-@ Integration*
-@ Evaluation
-@ Acceptance
-@ Disposal
-
 $ Which of the acceleration improvements we learned requires the implementation of said improvement (not including data preparation) by changing the code of the Intersectable abstract class only?
 @ Boundary Volume Hierarchy and Conservative Boundary Region*
 @ Regular Grid
@@ -209,13 +196,6 @@ $ Lehman's laws apply to P-type programs
 $ In the Staged-Model Software Lifecycle, in the stage called Servicing, no new developments are carried out, but they still provide corrections to the code for software errors
 @ True*
 @ False
-
-$ Which of the actions does not belong to the Software Servicing provision phase of the Software Development Life Cycle (SDLC)?
-@ Integration*
-@ Disposal
-@ Maintenance
-@ Acceptance
-@ Evaluation
 
 $ Lehman's Law on Continuing Growth speaks of continuous growth regarding the size and complexity of a software system
 @ True

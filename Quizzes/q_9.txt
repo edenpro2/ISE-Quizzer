@@ -162,7 +162,7 @@ $ Which of the following methods of creating points in a target area for a ray b
 $ Which of the image improvements that we learned that use a beam of rays (supersampling) will require changes in the Material class?
 @ No change is required in the Material class in any such improvement
 @ Soft Shadows
-@ Glossy Surface and Blur/Diffuse Glass
+@ Glossy Surface and Blur/Diffuse Glass*
 @ Depth of Field
 @ Anti-Aliasing
 
