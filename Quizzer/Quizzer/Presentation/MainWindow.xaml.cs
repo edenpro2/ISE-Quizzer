@@ -14,6 +14,7 @@ public partial class MainWindow
     private const int DefaultMax = 10;
     private int _maxQuestions = DefaultMax;
     private bool _fullQuizMode;
+    private bool _isTimed;
 
     public MainWindow() => InitializeComponent();
 
@@ -43,7 +44,7 @@ public partial class MainWindow
             total--;
         }
 
-        new QuizWindow(questions, _maxQuestions).Show();
+        new QuizWindow(questions, _maxQuestions, _isTimed).Show();
         // close this window
         Close(); 
     }
@@ -56,5 +57,10 @@ public partial class MainWindow
     private void MaxQuizToggle_OnClick(object sender, RoutedEventArgs e)
     {
         _fullQuizMode = (bool)(sender as ToggleButton).IsChecked; //isChecked from bool? to bool
+    }
+
+    private void TimerToggle_Click(object sender, RoutedEventArgs e)
+    {
+         _isTimed = (bool)(sender as ToggleButton).IsChecked; //isChecked from bool? to bool
     }
 }

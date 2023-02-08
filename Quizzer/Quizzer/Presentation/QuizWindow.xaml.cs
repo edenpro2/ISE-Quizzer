@@ -52,6 +52,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     }
 
     // Timer logic
+    private bool _isTimed;
     private Clock _clock;
     public Clock Clock
     {
@@ -63,34 +64,49 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         }
     }
 
-    private const int AllottedSec = 30;
-    //private int _remainingSeconds = AllottedSec;
-    //public int RemainingSeconds
-    //{
-    //    get => _remainingSeconds;
-    //    set
-    //    {
-    //        _remainingSeconds = value;
-    //        OnPropertyChanged();
-    //        if (_remainingSeconds == 0)
-    //            NextBtn_Click(this, null!);
-    //    }
-    //}
+    private const int DefaultAllottedSec = 30;
 
-    public QuizWindow(List<Question> questions, int maxQuestions)
+    public QuizWindow(List<Question> questions, int maxQuestions, bool isTimed)
     {
         _questions = questions;
         MaxQuestions = maxQuestions;
         CurrentQuestion = _questions[CurrentQuestionNum];
-        _clock = new Clock(AllottedSec /*, this*/ );
+        _isTimed = isTimed;
+        if (_isTimed)
+            _clock = new Clock();
         InitializeComponent();
         SetQuestion(CurrentQuestion);
+    }
+
+    private void SetClock(Question question)
+    {
+        if (question.QuestionText.Count() > 130)
+        {
+            _clock.SetAllotted(40);
+
+            if (question.PossibleAnswers.Count > 2)
+            {
+                _clock.SetAllotted(50);
+            }
+        }
+        else _clock.SetAllotted(DefaultAllottedSec);
+
+        if (question.PossibleAnswers.Count == 1)
+        {
+            _clock.SetAllotted(80);
+        }
     }
 
     public void SetQuestion(Question? question)
     {
         if (question == null)
             return;
+
+        if (_isTimed)
+        {
+            SetClock(question);
+            Clock.Start();
+        }
 
         CorrectAns = _questions[CurrentQuestionNum].CorrectAnswer;
         
@@ -175,13 +191,11 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
             // add to stack-panel
             RadioStackPanel.Children.Add(border);
         }
-
-        Clock.Start();
     }
 
     private void NextBtn_Click(object sender, RoutedEventArgs e)
     {
-        if (_clock.IsRunning)
+        if (_clock is { IsRunning: true })
         {
             _clock.Pause();
             _clock.Rewind();
@@ -200,7 +214,10 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         CurrentQuestion = _questions[++CurrentQuestionNum];
         SetQuestion(CurrentQuestion);
 
-        Clock.Start();
+        if (_isTimed)
+        {
+            Clock.Start();
+        }
     }
 
     // Avi's addition
@@ -219,7 +236,10 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         CurrentQuestion = _questions[--CurrentQuestionNum]; //go back 1 question
         SetQuestion(CurrentQuestion);
 
-        Clock.Start();
+        if (_isTimed)
+        {
+            Clock.Start();
+        }
     }
 
     private void MainBtn_Click(object sender, RoutedEventArgs e)

@@ -158,25 +158,46 @@
             </StackPanel>
         </DockPanel>
 
-       <Border
-           HorizontalAlignment="Left"
-           CornerRadius="10"
-           materialDesign:ElevationAssist.Elevation="Dp4"
-           Width="250"
-           Height="35"
-           Background="#dddddd"
-           Margin="65 0 0 0"
-           Grid.Row="2">
-            <DockPanel Margin="5">
-                <ToggleButton Click="MaxQuizToggle_OnClick"/>
-                <TextBlock 
-                    Text=" MAX QUESTIONS MODE"
-                    VerticalAlignment="Center"
-                    Foreground="#222222"
-                    FontWeight="Bold"
-                    FontSize="17"/>
-            </DockPanel>
-        </Border>
+        <DockPanel Grid.Row="2">
+            <Border
+                HorizontalAlignment="Left"
+                CornerRadius="10"
+                materialDesign:ElevationAssist.Elevation="Dp4"
+                Width="250"
+                Height="35"
+                Background="#dddddd"
+                Margin="65 0 0 0">
+                <DockPanel Margin="5">
+                    <ToggleButton Click="MaxQuizToggle_OnClick"/>
+                    <TextBlock 
+                        Text=" MAX QUESTIONS MODE"
+                        VerticalAlignment="Center"
+                        Foreground="#222222"
+                        FontWeight="Bold"
+                        FontSize="17"/>
+                </DockPanel>
+            </Border>
+
+            <Border
+                HorizontalAlignment="Left"
+                CornerRadius="10"
+                materialDesign:ElevationAssist.Elevation="Dp4"
+                Width="165"
+                Height="35"
+                Background="#dddddd"
+                Margin="15 0 0 0">
+                <DockPanel Margin="5">
+                    <ToggleButton Click="TimerToggle_Click"/>
+                    <TextBlock 
+                        Text=" TIMER MODE"
+                        VerticalAlignment="Center"
+                        Foreground="#222222"
+                        FontWeight="Bold"
+                        FontSize="17"/>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+       
     </Grid>
 
 </Window>

@@ -8,7 +8,7 @@ public class Clock : AbstractViewModel
 {
     private DispatcherTimer? _timer;
     private int _elapsedSeconds;
-    private readonly int _allottedSeconds;
+    private int _allottedSeconds;
     private int _remainingSeconds;
 
     public int RemainingSeconds
@@ -23,7 +23,12 @@ public class Clock : AbstractViewModel
 
     public bool IsRunning { get; private set; }
 
-    public Clock(int allottedSec)
+    public Clock(int allottedSec = 0)
+    {
+        _allottedSeconds = allottedSec;
+    }
+
+    public void SetAllotted(int allottedSec)
     {
         _allottedSeconds = allottedSec;
     }
