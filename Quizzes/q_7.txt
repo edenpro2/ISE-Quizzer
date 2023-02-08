@@ -1,5 +1,16 @@
 #Quiz 7
 
+$ Choose the statement that best describes the Template Method Pattern and the NVI (Non-Virtual
+Interface)
+@ The Template Method allows the user to execute the algorithm according to a specific order so that
+each class can implement the desired steps of the algorithm*
+@ The NVI pattern helps reduce the code odor known as immobility
+@ The Template Method is used to create loose coupling between inheriting classes
+@ The Template Method divides the algorithm among different classes such that each class is in charge of
+a different stage of the algorithm
+@ The NVI pattern defines an interface with virtual functions that have public access, this is done so that
+the classes that implement the interface can override these functions
+
 $ The Non-Virtual Interface (NVI) design pattern is a private case of the Template Method design pattern
 @ True*
 @ False
