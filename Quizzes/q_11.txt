@@ -1,1 +1,11 @@
+# Quiz 11
 
+$ Software Reuse improves program performance
+@ True
+@ False*
+
+$ In a Customized Software Product, the acceptance testing program is coordinated with the customer and is based on the requirements specification coordinated with the customer
+@ True*
+@ False
+
+$ 
