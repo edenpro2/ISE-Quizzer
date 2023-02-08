@@ -1,57 +1,57 @@
 # Quiz 12
 
-$ The check-in\checkin\ci operation is an operation that returns (saves) a component to the repository of a version management system after changes were made to it
+$ The check-in\checkin\ci operation is an operation that returns (saves) a component to the repository of a version control system after changes were made to it
 @ True*
 @ False
 
-$ Which of the following is not an activity of Configuration Managements?
+$ Which of the following is not an activity of Configuration Management
 @ System Configuration (maintaining a database of configuration values as well as a collection of possible components)*
 @ System Building
 @ Release Management
 @ Version Management
 @ Change Management
 
-$ In a traditional version control systems (not git) every time it saved a new version it save a full copy of all of the components
+$ In a traditional version control systems (not Git), every time it saves a new version, it saves a full copy of all of the components
 @ True
 @ False*
 
-$ You can build a distributed version management system by using git.
+$ You can build a distributed version control system by using Git
 @ True*
 @ False
 
-$ Avi and Baruch need to work together on a project. Since the onset of COVID they work from the house. Because they live in different time zones, sometimes they are working at the same time and sometimes they work at different times. Their work server is large and powerful as opposed to Avi and Baruch's computers that are relatively weak and have a very limited memory (disk). Which type of version management system best meets their needs?
+$ Avi and Baruch need to work together on a project. Since the onset of COVID, they work from home. Because they live in different time zones, sometimes they are working at the same time and sometimes they work at different times. Their work server is large and powerful as opposed to Avi and Baruch's computers that are relatively weak and have very limited memory (disk). Which type of version control system best meets their needs
 @ centralized*
 @ local
 @ local and distributed
 @ local and centralized
 @ distributed
 
-$ A distributed version management system needs a special system to perform backup for the system’s server.
+$ A distributed version control system needs a special system to perform backup for the system’s server
 @ True
 @ False*
 
-$ What is a sequence of different versions of the same component called?
+$ What is a sequence of different versions of the same component called
 @ codeline*
 @ release
 @ baseline
 @ mainline
 @ workspace
 
-$ Which commands in git can be used to create a new local repository?
+$ Which commands in Git can be used to create a new local repository
 @ init and clone*
 @ pull (only)
 @ init (only)
 @ commit (only)
 @ clone (only)
 
-$ Which of the following statements about conflict resolution in git is false?
+$ Which of the following statements about conflict resolution in Git is false
 @ You must first solve all of the commit issues before you can do a merge commit
 @ You should save the state image after conflict resolution.
 @ Problems of conflicts arise when it is updating different files that are on the same branch.*
 @ You can directoy edit the content of the components when trying to resolve conflicts.
 @ Most development environments offer gui (graphical user interface ) tools to help deal with conflicts.
 
-$ A git-based version management system (git) saves (in its data structures) the versions of software system components in their full content and not by deltas (collections of changes) as traditional version management systems do
+$ A Git-based version control system (git) saves (in its data structures) the versions of software system components in their full content and not by deltas (collections of changes) as traditional version control systems do
 @ True*
 @ False
 
@@ -59,18 +59,113 @@ $ There is more than one commend in Git that you can use to create a local repos
 @ True*
 @ False
 
-$ What is the difference between the following two statements: "git checkout HEAD^^" , "git checkout HEAD~2"?
+$ What is the difference between the following two statements: "git checkout HEAD^^" , "git checkout HEAD~2"
 @ The first statement moves the head along with the branch that the HEAD points to (the current branch) and the second statement moves only the HEAD but the branch stays in the same place
-@ There is no difference. The consequences from both statements are the same.*
+@ There is no difference. The consequences from both statements are the same*
 @ The first statement moves the branch by force and the second statement doesn’t
 @ There is a syntax error in one of the two statements
-@ The first statement moves the HEAD forward and the second statement moves the HEAD backwards.
+@ The first statement moves the HEAD forward and the second statement moves the HEAD backwards
 
-$ Which of the following states is not part of the file state lifecycle that is managed by a git repository?
-@ staged
-@ unmodified
-@ untracked
-@ committed*
-@ modified
+$ Which of the following states is not part of the file state lifecycle that is managed by a Git repository
+@ Staged
+@ Unmodified
+@ Untracked
+@ Committed*
+@ Modified
+
+$ What is an advantage of a Centralized version control system over Distributed 
+@ A central system always saves storage space on a central server versus a distributed system with a central shared/canonical repository
+@ Only in a central system can automatic tests be run every time after the construction of the system is completed
+@ A centralized system is more economical than a distributed one in terms of total storage space (that is - on all relevant computers and servers together)*
+@ A centralized system performs faster in most operations than a distributed system
+@ In a centralized system, loading the baseline to a system build is faster than in a distributed system (in any situation)
+
+$ In a distributed version control system, there is less operation load on the server than in a centralized system
+@ True*
+@ False
+
+$ In version control systems, a repository is basically just a folder that holds all the project code files of their versions
+@ True
+@ False*
+
+$ The check-out\checkout\co operation is an operation that returns a component to the repository of a version management system after the changes made to it
+@ True
+@ False*
+
+$ Which process is a direct part (not a sub-part of a part) of the software management concept?
+@ Version Management 
+@ Release Management
+@ System Building
+@ Change Management
+@ Configuration Management*
+
+$ Which statement is correct in the context of data structures in the Git repository
+@ The contents of each version of each managed component, as well as each commit, are represented by a hash code with 40 hexadecimal digits*
+@ The content of each version of each managed component is saved in the database as a file of the appropriate type - according to the file name and file type
+@ We use the rebase command instead of the merge command, if we want to keep the entire history of how and when changes arrived that we want to combine in their original form in a separate branch
+@ The HEAD pointer must contain a direct reference to saving a commit only
+@ A merge command will always be accompanied by the need to resolve conflicts
+
+$ In the Git version control system, if, during the synchronization of the changes from the local repository to the remote repository (push command), it turns out that there were changes in the synchronized branch in the remote repository (from other repositories - that is, by the other development participants), the Git system in the remote repository will try to resolve the conflicts by itself, and if unsuccessful, will automatically offer to perform manual merge conflicts in the remote repository
+@ True
+@ False*
+
+$ A Git-based distributed version control system is given, which also includes a shared central repository. A programmer in the company is required to make a correction to one of the components in the codeline, which is not necessarily one of those he worked on before. He must not interfere during his development with other programmers in the company who are working on the same codeline. What is the sequence and order of commands that he must execute (from left to right)
+@ checkout, branch, pull, add, commit, push, merge
+@ pull, branch, checkout, add, commit, merge, push*
+@ branch, pull, checkout, add, merge, push, commit
+@ pull, checkout, branch, add, merge, push, commit
+@ branch, pull, add, checkout, commit, push, merge
+
+$ Which sequence of state transitions correctly describes the life cycle of a component in a local Git repository (it is a partial transition sequence)
+@ untracked -> modified -> staged
+@ unmodified -> staged -> modified
+@ modified -> untracked -> modified
+@ staged -> unmodified -> modified*
+@ modified -> unmodified -> staged
+
+$ The Git commit command actually produces a new baseline for a software system in-development, even if it is not a release version but only an intermediate version
+@ True*
+@ False
+
+$ What is the correct statement regarding Git commands
+@ git branch test will create a new branch named 'test' and will move the HEAD pointer to the new branch 'test'
+@ git commit updates the files from the current working directory to the remote repository
+@ After git merge, there is always a need to deal with merge conflicts that are a result of merge
+@ git rebase disconnects a certain branch from the codeline and creates a new codline with no connection to the previous codeline
+@ git checkout target-branch-or-commit will move the HEAD pointer to the branch or a different commit, and the changes to the files in the working folder that also exist in the repository at the command destination won't be saved*
+
+$ What is a correct statement about branching and merging
+@ In merging, a new version of a software component is created by merging separate versions in the same codeline
+@ Usually, if there is no special reasoning, it is prefered not to do branching
+@ It possible to do merging, even if they didn't do branching before at all
+@ After branching, a new codeline is created from a version in the existing codeline*
+@ After branching, a dependency is created between the existing codeline and the new one
+
+$ In a distributed version control system, it is not necessarily possible to make a central repository
+@ True
+@ False*
+
+$ What is a correct statement in the context of the Git protocol and its commands?
+@ With the commit command, all managed files that are modified are always transferred to the repository
+@ In order to create a new branch and make changes to it, the following sequence of commands must be executed (Git commands, from left to right): branch, checkout, commit, commit, etc.*
+@ The way to prevent conflicts is to use a rebase operation instead of a merge operation
+@ The revert command returns the HEAD pointer together with the branch pointer back so that the only way to save a commit of HEAD before executing the command is with the help of hash code of the commit
+@ The revert command creates a new commit with the contents of some previous version so that we can later revert to the current version without using the commit hash code
+
+$ What is the name of a system version intended for the client(s)?
+@ Workspace
+@ Release*
+@ Mainline
+@ Baseline
+@ Codeline
+
+$ Which process is not a direct part (but can be a sub-part) of the software management concept?
+@ Version Management*
+@ Quality Management
+@ Process Improvement
+@ Project Design
+@ Project Management
 
 $ 
+
