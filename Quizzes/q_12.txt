@@ -1,0 +1,74 @@
+# Quiz 12
+
+$ The check-in\checkin\ci operation is an operation that returns (saves) a component to the repository of a version management system after changes were made to it
+@ True*
+@ False
+
+$ Which of the following is not an activity of Configuration Managements?
+@ System Configuration (maintaining a database of configuration values as well as a collection of possible components)*
+@ System Building
+@ Release Management
+@ Version Management
+@ Change Management
+
+$ In a traditional version control systems (not git) every time it saved a new version it save a full copy of all of the components
+@ True
+@ False*
+
+$ You can build a distributed version management system by using git.
+@ True*
+@ False
+
+$ Avi and Baruch need to work together on a project. Since the onset of COVID they work from the house. Because they live in different time zones, sometimes they are working at the same time and sometimes they work at different times. Their work server is large and powerful as opposed to Avi and Baruch's computers that are relatively weak and have a very limited memory (disk). Which type of version management system best meets their needs?
+@ centralized*
+@ local
+@ local and distributed
+@ local and centralized
+@ distributed
+
+$ A distributed version management system needs a special system to perform backup for the system’s server.
+@ True
+@ False*
+
+$ What is a sequence of different versions of the same component called?
+@ codeline*
+@ release
+@ baseline
+@ mainline
+@ workspace
+
+$ Which commands in git can be used to create a new local repository?
+@ init and clone*
+@ pull (only)
+@ init (only)
+@ commit (only)
+@ clone (only)
+
+$ Which of the following statements about conflict resolution in git is false?
+@ You must first solve all of the commit issues before you can do a merge commit
+@ You should save the state image after conflict resolution.
+@ Problems of conflicts arise when it is updating different files that are on the same branch.*
+@ You can directoy edit the content of the components when trying to resolve conflicts.
+@ Most development environments offer gui (graphical user interface ) tools to help deal with conflicts.
+
+$ A git-based version management system (git) saves (in its data structures) the versions of software system components in their full content and not by deltas (collections of changes) as traditional version management systems do
+@ True*
+@ False
+
+$ There is more than one commend in Git that you can use to create a local repository
+@ True*
+@ False
+
+$ What is the difference between the following two statements: "git checkout HEAD^^" and "git checkout HEAD~2"
+@ The first statement moves the head along with the branch that the HEAD points to (the current branch) and the second statement moves only the HEAD but the branch stays in the same place
+@ There is no difference. The consequences from both statements are the same.*
+@ The first statement moves the branch by force and the second statement doesn’t
+@ There is a syntax error in one of the two statements
+@ The first statement moves the HEAD forward and the second statement moves the HEAD backwards.
+
+$ Which of the following states is not part of the file state lifecycle that is managed by a git repository?
+@ staged
+@ unmodified
+@ untracked
+@ committed*
+@ modified
