@@ -25,8 +25,6 @@
         <Style TargetType="{x:Type RadioButton}">
             <Setter Property="FontSize" Value="18" />
         </Style>
-
-        <local:CompareAnswerConverter x:Key="CompareAnswerConverter"/>
     </Window.Resources>
 
     <Grid>
@@ -44,7 +42,9 @@
             HorizontalAlignment="Right"
             Margin="20 20 50 20">
             <DockPanel Margin="0 3 0 0">
-                <ToggleButton Click="ToggleSound_Click"/>
+                <ToggleButton 
+                    x:Name="SoundToggleBtn"
+                    Click="ToggleSound_Click"/>
                 <TextBlock
                     Text=" Sound"
                     FontWeight="SemiBold"
@@ -83,7 +83,7 @@
                     FontSize="24"
                     FontWeight="DemiBold"/>
                 <TextBlock 
-                    Text="{Binding RemainingSeconds}"
+                    Text="{Binding Clock.RemainingSeconds}"
                     d:Text="30"
                     FontSize="24"
                     FontWeight="DemiBold"/>
@@ -102,7 +102,7 @@
                         TextAlignment="Justify"
                         Margin="5"
                         TextWrapping="Wrap"
-                        Text="{Binding CurrentQuestion._question}"
+                        Text="{Binding CurrentQuestion.QuestionText}"
                         d:Text="Is the whole entire course really dumb?"
                         FontWeight="SemiBold"
                         FontSize="28"/>

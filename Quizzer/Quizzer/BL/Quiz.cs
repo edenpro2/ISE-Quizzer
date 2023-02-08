@@ -1,16 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace QuizApp.BL;
 
-public class Quiz : IEnumerable<Question>, INotifyPropertyChanged
+public class Quiz : IEnumerable<Question>
 {
-    public int Quiz_Num { get; set; } = -1;
-    public List<Question> Questions;
+    public List<Question> Questions { get; set; }
 
-    public Quiz(int Quiz_Num)
+    public Quiz()
     {
         Questions = new List<Question>();
     }
@@ -28,12 +25,5 @@ public class Quiz : IEnumerable<Question>, INotifyPropertyChanged
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();
-    }
-
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

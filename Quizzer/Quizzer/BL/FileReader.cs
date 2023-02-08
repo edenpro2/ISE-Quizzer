@@ -30,9 +30,16 @@ public static class FileReader
         ProjectDirectory = projectDirectory;
     }
 
-    public static string? GetFilePath(string filename, List<string> extensions)
+    public static string? GetFilePath(string filename, List<string>? extensions = null)
     {
         var projectPath = ProjectDirectory;
+
+        if (extensions == null)
+        {
+            var nameOnly = System.IO.Path.GetFileNameWithoutExtension(filename);
+            // extract extension from filename
+            extensions = new List<string> { filename[nameOnly.Length..] };
+        }
 
         return
             Directory
@@ -77,9 +84,6 @@ public static class FileReader
     public static IEnumerable<string> LoadTxt(string filename)
     {
         var path = GetFilePath(filename, new List<string> { ".txt" });
-        if (path == null)
-            return new List<string>();
-
-        return File.ReadAllLines(path).ToList();
+        return path == null ? new List<string>() : File.ReadAllLines(path).ToList();
     }
 }

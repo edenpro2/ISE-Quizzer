@@ -1,37 +1,53 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+﻿using System;
+using System.Collections.Generic;
 
 namespace QuizApp.BL;
 
-public class Question : INotifyPropertyChanged
+public class Question : AbstractViewModel
 {
-    public string _question { get; set; }
-    public List<string> _possibleAnswers { get; set; }
-    public string _answer { get; set; }
-    int identifier = -1;
-
-    public Question(string question, List<string> poss_ans, string answer)
+    private string _questionText = string.Empty;
+    public string QuestionText
     {
-        _question = question;
-        _possibleAnswers = poss_ans;
-        _answer = answer;
+        get => _questionText;
+        set
+        {
+            _questionText = value;
+            OnPropertyChanged();
+        }
+    }
 
-        identifier = _question.GetHashCode() % _possibleAnswers.GetHashCode() % _answer.GetHashCode();
+    private List<string>? _possibleAnswers;
+    public List<string>? PossibleAnswers
+    {
+        get => _possibleAnswers;
+        set
+        {
+            _possibleAnswers = value;
+            OnPropertyChanged();
+        }
+    }
+    private string _correctAnswer = string.Empty;
+    public string CorrectAnswer
+    {
+        get => _correctAnswer;
+        set
+        {
+            _correctAnswer = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public Question(string questionText = "", List<string>? possibleAnswers = null, string correctAnswer = "")
+    {
+        QuestionText = questionText;
+        PossibleAnswers = possibleAnswers;
+        CorrectAnswer = correctAnswer;
     }
 
     public override string ToString()
     {
-        return _question + '\n' +
-            string.Join(" ", _possibleAnswers.ToArray()) + '\n' +
-            _answer;
+        return "Question: " + QuestionText + '\n' + " " +
+            string.Join(" ", PossibleAnswers?.ToArray() ?? Array.Empty<string>()) + '\n' + " " + 
+            "Corr: " + CorrectAnswer;
     }
-
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-    }
-
 }

@@ -5,25 +5,22 @@ namespace QuizApp.BL;
 
 public static class Database
 {
-    public static List<Quiz> loadQuizzes()
+    public static List<Quiz> LoadQuizzes()
     {
         var quizzes = new List<Quiz>();
+        string questionText;
+        Question question;
+        string trimmed;
+        List<string> possibleAns;
 
-        for (var quiz_num = 1; quiz_num <= 12; quiz_num++)
+        for (var quizNum = 1; quizNum <= 12; quizNum++)
         {
-            var text = (List<string>)FileReader.LoadTxt($"/Quizzes/q_{quiz_num}.txt");
-            if (text == default)
-                continue;
-
+            var text = (List<string>)FileReader.LoadTxt($"/Quizzes/q_{quizNum}.txt");
             var joined = string.Join("", text.Select(o => o.ToString()).ToArray());
             var blocks = joined.Split('$').ToArray();
-            var q = new List<string>();
-            var question_text = "";
-            var possible_ans = new List<string>();
+            
             var answer = "";
-            var trimmed = "";
-            var quiz = new Quiz(quiz_num);
-            Question question;
+            var quiz = new Quiz();
 
             // questions inside each quiz
             foreach (var block in blocks)
@@ -32,11 +29,11 @@ public static class Database
                 // if open question 
                 if (index != -1)
                 {
-                    question_text = new string(block.Take(index).ToArray()).Trim();
+                    questionText = new string(block.Take(index).ToArray()).Trim();
                     trimmed = block.Remove(0, index);
-                    possible_ans = new List<string>(trimmed.Remove(0, 1).Split('~'));
-                    answer = possible_ans[0];
-                    question = new(question_text, possible_ans, answer);
+                    possibleAns = new List<string>(trimmed.Remove(0, 1).Split('~'));
+                    answer = possibleAns[0];
+                    question = new Question(questionText, possibleAns, answer);
                     quiz.AddQuestion(question);
                     continue;
                 }
@@ -44,25 +41,25 @@ public static class Database
                 // find answer symbol
                 index = block.IndexOf('@');
                 // question will be 
-                question_text = new string(block.Take(index).ToArray()).Trim();
+                questionText = new string(block.Take(index).ToArray()).Trim();
 
-                if (question_text.Count() < 1)
+                if (!questionText.Any())
                     continue;
 
                 // remove text until first '@' 
                 trimmed = block.Remove(0, index);
-                possible_ans = new List<string>(trimmed.Remove(0, 1).Split('@'));
-                possible_ans.ForEach(s => s.Trim());
-                var possible_ans_edited = new List<string>();
+                possibleAns = new List<string>(trimmed.Remove(0, 1).Split('@'));
+                possibleAns = possibleAns.Select(s => s.Trim()).ToList();
+                var possibleAnsEdited = new List<string>();
 
-                foreach (var ans in possible_ans)
+                foreach (var ans in possibleAns)
                 {
-                    possible_ans_edited.Add(ans.Trim().Replace("*", " "));
+                    possibleAnsEdited.Add(ans.Trim().Replace("*", " "));
                     if (ans.Contains('*'))
                         answer = ans.Replace("*", " ").Trim();
                 }
 
-                question = new(question_text, possible_ans_edited, answer);
+                question = new Question(questionText, possibleAnsEdited, answer);
                 quiz.AddQuestion(question);
             }
 

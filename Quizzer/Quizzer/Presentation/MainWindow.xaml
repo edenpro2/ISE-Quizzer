@@ -52,7 +52,7 @@
         
         <Image 
             Grid.RowSpan="3"
-            Source="C:\Users\Eden\source\repos\ISE-Quizzer\Resources\ise_bg.jpg"
+            Source="../Presentation/Resources/ise_bg.jpg"
             Stretch="Fill">
             <Image.Effect>
                 <BlurEffect Radius="30"/>
@@ -135,7 +135,7 @@
                 <Button
                     Content="Quiz Week 7"
                     Click="Quiz_BtnClick"/>
-                <TextBlock Text="Shadows + Relfection/Refraction"/>
+                <TextBlock Text="Shadows + Reflection/Refraction"/>
                 <Button
                     Content="Quiz Week 8"
                     Click="Quiz_BtnClick"/>
@@ -145,18 +145,16 @@
                 <Button
                     Content="Quiz Week 9"
                     Click="Quiz_BtnClick"/>
-                <TextBlock Text="Perf. Improvements + S.D. Methodolgies"/>
+                <TextBlock Text="Perf. Improvements + S.D. Methodologies"/>
                 <Button
                     Content="Quiz Week 10"
                     Click="Quiz_BtnClick"/>
-                <TextBlock Text="Testing, Reuse, Depe. and Sec., Soft. Mngmt "/>
+                <TextBlock Text="Testing, Reuse, Dpndcy. and Sec., Soft. Mngmt "/>
                 <Button
-                    Content="Quiz Week 11"
-                    Click="Unimplemented_Click"/>
+                    Content="Quiz Week 11"/>
                 <TextBlock Text="Software Configuration (Ver. Control)"/>
                 <Button
-                    Content="Quiz Week 12"
-                    Click="Unimplemented_Click"/>
+                    Content="Quiz Week 12"/>
             </StackPanel>
         </DockPanel>
 

@@ -77,7 +77,7 @@ public partial class SearchWindow : Window, INotifyPropertyChanged
 
     private List<Question>? Search(string searchText)
     {
-        return _questions.Where(que => que._question.ToLower().Contains(searchText.ToLower())).ToList();
+        return _questions.Where(que => que.QuestionText.ToLower().Contains(searchText.ToLower())).ToList();
     }
 
     public SearchWindow(List<Quiz> quizzes)

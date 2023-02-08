@@ -1,7 +1,6 @@
 ﻿using System.Windows;
-using QuizApp.Presentation;
 
-namespace QuizApp
+namespace QuizApp.Presentation
 {
     public partial class App
     {

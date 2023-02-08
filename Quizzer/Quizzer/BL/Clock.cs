@@ -1,58 +1,70 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Input;
 using System.Windows.Threading;
-using QuizApp.Presentation;
 
 namespace QuizApp.BL;
 
-public class Clock
+public class Clock : AbstractViewModel
 {
-    DispatcherTimer? timer;
-    QuizWindow quizWindow;
-    int elapsedSeconds = 0;
-    int allotedSeconds = 0;
-    public bool isRunning { get; private set; } = false;
+    private DispatcherTimer? _timer;
+    private int _elapsedSeconds;
+    private readonly int _allottedSeconds;
+    private int _remainingSeconds;
 
-    public Clock(int allotedSec, QuizWindow quizWin) // circular dependency -- to fix
+    public int RemainingSeconds
     {
-        allotedSeconds = allotedSec;
-        quizWindow = quizWin;
+        get => _remainingSeconds;
+        private set
+        {
+            _remainingSeconds = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public bool IsRunning { get; private set; }
+
+    public Clock(int allottedSec)
+    {
+        _allottedSeconds = allottedSec;
     }
 
     public void Start()
     {
         // if Start() is being called for the first time
-        if (timer == null)
+        if (_timer == null)
         {
-            timer = new DispatcherTimer(DispatcherPriority.Normal, Application.Current.Dispatcher);
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Tick += new EventHandler(timer_Ticked);
-        }
-        timer.Start();
-        isRunning = true;
-    }
-
-    // delegate
-    public void Stop()
-    {
-        timer.Stop();
-        timer = null;
-        elapsedSeconds = 0; 
-        isRunning = false;
-
-    }
-
-    private void timer_Ticked(object? sender, EventArgs e)
-    {
-        if (elapsedSeconds + 1 > allotedSeconds)
-        {
-            Stop();
+            _timer = new DispatcherTimer(DispatcherPriority.Normal, Application.Current.Dispatcher)
+            {
+                Interval = new TimeSpan(0, 0, 1)
+            };
+            _timer.Tick += Timer_Ticked;
         }
 
-        quizWindow.RemainingSeconds = allotedSeconds - ++elapsedSeconds;
+        _timer.Start();
+        IsRunning = true;
+    }
 
-        // Forcing the CommandManager to raise the RequerySuggested event
-        CommandManager.InvalidateRequerySuggested();
+    public void Pause()
+    {
+        if (_timer == null)
+            return;
+
+        _timer.Stop();
+        _timer = null;
+        _elapsedSeconds = 0;
+        IsRunning = false;
+    }
+
+    public void Rewind()
+    {
+        RemainingSeconds = _allottedSeconds;
+    }
+
+    private void Timer_Ticked(object? sender, EventArgs e)
+    {
+        if (_elapsedSeconds + 1 > _allottedSeconds)
+            Pause();
+
+        RemainingSeconds = _allottedSeconds - ++_elapsedSeconds;
     }
 }

@@ -41,12 +41,12 @@
                             </Grid.RowDefinitions>
                             <TextBlock 
                                 Grid.Row="0"
-                                Text="{Binding _question}"
+                                Text="{Binding Question}"
                                 TextWrapping="Wrap"
                                 TextAlignment="Justify"/>
                             <TextBlock
                                 Grid.Row="1"
-                                Text="{Binding _answer}"
+                                Text="{Binding CorrectAnswer}"
                                 FontWeight="Bold"
                                 TextWrapping="Wrap"
                                 TextAlignment="Justify"/> 
