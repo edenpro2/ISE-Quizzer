@@ -186,13 +186,6 @@ $ Which of the statements does not present one of the advantages of Software Reu
 @ Effective use of specialists
 @ Accelerated development
 
-$ A security company has purchased a system that will only allow certain (predefined) people to enter their building. The system includes a facial recognition system. Now the police are considering creating a system to monitor people who should be in isolation and this system will include the facial recognition system that is used by the security company. Which category of Software Reuse does this example belong to?
-@ Object Reuse
-@ Library Reuse
-@ Application Reuse
-@ Funciton Reuse
-@ Component Reuse*
-
 $ An ERP (Enterprise Resource Planning) system is an example of a COTS (Commercial Off the Shelf) system of COTS-solution type
 @ True*
 @ False
