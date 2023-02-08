@@ -59,7 +59,7 @@ $ There is more than one commend in Git that you can use to create a local repos
 @ True*
 @ False
 
-$ What is the difference between the following two statements: "git checkout HEAD^^" and "git checkout HEAD~2"
+$ What is the difference between the following two statements: "git checkout HEAD^^" , "git checkout HEAD~2"?
 @ The first statement moves the head along with the branch that the HEAD points to (the current branch) and the second statement moves only the HEAD but the branch stays in the same place
 @ There is no difference. The consequences from both statements are the same.*
 @ The first statement moves the branch by force and the second statement doesn’t
@@ -72,3 +72,5 @@ $ Which of the following states is not part of the file state lifecycle that is 
 @ untracked
 @ committed*
 @ modified
+
+$ 

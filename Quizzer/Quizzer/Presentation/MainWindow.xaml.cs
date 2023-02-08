@@ -39,6 +39,7 @@ public partial class MainWindow
         for (var i = 0; i < _maxQuestions; i++)
         {
             var index = rand.Next(total);
+
             questions.Add(allQuestions[index]);
             allQuestions.RemoveAt(index);
             total--;
