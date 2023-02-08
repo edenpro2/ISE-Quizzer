@@ -40,29 +40,37 @@
         <DockPanel 
             VerticalAlignment="Top"
             HorizontalAlignment="Right"
-            Margin="20 20 50 20">
-            <DockPanel Margin="0 3 0 0">
-                <ToggleButton 
+            Margin="50 20">
+            <DockPanel 
+                Margin="0 -2 20 0">
+                <ToggleButton
+                    Style="{StaticResource MaterialDesignFlatPrimaryToggleButton}"
+                    DataContext="{Binding RelativeSource={RelativeSource Self}}"
                     x:Name="SoundToggleBtn"
-                    Click="ToggleSound_Click"/>
-                <TextBlock
-                    Text=" Sound"
-                    FontWeight="SemiBold"
-                    FontSize="20"/>
+                    Click="ToggleSound_Click">
+                    <Image Width="24" Height="24">
+                        <Image.Style>
+                            <Style TargetType="{x:Type Image}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding IsChecked}" Value="true">
+                                        <Setter Property="Source" Value="Resources/volume.png"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding IsChecked}" Value="false">
+                                        <Setter Property="Source" Value="Resources/mute.png"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </ToggleButton>
             </DockPanel>
 
-            <Separator
-                Visibility="Hidden"
-                Width="20"/>
-
-            <DockPanel>
+            <DockPanel 
+             
+                Margin="0 0 20 0">
                 <TextBlock
-                    d:Text="0"
-                    Text="{Binding CurrentQuestionNum}"
-                    FontSize="24"
-                    FontWeight="Bold"/>
-                <TextBlock
-                    Text="/"
+                    d:Text="5/"
+                    Text="{Binding CurrentQuestionNum, StringFormat=0/}"
                     FontSize="24"
                     FontWeight="Bold"/>
                 <TextBlock 
@@ -72,22 +80,12 @@
                     FontWeight="Bold"/>
             </DockPanel>
 
-            <Separator
-                Visibility="Hidden"
-                Width="20"/>
-
-            <DockPanel>
-                <TextBlock
-                    Name="SecondsDisplay"
-                    Text="00:"
-                    FontSize="24"
-                    FontWeight="DemiBold"/>
-                <TextBlock 
-                    Text="{Binding Clock.RemainingSeconds}"
-                    d:Text="30"
-                    FontSize="24"
-                    FontWeight="DemiBold"/>
-            </DockPanel>
+            <TextBlock 
+                
+                Text="{Binding Clock.RemainingSeconds, StringFormat=0:00}"
+                d:Text="0:24"
+                FontSize="24"
+                FontWeight="DemiBold"/>
         </DockPanel>
 
         <Grid Margin="50 70 50 80">
@@ -110,10 +108,6 @@
                 <StackPanel
                     x:Name="RadioStackPanel"
                     Margin="0 20 0 0" />
-
-                
-
-                
             </StackPanel>
 
             <DockPanel
@@ -122,15 +116,10 @@
                 <Button 
                     Content="Previous"
                     Click="PrevBtn_Click"
-                    Background="LightBlue"
-                    BorderBrush="LightBlue"
-                    VerticalAlignment="Bottom"
-                    Margin="5">
-                </Button>
+                    Margin="5"/>
                 <Button 
                     Content="Next"
                     Click="NextBtn_Click"
-                    VerticalAlignment="Bottom"
                     Margin="5"/>
             </DockPanel>
         </Grid>

@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="$(ProjectDir)Presentation\Resources\*.*" CopyToOutputDirectory="Always" />
+		<Content Include="$(ProjectDir)Presentation\Resources\*.*" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 
 	<ItemGroup>

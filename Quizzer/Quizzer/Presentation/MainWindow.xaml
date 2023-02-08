@@ -205,6 +205,13 @@
                         FontSize="17"/>
                 </DockPanel>
             </Border>
+
+            <Button 
+                Height="50"
+                Width="275"
+                Margin="300 0 0 0" 
+                Click="PracticeTestBtn_Click"
+                Content="Practice Test"/>
         </DockPanel>
        
     </Grid>
