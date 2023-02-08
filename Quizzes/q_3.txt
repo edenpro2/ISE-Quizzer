@@ -1,5 +1,14 @@
 #Quiz 3
 
+$ A generic product does not need to perform Acceptance Tests since there is no customer that ordered
+the product
+@ True
+@ False*
+
+$ The project that we studied this semester included shooting rays from a camera to a 3x3 view plane. When testing our code, we performed only Boundary Value Analysis, aka we only tested the boundary cases
+@ True*
+@ False
+
 $ Usually, the test cases document an already checked component when its state changes. 
 @ True
 @ False*
