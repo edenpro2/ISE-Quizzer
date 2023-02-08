@@ -1,5 +1,15 @@
 # Quiz 12
 
+$ Which of the following statements most accurately describes git commands
+@ When doing a git checkout you can move the HEAD to a different branch, however the changes that
+have been made to the working directory will not be saved*
+@ A git commit updates the files from the working directory to the remote repository
+@ The git branch TEST command creates a new branch by the name of TEST and moves the HEAD to work
+on the TEST branch
+@ There is always a need to handle conflicts after executing the git merge command
+@ The git rebase command disconnects a specific branch from the codeline and creates a new codeline
+that has nothing to do with the previous one.
+
 $ The check-in\checkin\ci operation is an operation that returns (saves) a component to the repository of a version control system after changes were made to it
 @ True*
 @ False
