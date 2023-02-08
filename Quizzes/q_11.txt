@@ -54,7 +54,7 @@ $ Which of the following states is not part of the File State Lifecycle that is 
 
 $ What is the difference between the following two statements 
 git checkout HEAD^^ 
-git checkout HEAD~2 
+git checkout HEAD-2 (- tilda)
 @ There is a syntax error in one of the two statements
 @ The first statement moves the HEAD forward and the second statement moves the HEAD backwards
 @ The first statement moves the branch by force and the second statement doesn’t
