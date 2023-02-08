@@ -1,5 +1,10 @@
 # Quiz 2
 
+$ The Iterator design pattern is used to traverse elements of a collection; however, it requires
+knowledge of the underlying structure of the elements that are stored in the collection
+@ True
+@ False*
+
 $ Which of the following attributes is not an attribute of OOD (Object Oriented Design)? Choose the
 best answer
 @ CPU dependant*
