@@ -4,10 +4,6 @@ $ Software Reuse improves program performance
 @ True
 @ False*
 
-$ In a Customized Software Product, the acceptance testing program is coordinated with the customer and is based on the requirements specification coordinated with the customer
-@ True*
-@ False
-
 $ Which of the following is not an activity of Configuration Management
 @ Version Management
 @ Release Management
@@ -253,7 +249,7 @@ $ Using frameworks like those of .Net or in Java is an example of Software Reuse
 @ True*
 @ False
 
-$ In a customized software products, the Acceptance Testing plan is coordinated with the customer and is based on the Requirements Specification coordinated with the customer
+$ In a Customized Software Product, the acceptance testing program is coordinated with the customer and is based on the requirements specification coordinated with the customer
 @ True*
 @ False
 
