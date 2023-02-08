@@ -16,7 +16,7 @@ $ It is most likely that the code odor of immobility is accompanied by the code 
 @ True*
 @ False
 
-$ It is the job of a software engineer is to handle all aspects of the production of software products
+$ It is the job of a software engineer to handle all aspects of the production of software products
 @ True*
 @ False 
 
