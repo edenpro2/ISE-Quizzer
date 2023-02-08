@@ -29,8 +29,8 @@ $ In the Phong Model, we add the effect of a light source if its shadow ray inte
 @ False*
 
 $ After our first implementation of unshaded, our picture was messed up. It seemed to be that the light source(s) was/were shaded in places that there should not be any shading and we see a spotted picture. This could be caused by the fact that the head of the ray was included in the list of intersection points.
-@ True
-@ False*
+@ True*
+@ False
 
 $ In the implementation of the shading, after we discovered that flat bodies lost their lighting (they appear without any light shining on them even though light is clearly hitting them), we added in the unshaded method, a test to see if the geometric body (where we found the intersection point) is flat. (The test was carried out using the FlatGeometry "marking interface" that we created especially for this test). We then said that this test is still a BAD design. What was the main drawback?
 @ Law of Demeter - LoD
