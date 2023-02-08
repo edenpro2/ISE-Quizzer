@@ -138,8 +138,7 @@ $ Which of the following steps is not part of Risk-Driven Design for Safety-Crit
 @ Risk analysis
 @ Risk decomposition
 
-$ In the Risk Triangle, the width of the triangle expresses the balance of the severity of the risk and the costs, where a lower risk with
-higher coping costs is in the narrow part of the triangle
+$ In the Risk Triangle, the width of the triangle expresses the balance of the severity of the risk and the costs, where a lower risk with higher coping costs is in the narrow part of the triangle
 @ True*
 @ False
 
