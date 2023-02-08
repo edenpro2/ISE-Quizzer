@@ -55,7 +55,7 @@ $ A Git-based version control system (git) saves (in its data structures) the ve
 @ True*
 @ False
 
-$ There is more than one commend in Git that you can use to create a local repository
+$ There is more than one command in Git that you can use to create a local repository
 @ True*
 @ False
 
