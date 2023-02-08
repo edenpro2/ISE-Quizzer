@@ -1,5 +1,26 @@
 # Quiz 6
 
+$ Choose the statement that best describes the Builder Pattern
+@ The Builder Pattern allows us to build an object in such a way that we can guarantee that certain
+preconditions will exist before we use the object*
+@ The purpose of the Builder Pattern is to create objects that can implement an interface without them
+needing to know anything about its’ classes
+@ The purpose of the Builder Pattern is to create just one and only one object from each and every class
+@ A disadvantage of the Builder Pattern is that it adds irrelevant fields to all the classes that inherit from
+the class which uses the Builder pattern
+@ The Builder Pattern is a behavioral design pattern
+
+$ One of the following statements about the way that we used a PDS (Passive Data Structure) in our
+course is not correct. Choose the INCORRECT statement
+@ A PDS class cannot be nested within another class*
+@ A PDS class doesn’t have the main characteristics that we would be expect in OOD (Object Oriented
+Design)
+@ All of the fields of a PDS class have public access
+@ There aren’t any getters (get functions) in a PDS class
+@ PDS classes are used in order to prevent breaking the LoD (Law of Demeter) 
+
+$
+
 $ The Builder Design Pattern is a structural design pattern.
 @ True
 @ False*
