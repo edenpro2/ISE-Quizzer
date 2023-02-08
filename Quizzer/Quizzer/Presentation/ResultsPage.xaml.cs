@@ -1,22 +1,23 @@
 ﻿using System.Windows;
 
-namespace QuizApp.Presentation;
-
-public partial class ResultsWindow
+namespace QuizApp.Presentation
 {
-    public int TotalCorrect { get; set; }
-    public int TotalQuestions { get; set; }
-
-    public ResultsWindow(int totalCorrect, int totalQuestions)
+    public partial class ResultsWindow
     {
-        TotalCorrect = totalCorrect;
-        TotalQuestions = totalQuestions;
-        InitializeComponent();
-    }
+        public int TotalCorrect { get; set; }
+        public int TotalQuestions { get; set; }
 
-    private void MainBtn_Click(object sender, RoutedEventArgs e)
-    {
-        new MainWindow().Show();
-        Close();
+        public ResultsWindow(int totalCorrect, int totalQuestions)
+        {
+            TotalCorrect = totalCorrect;
+            TotalQuestions = totalQuestions;
+            InitializeComponent();
+        }
+
+        private void MainBtn_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            Close();
+        }
     }
 }

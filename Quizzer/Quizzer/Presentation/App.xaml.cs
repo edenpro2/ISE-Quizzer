@@ -1,17 +1,18 @@
 ﻿using System.Windows;
 
-namespace QuizApp.Presentation;
-
-public partial class App
+namespace QuizApp.Presentation
 {
-    public App()
+    public partial class App
     {
-        Startup += App_Startup;
-    }
+        public App()
+        {
+            Startup += App_Startup;
+        }
 
-    private static void App_Startup(object sender, StartupEventArgs e)
-    {
-        new MainWindow().Show();
+        private static void App_Startup(object sender, StartupEventArgs e)
+        {
+            new MainWindow().Show();
+        }
     }
 }
 

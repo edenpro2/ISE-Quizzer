@@ -1,29 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-namespace QuizApp.BL;
-
-public class Quiz : IEnumerable<Question>
+namespace QuizApp.BL
 {
-    public List<Question> Questions { get; set; }
-
-    public Quiz()
+    public class Quiz : IEnumerable<Question>
     {
-        Questions = new List<Question>();
-    }
+        public List<Question> Questions { get; set; }
 
-    public void AddQuestion(Question question)
-    {
-        Questions.Add(question);
-    }
+        public Quiz()
+        {
+            Questions = new List<Question>();
+        }
 
-    public IEnumerator<Question> GetEnumerator()
-    {
-        return Questions.GetEnumerator();
-    }
+        public void AddQuestion(Question question)
+        {
+            Questions.Add(question);
+        }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
+        public IEnumerator<Question> GetEnumerator()
+        {
+            return Questions.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
