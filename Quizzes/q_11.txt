@@ -8,4 +8,169 @@ $ In a Customized Software Product, the acceptance testing program is coordinate
 @ True*
 @ False
 
-$ 
+$ Which of the following is not an activity of Configuration Management
+@ Version Management
+@ Release Management
+@ System Building
+@ Change Management
+@ System Configuration (maintaining a database of configuration values as well as a collection of possible components)*
+
+$ A distributed Version Control System needs a special system to perform backup for the system’s server
+@ True
+@ False*
+
+$ What is a sequence of different versions of the same component called
+@ Workspace
+@ Mainline
+@ Release
+@ Baseline
+@ Codeline*
+
+$ The check-in\checkin\ci operation is an operation that returns (saves) a component to the repository of a Version Control System after changes were made to it
+@ True*
+@ False
+
+$ In a traditional version control system (not Git) every time it saved a new version it save a full copy of all of the components
+@ True
+@ False*
+
+$ Avi and Baruch need to work together on a project. Since the onset of COVID, they have been working from home. Because they live in different time zones, sometimes they work at the same time and sometimes they work at different times. Their work server is large and powerful, as opposed to Avi and Baruch's computers that are relatively weak and have very limited memory (disk). Which type of version control system best meets their needs
+@ Local and Centralized
+@ Local
+@ Centralized*
+@ Local and Distributed
+@ Distributed
+
+$ You can build a Distributed Version Control System by using Git
+@ True*
+@ False
+
+$ Which of the following states is not part of the File State Lifecycle that is managed by a Git repository
+@ Committed*
+@ Modified
+@ Untracked
+@ Staged
+@ Unmodified
+
+$ What is the difference between the following two statements 
+git checkout HEAD^^ 
+git checkout HEAD~2 
+@ There is a syntax error in one of the two statements
+@ The first statement moves the HEAD forward and the second statement moves the HEAD backwards
+@ The first statement moves the branch by force and the second statement doesn’t
+@ The first statement moves the head along with the branch that the HEAD points to (the current branch) and the second statement moves only the HEAD but the branch stays in the same place
+@ There is no difference. The consequences from both statements are the same*
+
+$ Which commands in Git can be used to create a new local repository
+@ init and clone*
+@ init (only)
+@ commit (only)
+@ pull (only)
+@ clone (only)
+
+$ There is more than one command in Git, that you can use, to create a local repository
+@ True*
+@ False
+
+$ A Git-based Version Control System saves (in its data structures) the versions of software system components in their full content and not by deltas (collections of changes) compared to traditional Version Control Systems
+@ True*
+@ False
+
+$ Which of the following statements about conflict resolution in Git is false
+@ You must first solve all of the commit issues before you can do a merge commit
+@ Most development environments offer GUI (Graphical User Interface) tools to help deal with conflicts
+@ You should save the state image after conflict resolution
+@ Problems of conflicts arise when it is updating different files that are on the same branch*
+@ You can directoy edit the content of the components when trying to resolve conflicts
+
+$ A security company has purchased a system that will only allow certain (predefined) people to enter their building. The syste includes a facial recognition system. Now the police are considering creating a system to monitor people who should be in isolation and this system will include the facial recognition system that is used by the security company. To which category of software reuse does this example belong to
+@ Component Reuse*
+@ Function Reuse
+@ Library Reuse
+@ Application Reuse
+@ Object Reuse
+
+$ What is incorrect regarding software testing processes and outputs
+@ Software development methodology has no effect on the planning process and the conduct of the tests*
+@ In the development state the unit tests are usually being performed by the developers
+@ In a large system, the system testing process is multi-staged and includes Subsystem Integration tests of and System Intergration tests
+@ Acceptance tests are being performed at the final stage of the testing process
+@ In customer-adapted systems, acceptance tests are performed by or together with the customer's representatives
+
+$ Which is correct regarding the relationship between Software Reuse and Dependability
+@ Software reuse may cause problems with maintainability because maintainability requires flexibility to adapt to new environments and software reuse is not so flexible
+@ Software reuse may cause problems with error tolerance because error tolerance requires software design so that there are no human errors, but in reuse there are always human errors
+@ Software reuse may cause problems with survivability because survivability requires the ability to maintain dark-functionality under attack, and software reuse cannot work under attack
+@ There is no relationship between the two
+@ Software reuse may cause problems with repairability because repairability requires access to the source code and in somecases of reuse, there is no access to the source code*
+
+$ Software Reuse allows reducing risks, increasing reliability
+@ True*
+@ False
+
+$ Software Reuse allows the project's managers to estimate the project development time more correctly
+@ True*
+@ False
+
+$ A Enterprise Resource Planning (ERP) system is an example of "Commercial Off The Shelf" (COTS) of COTS-Solution type
+@ True*
+@ False
+
+$ Software Reuse always saves maintenance costs
+@ True
+@ False*
+
+$ A Software Product Line uses the Software Reuse approach and is based on Generic Systems
+@ True*
+@ False
+
+$ Which of the claims does is not a present advantage of Software Reuse
+@ Increased dependability
+@ Accelerated development
+@ Effective use of specialsts
+@ Standard compliance
+@ Decreased maintenance costs*
+
+$ Which of the following steps is not part of Risk-Driven Design for Safety-Critical Systems
+@ Risk avoidance
+@ Risk reduction
+@ Risk identification*
+@ Risk analysis
+@ Risk decomposition
+
+$ In the Risk Triangle, the width of the triangle expresses the balance of the severity of the risk and the costs, where a lower risk with
+higher coping costs is in the narrow part of the triangle
+@ True*
+@ False
+
+$ One of the ways to add dependability to a software system is to include fault tolerance. The meaning of fault tolerance is to create protections in the code to handle improper user input
+@ True
+@ False*
+
+$ Security is part of the dependability components of software systems, but it is not a necessary part of every software system
+@ True*
+@ False
+
+$ Resource allocation does not appear in any of the following project schedule views: activity table, activity network, Gantt chart
+@ True*
+@ False
+
+$ During the project planning phase by the project managers, the training costs are part of the project cost estimate
+@ True*
+@ False
+
+$ What is the correct statement regarding scheduling in Agile methodology projects
+@ Release planning is done before initial estimation
+@ Task planning is done before release planning
+@ Initial estimation is done before story identification
+@ Release planning is done before iteration planning*
+@ Task planning is done before story identification
+
+$ Which statement is incorrect regarding the project schedule?
+@ The disadvantage of an activity table is the difficulty of identifying relationships and dependencies between activities
+@ In the Gantt [activity bar] chart, it is easy to identify whether there is flexibility in a certain activity schedule
+@ In a Gantt [activity bar] chart, you can identify unrelated activities that can be performed simultaneously
+@ In some forms of presentation of the project schedule there is no marking of milestones*
+@ The activity network diagram shows a graph of dependencies between project activities
+
+$
