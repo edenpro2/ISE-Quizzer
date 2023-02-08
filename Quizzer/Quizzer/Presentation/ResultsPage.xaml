@@ -38,6 +38,7 @@
             <Button 
                 Width="200"
                 Height="60"
+                BorderBrush="CadetBlue"
                 Background="CadetBlue"
                 FontSize="28"
                 HorizontalAlignment="Center"
