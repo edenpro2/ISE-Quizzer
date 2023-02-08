@@ -26,7 +26,7 @@ $ The check-in\checkin\ci operation is an operation that returns (saves) a compo
 @ True*
 @ False
 
-$ In a traditional version control system (not Git) every time it saved a new version it save a full copy of all of the components
+$ In a traditional version control system (not Git) every time it saved a new version, it saves a full copy of all of the components
 @ True
 @ False*
 
@@ -47,15 +47,6 @@ $ Which of the following states is not part of the File State Lifecycle that is 
 @ Untracked
 @ Staged
 @ Unmodified
-
-$ What is the difference between the following two statements 
-git checkout HEAD^^ 
-git checkout HEAD-2 (- tilda)
-@ There is a syntax error in one of the two statements
-@ The first statement moves the HEAD forward and the second statement moves the HEAD backwards
-@ The first statement moves the branch by force and the second statement doesn’t
-@ The first statement moves the head along with the branch that the HEAD points to (the current branch) and the second statement moves only the HEAD but the branch stays in the same place
-@ There is no difference. The consequences from both statements are the same*
 
 $ Which commands in Git can be used to create a new local repository
 @ init and clone*
@@ -108,9 +99,6 @@ $ Software Reuse allows the project's managers to estimate the project developme
 @ True*
 @ False
 
-$ A Enterprise Resource Planning (ERP) system is an example of "Commercial Off The Shelf" (COTS) of COTS-Solution type
-@ True*
-@ False
 
 $ Software Reuse always saves maintenance costs
 @ True
@@ -120,7 +108,7 @@ $ A Software Product Line uses the Software Reuse approach and is based on Gener
 @ True*
 @ False
 
-$ Which of the claims does is not a present advantage of Software Reuse
+$ Which of the claims is not a present advantage of Software Reuse
 @ Increased dependability
 @ Accelerated development
 @ Effective use of specialsts
@@ -175,18 +163,11 @@ $ In project planning (creating a schedule), defining a clear endpoint that defi
 $ Which statement is true about Software Testing processes and products
 @ In terms of planning the tests, the product of the system design is an Acceptance Test Plan
 @ An acceptance testing plan is used as an input to the system testing process
-@ The test plan is planned from general to specific and the execution of the tests from individual to general*
+@ The test plan is planned from general to specific and the execution of the tests from specific to general*
 @ The last step before implementing the systems is the system design
 @ The test plans and test performance are always from the individual to the general
 
-$ Which of the statements does not present one of the advantages of Software Reuse
-@ Decreased maintenance costs*
-@ Increased dependability
-@ Standard compliance
-@ Effective use of specialists
-@ Accelerated development
-
-$ An ERP (Enterprise Resource Planning) system is an example of a COTS (Commercial Off the Shelf) system of COTS-solution type
+$ A Enterprise Resource Planning (ERP) system is an example of "Commercial Off The Shelf" (COTS) of COTS-Solution type
 @ True*
 @ False
 
@@ -228,9 +209,9 @@ $ In the Project Planning Process, when you encounter a significant problem (whi
 @ False
 
 $ Project planning is carried out in three stages of the project life cycle: 
-1. Proposal
-2. Startup
-3. Periodically throughout the project (periodic). 
+1. Proposal 
+2. Startup 
+3. Periodically throughout the project (periodic).  
 In which of the stages is the project cost assessment carried out?
 @ Only in the startup stage
 @ Only in the proposal stage
