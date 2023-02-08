@@ -173,4 +173,7 @@ $ Which statement is incorrect regarding the project schedule?
 @ In some forms of presentation of the project schedule there is no marking of milestones*
 @ The activity network diagram shows a graph of dependencies between project activities
 
-$
+$ In project planning (creating a schedule), defining a clear endpoint that defines the end of a project activity is a necessary feature in defining a project activity
+@ True*
+@ False
+$ 
