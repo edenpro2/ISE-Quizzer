@@ -147,7 +147,7 @@ $ One of the ways to add dependability to a software system is to include fault 
 @ True
 @ False*
 
-$ Security is part of the dependability components of software systems, but it is not a necessary part of every software system
+$ Security is part of the Dependability Components of software systems, but it is not a necessary part of every software system
 @ True*
 @ False
 
@@ -170,10 +170,134 @@ $ Which statement is incorrect regarding the project schedule?
 @ The disadvantage of an activity table is the difficulty of identifying relationships and dependencies between activities
 @ In the Gantt [activity bar] chart, it is easy to identify whether there is flexibility in a certain activity schedule
 @ In a Gantt [activity bar] chart, you can identify unrelated activities that can be performed simultaneously
-@ In some forms of presentation of the project schedule there is no marking of milestones*
+@ In some presentation forms of the project schedule, there is no marking of milestones*
 @ The activity network diagram shows a graph of dependencies between project activities
 
 $ In project planning (creating a schedule), defining a clear endpoint that defines the end of a project activity is a necessary feature in defining a project activity
 @ True*
 @ False
+
+$ Which statement is true about Software Testing processes and products
+@ In terms of planning the tests, the product of the system design is an Acceptance Test Plan
+@ An acceptance testing plan is used as an input to the system testing process
+@ The test plan is planned from general to specific and the execution of the tests from individual to general*
+@ The last step before implementing the systems is the system design
+@ The test plans and test performance are always from the individual to the general
+
+$ Which of the statements does not present one of the advantages of Software Reuse
+@ Decreased maintenance costs*
+@ Increased dependability
+@ Standard compliance
+@ Effective use of specialists
+@ Accelerated development
+
+$ A security company has purchased a system that will only allow certain (predefined) people to enter their building. The system includes a facial recognition system. Now the police are considering creating a system to monitor people who should be in isolation and this system will include the facial recognition system that is used by the security company. Which category of Software Reuse does this example belong to?
+@ Object Reuse
+@ Library Reuse
+@ Application Reuse
+@ Funciton Reuse
+@ Component Reuse*
+
+$ An ERP (Enterprise Resource Planning) system is an example of a COTS (Commercial Off the Shelf) system of COTS-solution type
+@ True*
+@ False
+
+$ A disadvantage of Software Reuse can be that, sometimes, the cost and negative consequences of investing resources in the search and maintenance of external components can be greater than the cost of writing code ourselves
+@ True*
+@ False
+
+$ What is not part of the Dependability Means software system
+@ Reliability
+@ Saftey
+@ Availablity
+@ Security
+@ Usability*
+
+$ Threats are part of the Dependability attributes of a software system
+@ True
+@ False*
+
+$ Which statement is false in the context of a safety fault in a software system, in the Lufthansa plane crash in Warsaw, that was demonstrated?
+@ The problem was caused by an error in the code (therefore the software did not work according to the system requirements specification)*
+@ The safety component in the software prevented the pilots from recognizing that there was a change in the weather characteristics (such as wind direction) during the landing
+@ The software did not recognize that the plane had landed and assumed that it was still in the air
+@ Following the malfunction, the aircraft's braking system was not activated by the software
+@ There was an error in the system requirements specification
+
+$ Which of the charts is a graphical representation of the project schedule that best shows the relationships between activities and milestones in the project
+@ Resource allocation chart
+@ Activity network*
+@ Gantt [activity bar] chart
+@ None of the charts in other sections show the relationships between activities clearly
+@ Spreadsheet
+
+$ The Resources Allocation Chart is one of the charts that show the project phases and the dependencies between them
+@ True
+@ False*
+
+$ In the Project Planning Process, when you encounter a significant problem (which does not allow you to continue development according to the plan), it may not be necessary to stop the project and start a procedure of Risk Mitigation
+@ True*
+@ False
+
+$ Project planning is carried out in three stages of the project life cycle: 
+1. Proposal
+2. Startup
+3. Periodically throughout the project (periodic). 
+In which of the stages is the project cost assessment carried out?
+@ Only in the startup stage
+@ Only in the proposal stage
+@ Only in the proposal and startup stages
+@ Only in the proposal and periodic stages
+@ In all three*
+
+$ Using frameworks like those of .Net or in Java is an example of Software Reuse in the Middleware Integration Frameworks category
+@ True*
+@ False
+
+$ In a customized software products, the Acceptance Testing plan is coordinated with the customer and is based on the Requirements Specification coordinated with the customer
+@ True*
+@ False
+
+$ Which of the following Software Reuse approaches emphasizes adapting a unified product for different customers
+@ Software Product Lines and Application Frameworks
+@ Commercial-Off-the-Shelf (COTS) and Application Frameworks
+@ Software Product Lines and Enterprise Resource Planning (ERP)
+@ Application Framworks and Enterprise Resource Planning (ERP)
+@ Software Product Lines and Commercial-Off-the-Shelf (COTS)*
+
+$ Software Reuse may result in inefficient use of experts
+@ True
+@ False*
+
+$ In a Risk-Driven Approach, which of the following products is a result of Risk Reduction
+@ Risk Description
+@ Risk Analysis
+@ Dependability Requirements*
+@ Risk Assessment
+@ Root Cause Analysis
+
+$ The Survivability attribute is a part of the Safety System
+@ True
+@ False*
+
+$ What is the correct statement regarding scheduling in Agile methodology projects?
+@ Task planning is done before release planning
+@ Release planning is done before iteration planning *
+@ Initial estimation is done before story identification
+@ Release planning is done before initial estimation
+@ Task planning is done before story identification
+
+$ Which of the following steps is not part of risk-driven security requirement engineering
+@ Risk identification*
+@ Exposure assessment
+@ Threat identification
+@ Asset identification
+@ Asset value assessment 
+
+$ In the context of Dependability, with an emphasis on the characteristic of Security: when identifying the assets that could be the target of an attack (Asset Identification), it is mandatory to protect all the assets that we have identified
+@ True
+@ False*
+
 $ 
+
+
