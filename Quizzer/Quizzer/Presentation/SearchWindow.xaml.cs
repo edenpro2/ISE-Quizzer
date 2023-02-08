@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Windows;
 using System.Windows.Controls;
 using QuizApp.BL;
 
 namespace QuizApp.Presentation;
 
-public partial class SearchWindow : Window, INotifyPropertyChanged
+public partial class SearchWindow : INotifyPropertyChanged
 {
-    private BackgroundWorker Worker;
-    public List<Question> _questions;
+    private BackgroundWorker _worker;
+    private readonly List<Question> _questions;
 
     private List<Question> _possibleQuestions;
     public List<Question> PossibleQuestions
@@ -47,15 +46,15 @@ public partial class SearchWindow : Window, INotifyPropertyChanged
 
     private void StartSearch()
     {
-        Worker = new BackgroundWorker()
+        _worker = new BackgroundWorker()
         {
             WorkerReportsProgress = true,
             WorkerSupportsCancellation = true
         };
         
-        Worker.DoWork += Worker_DoWork!;
-        Worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
-        Worker.RunWorkerAsync();
+        _worker.DoWork += Worker_DoWork!;
+        _worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
+        _worker.RunWorkerAsync();
     }
 
     private void Worker_DoWork(object sender, DoWorkEventArgs e)
@@ -72,7 +71,7 @@ public partial class SearchWindow : Window, INotifyPropertyChanged
             throw new Exception("Fatal Error - stopping thread");
         }
 
-        Worker?.CancelAsync();
+        _worker.CancelAsync();
     }
 
     private List<Question>? Search(string searchText)
@@ -80,7 +79,7 @@ public partial class SearchWindow : Window, INotifyPropertyChanged
         return _questions.Where(que => que.QuestionText.ToLower().Contains(searchText.ToLower())).ToList();
     }
 
-    public SearchWindow(List<Quiz> quizzes)
+    public SearchWindow(IEnumerable<Quiz> quizzes)
     {
         InitializeComponent();
         _questions = quizzes.SelectMany(q => q.Questions).ToList();
