@@ -151,4 +151,13 @@ $ Which statement is true about the integration tests of a developer who planned
 @ In each test, we "shot" exactly one ray from the camera
 @ In every test, we checked that we got exactly the expected intersection point values 
 
-$
+$ Choose the statement that best describes Composite Design Pattern
+@ This pattern allows us to represent a hierarchy without needing to use a special tree structure*
+@ This pattern helps convert from an inheritance relationship between two classes to a composition
+relationship between two classes
+@ This pattern is a creational design pattern
+@ This design pattern allows us to represent the complex structure in a unique way (aka it can represent
+the complex structure in a manner that is different to how it represents the structure of the items)
+@ This design pattern is a behavioral design pattern
+
+$ 

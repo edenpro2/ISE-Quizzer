@@ -1,5 +1,32 @@
 #Quiz 8
 
+$ Which of the following statements best describes how we implemented shadows in the framework that we built? Choose the best answer
+@ The function unshaded will use a form of code reuse. Instead of creating a new function that will
+determine if the point is shaded, the function will reuse the function that calculates intersection points*
+@ The function unshaded is considered a badly written function since it breaks the Law of Demeter. This
+is due to the fact that the function includes the statement scene.geometries.findIntersections(…)
+which is a clear violation of the Law of Demeter
+@ The function unshaded is considered a badly written function since it breaks the Responsibility Driven
+Design approach - the function unshaded should be included as a function of the class Light (and not
+in Renderer) since it is the light which is being shaded
+@ The function calcLocalEffects is considered a badly written function since it causes high fragility – when
+we change the function, we often have unrelated issues in other parts of the framework that we built
+@ The function calcLocalEffects is considered a badly written function since it causes high viscosity –
+every time we try to upgrade the framework to create a more realistic picture, we need to do major
+changes to this function
+
+$ In building our project we changed our code so that we no longer use the unshaded function but instead use the transparency function. Which of the following did not occur when we made this change?
+@ We had to make changes to the functions that handle the global effects*
+@ We had to take care of the objects that create partial shading
+@ We had to move from a function that returned a boolean value to a function that returns a floatingpoint numeric value
+@ We had to decrease the intensity of the light that reaches the point. The amount that we decreased
+the intensity is dependent on the material of certain geometrical objects
+@ We had to make changes in the functions that handle the local effects
+
+$ In the framework that we built this semester, the only secondary rays that we considered were the rays that were used for reflection and refraction.
+@ True
+@ False*
+
 $ The "backlighting" phenomenon that we faced in the implementation of the Phong Model sometimes disappears in the sphere after the implementation of shading
 @ True*
 @ False

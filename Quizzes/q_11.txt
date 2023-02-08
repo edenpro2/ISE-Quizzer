@@ -1,5 +1,9 @@
 # Quiz 11
 
+$ In the SDLC – Software Delivery Life Cycle, the customer is involved in testing the product during the Evaluation phase
+@ True
+@ False*
+
 $ Software Reuse improves program performance
 @ True
 @ False*

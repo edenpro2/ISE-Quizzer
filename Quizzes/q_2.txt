@@ -1,5 +1,45 @@
 # Quiz 2
 
+$ The Iterator design pattern is used to traverse elements of a collection; however, it requires
+knowledge of the underlying structure of the elements that are stored in the collection
+@ True
+@ False*
+
+$ Which of the following attributes is not an attribute of OOD (Object Oriented Design)? Choose the
+best answer
+@ CPU dependant*
+@ Uses code reuse
+@ Uses the divide and conquer approach
+@ Is aesthetically organized
+@ Is easy to debug
+
+$ Choose the statement that best describes Design Patterns
+@ Design patterns are typical solutions to commonly occurring problems that exist in the world of
+software engineering*
+@ Interfaces of generic Lists are examples that fall into category of the Creational design pattern
+@ Not all programming languages can implement design patterns
+@ The refactoring that was done in our project is an example of how to implement a design pattern
+@ UML is a type of design pattern
+
+$ In which of the following cases did we not calculate the dot product. Choose the best answer
+@ When we were given two axes and had to calculate the third axis. (For example, when we were
+improving the picture by using the super-sampling algorithm and needed to calculate the target area)*
+@ When we calculated the vector’s projection onto a line (by using the line’s unit vector)
+@ When we calculated the cosine of the angle between the normal and the vector that began at the light
+source
+@ When we calculated the cosine of the angle between the original ray and the reflection ray
+@ When we calculated the cosine of the angle between the vector that began at the light source and the
+ray whose direction is toward the light source
+
+$ Using RGB values for the implementation of the picture color model belongs to the Software Domain
+@ True*
+@ False
+
+$ The purpose of high cohesion is to guarantee a strong connection between two objects if one of the
+objects uses the other object
+@ True
+@ False*
+
 $ u = (-2,-5,-7) Calculate the x-coordinate value of vector û [that is - "unit vector" of u or normalized u vector] (round up to two digits after the decimal point)
 
 ~ -0.23
