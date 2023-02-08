@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MaterialDesignThemes.Wpf;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace QuizApp.BL;
@@ -18,18 +19,16 @@ public static class Database
             var text = (List<string>)FileReader.LoadTxt($"/Quizzes/q_{quizNum}.txt");
             var joined = string.Join("", text.Select(o => o.ToString()).ToArray());
             var blocks = joined.Split('$').ToArray();
-            
+
             var answer = "";
             var quiz = new Quiz();
 
             // questions inside each quiz
             foreach (var block in blocks)
             {
-                var index = block.IndexOf('~'); //index of the tilda (open answer solution)
-                //  skip the trouble-some question for week 12
-
-                // if open question
-                if (index != -1 && quizNum != 12)
+                var index = block.IndexOf('~');
+                // if open question 
+                if (index != -1)
                 {
                     questionText = new string(block.Take(index).ToArray()).Trim();
                     trimmed = block.Remove(0, index);
@@ -40,7 +39,7 @@ public static class Database
                     continue;
                 }
 
-                // find answer symbol (T/F or multiple choice)
+                // find answer symbol
                 index = block.IndexOf('@');
                 // question will be 
                 questionText = new string(block.Take(index).ToArray()).Trim();

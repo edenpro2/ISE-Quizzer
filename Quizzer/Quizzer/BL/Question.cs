@@ -37,6 +37,11 @@ public class Question : AbstractViewModel
         }
     }
 
+    public override int GetHashCode()
+    {
+        return _questionText.GetHashCode() + _correctAnswer.GetHashCode();
+    }
+
     public Question(string questionText = "", List<string>? possibleAnswers = null, string correctAnswer = "")
     {
         QuestionText = questionText;
@@ -47,7 +52,6 @@ public class Question : AbstractViewModel
     public override string ToString()
     {
         return "Question: " + QuestionText + '\n' + " " +
-            string.Join(" ", PossibleAnswers?.ToArray() ?? Array.Empty<string>()) + '\n' + " " + 
-            "Corr: " + CorrectAnswer;
+               "Corr: " + CorrectAnswer;
     }
 }

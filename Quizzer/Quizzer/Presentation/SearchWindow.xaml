@@ -15,15 +15,22 @@
             <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         <TextBox
-            Style="{StaticResource MaterialDesignOutlinedTextBox}"
-            Grid.Row="0"
             Name="SearchBar"
-            matd:HintAssist.HelperText="Search"
+            Style="{StaticResource MaterialDesignOutlinedTextBox}"
+            Margin="20 0"
+            FontSize="22"
             VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            Width="820"
-            FontSize="16"
-            TextChanged="searchChangedEventHandler"/>
+            HorizontalAlignment="Stretch"
+            TextChanged="searchChangedEventHandler" Height="61"  >
+            <matd:HintAssist.Hint>
+                <DockPanel 
+                    VerticalAlignment="Center" 
+                    HorizontalAlignment="Center">
+                    <Image Source="Resources/magnifier.png" Height="31" Width="22"/>
+                    <TextBlock Text=" Search" FontSize="22"/>
+                </DockPanel>
+            </matd:HintAssist.Hint>
+        </TextBox>
 
         <ListView
             Margin="33 0 0 0"
@@ -49,15 +56,11 @@
                                 Text="{Binding CorrectAnswer}"
                                 FontWeight="Bold"
                                 TextWrapping="Wrap"
-                                TextAlignment="Justify"/> 
+                                TextAlignment="Justify"/>
                         </Grid>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
-          
-            
         </ListView>
-        
-
     </Grid>
 </Window>

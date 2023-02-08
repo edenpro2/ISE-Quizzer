@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuizApp.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,7 +8,6 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using QuizApp.BL;
 
 namespace QuizApp.Presentation;
 
@@ -20,7 +20,6 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     private static readonly SoundPlayer CorrectSoundPlayer = new(FileReader.GetFilePath("right_answer.wav"));
     private static readonly SoundPlayer WrongSoundPlayer = new(FileReader.GetFilePath("wrong_answer.wav"));
     private bool _soundToggled;
-    public string CorrectAns { get; set; } = "";
     private readonly Thickness _highlightThickness = new(2);
 
     // Backend Related
@@ -31,15 +30,14 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     public Question CurrentQuestion
     {
         get => _currentQuestion;
-        set
+        private set
         {
             _currentQuestion = value;
             OnPropertyChanged();
         }
-    } 
+    }
 
     public int MaxQuestions { get; }
-    private int _totalCorrect;
     private int _currentQuestionNum;
     public int CurrentQuestionNum
     {
@@ -52,22 +50,13 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     }
 
     // Timer logic
-    private bool _isTimed;
-    private Clock _clock;
-    public Clock Clock
-    {
-        get => _clock;
-        set
-        {
-            _clock = value;
-            OnPropertyChanged();
-        }
-    }
+    private readonly bool _isTimed;
+    private readonly Clock _clock;
 
-    private bool[,] correctAnswers;
+    private readonly bool[,] _correctAnswers;
 
-    const int firstTimeRow = 0;
-    const int questionRow = 1;
+    private const int FirstTimeRow = 0;
+    private const int QuestionRow = 1;
 
     private const int DefaultAllottedSec = 30;
 
@@ -76,11 +65,11 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         _questions = questions;
         MaxQuestions = maxQuestions;
         CurrentQuestion = _questions[CurrentQuestionNum];
-        correctAnswers = new bool[2, MaxQuestions];
+        _correctAnswers = new bool[2, MaxQuestions];
 
-        for (var i = 0; i < correctAnswers.GetLength(0); i++)
+        for (var i = 0; i < _correctAnswers.GetLength(0); i++)
         {
-            correctAnswers[firstTimeRow, i] = true;
+            _correctAnswers[FirstTimeRow, i] = true;
         }
 
         _isTimed = isTimed;
@@ -117,11 +106,11 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         if (_isTimed)
         {
             SetClock(question);
-            Clock.Start();
+            _clock.Start();
         }
 
-        CorrectAns = _questions[CurrentQuestionNum].CorrectAnswer;
-        
+        var CorrectAns = _questions[CurrentQuestionNum].CorrectAnswer;
+
         // reorder multiple choice questions
         if (question.PossibleAnswers.Count > 2)
         {
@@ -163,16 +152,16 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
                 if (possibleAnswer.Contains(CorrectAns))
                 {
                     // first row will be 
-                    if (correctAnswers[firstTimeRow, CurrentQuestionNum])
+                    if (_correctAnswers[FirstTimeRow, CurrentQuestionNum])
                     {
-                        correctAnswers[firstTimeRow, CurrentQuestionNum] = false;
-                        correctAnswers[questionRow, CurrentQuestionNum] = true;
+                        _correctAnswers[FirstTimeRow, CurrentQuestionNum] = false;
+                        _correctAnswers[QuestionRow, CurrentQuestionNum] = true;
                     }
 
                     if (_soundToggled)
                         CorrectSoundPlayer.Play();
 
-                    if (_clock is { IsRunning: true})
+                    if (_clock is { IsRunning: true })
                         _clock.Pause();
 
                     border.Background = _correctColorGreen;
@@ -182,7 +171,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
                 // answer incorrect
                 else
                 {
-                    correctAnswers[firstTimeRow, CurrentQuestionNum] = false;
+                    _correctAnswers[FirstTimeRow, CurrentQuestionNum] = false;
 
                     if (_soundToggled)
                         WrongSoundPlayer.Play();
@@ -217,12 +206,12 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         if (CurrentQuestionNum + 1 >= MaxQuestions)
         {
             var totalCorrect = 0;
-            for(var i = 0; i < MaxQuestions; i++)
+            for (var i = 0; i < MaxQuestions; i++)
             {
-                if (correctAnswers[questionRow, i])
+                if (_correctAnswers[QuestionRow, i])
                     totalCorrect++;
             }
-           
+
             new ResultsWindow(totalCorrect, _questions.Count).Show();
             Close();
             return;
@@ -235,7 +224,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
 
         if (_isTimed)
         {
-            Clock.Start();
+            _clock.Start();
         }
     }
 
@@ -245,7 +234,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
         if (CurrentQuestionNum - 1 < 0)
             return;
 
-        if (Clock is { IsRunning:true})
+        if (_clock is { IsRunning: true })
         {
             _clock.Pause();
             _clock.Rewind();
@@ -257,7 +246,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
 
         if (_isTimed)
         {
-            Clock.Start();
+            _clock.Start();
         }
     }
 
@@ -271,7 +260,7 @@ public partial class QuizWindow : Window, INotifyPropertyChanged
     {
         _soundToggled = (bool)SoundToggleBtn.IsChecked;
     }
-    
+
     #region INotify
 
     public event PropertyChangedEventHandler? PropertyChanged;

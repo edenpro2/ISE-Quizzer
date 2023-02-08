@@ -8,7 +8,7 @@ using System.Windows.Controls.Primitives;
 
 namespace QuizApp.Presentation;
 
-public partial class MainWindow  
+public partial class MainWindow
 {
     private readonly List<Quiz> _quizzes = Database.LoadQuizzes();
     private const int DefaultMax = 10;
@@ -47,7 +47,7 @@ public partial class MainWindow
 
         new QuizWindow(questions, _maxQuestions, _isTimed).Show();
         // close this window
-        Close(); 
+        Close();
     }
 
     private void SearchBtn_Click(object sender, RoutedEventArgs e)
@@ -62,6 +62,6 @@ public partial class MainWindow
 
     private void TimerToggle_Click(object sender, RoutedEventArgs e)
     {
-         _isTimed = (bool)(sender as ToggleButton).IsChecked; //isChecked from bool? to bool
+        _isTimed = (bool)(sender as ToggleButton).IsChecked; //isChecked from bool? to bool
     }
 }

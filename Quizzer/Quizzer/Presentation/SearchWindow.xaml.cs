@@ -1,11 +1,10 @@
-﻿using System;
+﻿using QuizApp.BL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
-using MaterialDesignColors;
-using QuizApp.BL;
 
 namespace QuizApp.Presentation;
 
@@ -52,7 +51,7 @@ public partial class SearchWindow : INotifyPropertyChanged
             WorkerReportsProgress = true,
             WorkerSupportsCancellation = true
         };
-        
+
         _worker.DoWork += Worker_DoWork!;
         _worker.RunWorkerCompleted += Worker_RunWorkerCompleted;
         _worker.RunWorkerAsync();

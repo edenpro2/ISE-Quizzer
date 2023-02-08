@@ -70,14 +70,19 @@
                 Foreground="White"
                 FontSize="40"/>
 
-
             <Button 
-                Content="Search"
                 HorizontalContentAlignment="Left"
                 Width="250"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Right"
                 Click="SearchBtn_Click">
+                <Button.Content>
+                    <DockPanel 
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Center">
+                        <Image Source="Resources/magnifier.png" Height="31" Width="22"/>
+                    </DockPanel>
+                </Button.Content>
                 <Button.Style>
                     <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatAccentBgButton}">
                         <Setter Property="FontSize" Value="16"/>
@@ -170,7 +175,9 @@
                 Background="#dddddd"
                 Margin="65 0 0 0">
                 <DockPanel Margin="5">
-                    <ToggleButton Click="MaxQuizToggle_OnClick"/>
+                    <ToggleButton 
+                        Click="MaxQuizToggle_OnClick">
+                    </ToggleButton>
                     <TextBlock 
                         Text=" MAX QUESTIONS MODE"
                         VerticalAlignment="Center"
