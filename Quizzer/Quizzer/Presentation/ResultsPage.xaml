@@ -3,50 +3,172 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:livecharts="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       Height="700"
       Width="1200"
       Title="ResultsPage"
       WindowStartupLocation="CenterScreen"
-      DataContext="{Binding RelativeSource={RelativeSource Self}}"
-      Background="White">
+      DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <Window.Resources>
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontSize" Value="82"/>
+            <Setter Property="FontSize" Value="60"/>
+        </Style>
+
+        <Style TargetType="{x:Type materialDesign:Card}">
+            <Setter Property="UniformCornerRadius" Value="10"/>
+            <Setter Property="Background" Value="{StaticResource MaterialDesignPaper}"/>
+            <Setter Property="materialDesign:ElevationAssist.Elevation" Value="Dp2"/>
         </Style>
     </Window.Resources>
 
-    <Grid Margin="10">
-        <StackPanel  
-            Margin="100"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center">
-            <DockPanel
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center">
-                <TextBlock
-                    Text="{Binding TotalCorrect}"
-                    d:Text="5"/>
-                <TextBlock
-                    Text="/"/>
-                <TextBlock
-                    d:Text="10"
-                    Text="{Binding TotalQuestions}"/>
-            </DockPanel>
-            <Button 
-                Width="200"
-                Height="60"
-                BorderBrush="CadetBlue"
-                Background="CadetBlue"
-                FontSize="28"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Content="Main Page"
-                Click="MainBtn_Click"
-                Margin="10" />
-        </StackPanel>
+    <Grid
+        Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:Card
+            UniformCornerRadius="10"
+            Background="{StaticResource MaterialDesignPaper}"
+            materialDesign:ElevationAssist.Elevation="Dp2"
+            Margin="50"
+            Grid.Column="0">
+
+            <Grid>
+                <Grid 
+                    VerticalAlignment="Top">
+                    <TextBlock 
+                        Text="Score" 
+                        FontSize="40"
+                        HorizontalAlignment="Center"/>
+                    <livecharts:Gauge 
+                        Margin="70"
+                        Width="200"
+                        Height="200"
+                        Uses360Mode="True"
+                        From="0" To="100" 
+                        Foreground="{x:Null}"
+                        LabelsVisibility="Hidden"
+                        Value="{Binding Score}"
+                        d:Value="60"
+                        InnerRadius="40">
+                        <livecharts:Gauge.GaugeRenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="90"/>
+                                <ScaleTransform ScaleX="1"/>
+                            </TransformGroup>
+                        </livecharts:Gauge.GaugeRenderTransform>
+                    </livecharts:Gauge>
+
+                    <Border 
+                        Background="White"
+                        CornerRadius="150"
+                        Width="160"
+                        Height="160">
+                        <DockPanel
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding TotalCorrect}" d:Text="6"/>
+                            <TextBlock Text="/"/>
+                            <TextBlock Text="{Binding TotalQuestions}" d:Text="10"/>
+                        </DockPanel>
+                    </Border>
+                </Grid>
+
+                <Button
+                    VerticalAlignment="Bottom"
+                    Margin="50"
+                    Width="200"
+                    Height="60"
+                    BorderBrush="CadetBlue"
+                    Background="CadetBlue"
+                    FontSize="28"
+                    Content="Main Page"
+                    Click="MainBtn_Click"/>
+            </Grid>
+        </materialDesign:Card>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <materialDesign:Card Grid.Row="0" Margin="30 50 50 30">
+                 <!--<livecharts:CartesianChart
+                     Series="{Binding TimeStamps}"
+                     AxisY="{Binding Answered}">
+
+                 </livecharts:CartesianChart>-->
+                
+            </materialDesign:Card>
+
+            <materialDesign:Card Grid.Row="1" Margin="30 30 50 50">
+                <Grid>
+                    <TextBlock
+                        Text="Review" 
+                        FontSize="20" 
+                        Margin="10" 
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"/>
+
+                    <ScrollViewer  
+                        VerticalScrollBarVisibility="Disabled" 
+                        Margin="10 45 10 15">
+                        <ListBox
+                            ItemsSource="{Binding incorrectAnswered}"
+                            d:ItemsSource="{d:SampleData ItemCount=10}"
+                            IsSynchronizedWithCurrentItem="true"
+                            HorizontalContentAlignment="Stretch"
+                            ScrollViewer.CanContentScroll="False"
+                            ScrollViewer.IsDeferredScrollingEnabled="True"
+                            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                            VirtualizingPanel.ScrollUnit="Pixel"
+                            VirtualizingStackPanel.IsVirtualizing="True">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Border 
+                                        Margin="5"
+                                        CornerRadius="5"
+                                        Background="White">
+                                        <StackPanel>
+                                            <TextBlock 
+                                                Margin="5"
+                                                Text="{Binding QuestionText}"
+                                                TextWrapping="Wrap"
+                                                FontSize="16"
+                                                FontWeight="Bold"
+                                                TextAlignment="Justify"/>
+                                            <TextBlock
+                                                Margin="5"
+                                                Text="{Binding CorrectAnswer, StringFormat=Answer: {0}}"
+                                                TextWrapping="Wrap"
+                                                FontWeight="SemiBold"
+                                                FontSize="16"
+                                                Foreground="ForestGreen"
+                                                TextAlignment="Justify"/>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                            <ListBox.ItemContainerStyle>
+                                <Style TargetType="ListBoxItem">
+
+                                </Style>
+                            </ListBox.ItemContainerStyle>
+                        </ListBox>
+                    </ScrollViewer>
+                    
+                </Grid>
+            </materialDesign:Card>
+
+        </Grid>
 
     </Grid>
 </Window>
+ 

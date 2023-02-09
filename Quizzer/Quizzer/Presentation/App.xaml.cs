@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
+using QuizApp.BL;
 
 namespace QuizApp.Presentation
 {
@@ -11,7 +13,9 @@ namespace QuizApp.Presentation
 
         private static void App_Startup(object sender, StartupEventArgs e)
         {
-            new MainWindow().Show();
+            var q = Database.LoadQuizzes();
+            new ResultsWindow(5, 10, q[0].Take(10).ToList()).Show();
+            // new MainWindow().Show();
         }
     }
 }

@@ -39,7 +39,7 @@ namespace QuizApp.BL
 
         public int QuizNum { get; }
 
-        public int AnsweredCorrectly { get; set; } 
+        public int AnsweredCorrectly { get; set; }
         public bool IsFirstTry { get; set; } = true;
 
         public Question(string questionText, IEnumerable<string> possibleAnswers, string correctAnswer, int quizNum)

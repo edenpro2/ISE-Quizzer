@@ -27,6 +27,7 @@ namespace QuizApp.Presentation
 
         // Backend Related
         private readonly List<Question> _questions;
+        private readonly List<Question> _incorrectQuestions = new();
 
         private Question _currentQuestion;
         public Question CurrentQuestion
@@ -55,7 +56,6 @@ namespace QuizApp.Presentation
         private readonly bool _isTimed;
         public Clock Clock { get; }
         private const int DefaultAllottedSec = 30;
-
 
         public QuizWindow(List<Question> questions, int maxQuestions, bool isTimed)
         {
@@ -159,7 +159,11 @@ namespace QuizApp.Presentation
                     // answer incorrect
                     else
                     {
-                        question.IsFirstTry = false;
+                        if (question.IsFirstTry)
+                        {
+                            question.IsFirstTry = false;
+                            _incorrectQuestions.Add(question);
+                        }
 
                         if (_soundToggled)
                             WrongSoundPlayer.Play();
@@ -201,10 +205,10 @@ namespace QuizApp.Presentation
                         LowScorePlayer.Play();
                     else if (totalCorrect < 24)
                         MediumScorePlayer.Play();
-                    else 
+                    else
                         PassedScorePlayer.Play();
                 }
-                new ResultsWindow(totalCorrect, _questions.Count).Show();
+                new ResultsWindow(totalCorrect, _questions.Count, _incorrectQuestions).Show();
                 Close();
                 return;
             }
