@@ -1,5 +1,10 @@
 # Quiz 2
 
+$ The Util class we developed completely resolves the side effects of floating
+point accuracy
+@ True
+@ False*
+
 $ The Iterator design pattern is used to traverse elements of a collection; however, it requires
 knowledge of the underlying structure of the elements that are stored in the collection
 @ True
