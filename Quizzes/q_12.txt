@@ -30,22 +30,22 @@ $ You can build a distributed version control system by using Git
 @ False
 
 $ Avi and Baruch are both hired to work on a project. Since COVID they generally work from their homes. Since they are in different time zones, they sometimes work on the project at the same time and sometimes work on the project at different times. While the company’s server is state of the art, Avi and Baruch both have simple computers with little memory. Which type of version management system/systems would best fit their needs
-@ centralized*
-@ local
-@ local and distributed
-@ local and centralized
-@ distributed
+@ Local and Centralized
+@ Local
+@ Centralized*
+@ Local and Distributed
+@ Distributed
 
 $ A distributed version control system needs a special system to perform backup for the system’s server
 @ True
 @ False*
 
 $ What is a sequence of different versions of the same component called
-@ codeline*
-@ release
-@ baseline
-@ mainline
-@ workspace
+@ Workspace
+@ Mainline
+@ Release
+@ Baseline
+@ Codeline*
 
 $ Which commands in Git can be used to create a new local repository
 @ init and clone*
