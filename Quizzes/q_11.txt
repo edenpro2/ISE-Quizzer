@@ -8,72 +8,6 @@ $ Software Reuse improves program performance
 @ True
 @ False*
 
-$ Which of the following is not an activity of Configuration Management
-@ Version Management
-@ Release Management
-@ System Building
-@ Change Management
-@ System Configuration (maintaining a database of configuration values as well as a collection of possible components)*
-
-$ A distributed Version Control System needs a special system to perform backup for the system’s server
-@ True
-@ False*
-
-$ What is a sequence of different versions of the same component called
-@ Workspace
-@ Mainline
-@ Release
-@ Baseline
-@ Codeline*
-
-$ The check-in\checkin\ci operation is an operation that returns (saves) a component to the repository of a Version Control System after changes were made to it
-@ True*
-@ False
-
-$ In a traditional version control system (not Git) every time it saved a new version, it saves a full copy of all of the components
-@ True
-@ False*
-
-$ Avi and Baruch need to work together on a project. Since the onset of COVID, they have been working from home. Because they live in different time zones, sometimes they work at the same time and sometimes they work at different times. Their work server is large and powerful, as opposed to Avi and Baruch's computers that are relatively weak and have very limited memory (disk). Which type of version control system best meets their needs
-@ Local and Centralized
-@ Local
-@ Centralized*
-@ Local and Distributed
-@ Distributed
-
-$ You can build a Distributed Version Control System by using Git
-@ True*
-@ False
-
-$ Which of the following states is not part of the File State Lifecycle that is managed by a Git repository
-@ Committed*
-@ Modified
-@ Untracked
-@ Staged
-@ Unmodified
-
-$ Which commands in Git can be used to create a new local repository
-@ init and clone*
-@ init (only)
-@ commit (only)
-@ pull (only)
-@ clone (only)
-
-$ There is more than one command in Git, that you can use, to create a local repository
-@ True*
-@ False
-
-$ A Git-based Version Control System saves (in its data structures) the versions of software system components in their full content and not by deltas (collections of changes) compared to traditional Version Control Systems
-@ True*
-@ False
-
-$ Which of the following statements about conflict resolution in Git is false
-@ You must first solve all of the commit issues before you can do a merge commit
-@ Most development environments offer GUI (Graphical User Interface) tools to help deal with conflicts
-@ You should save the state image after conflict resolution
-@ Problems of conflicts arise when it is updating different files that are on the same branch*
-@ You can directoy edit the content of the components when trying to resolve conflicts
-
 $ A security company has purchased a system that will only allow certain (predefined) people to enter their building. The system includes a facial recognition system. Now the police are considering creating a system to monitor people who should be in isolation and this system will include the facial recognition system that is used by the security company. To which category of software reuse does this example belong to
 @ Component Reuse*
 @ Function Reuse
@@ -102,7 +36,6 @@ $ Software Reuse allows reducing risks, increasing reliability
 $ Software Reuse allows the project's managers to estimate the project development time more correctly
 @ True*
 @ False
-
 
 $ Software Reuse always saves maintenance costs
 @ True
