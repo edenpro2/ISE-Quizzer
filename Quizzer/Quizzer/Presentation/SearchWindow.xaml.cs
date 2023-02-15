@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using System.Windows.Controls;
 
 namespace QuizApp.Presentation
@@ -74,13 +75,16 @@ namespace QuizApp.Presentation
             _worker.CancelAsync();
         }
 
+        //the condition met to show in the results (either text matches question or answer
         private bool Found(Question que, string searchText)
         {
-            return (que.QuestionText.ToLower().Contains(searchText.ToLower()) || que.CorrectAnswer.ToLower().Contains(searchText.ToLower()));
+
+            return que.QuestionText.ToLower().Contains(searchText) || que.CorrectAnswer.ToLower().Contains(searchText);
         }
+
         private List<Question>? Search(string searchText)
         {
-            return _questions.Where(que => Found(que, searchText)).ToList();
+            return _questions.Where(que => Found(que, searchText.ToLower().Trim())).ToList();
         }
 
         public SearchWindow(IEnumerable<Quiz> quizzes)

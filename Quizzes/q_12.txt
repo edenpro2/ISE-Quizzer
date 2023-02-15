@@ -25,7 +25,7 @@ $ In a traditional version control systems (not Git), every time it saves a new 
 @ True
 @ False*
 
-$ You can build a distributed version control system by using Git
+$ You can build a distributed version management control system by using Git
 @ True*
 @ False
 

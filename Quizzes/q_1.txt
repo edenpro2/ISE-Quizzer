@@ -84,4 +84,11 @@ $ Investing time in the development planning stage (design) allows the software 
 @ True
 @ False*
 
+$ Progress in a project that is done using the Agile philosophy is measured in the following manner: 
+@ The amount of meetings.(in relation to the amount planned) of total staff meetings
+@ The amount of comments in the code
+@ The relative amount (from the planned) number of lines of code that are working
+@ The amount of requirements, also known as functionality (in relation to the total amount of requirements in the requirements specification) that the system which is still under development already fulfills in practice (in relation to the planned requirements)*
+@ The amount of interactions .(in relation to the amount of planned interactions) with the customer
+
 $

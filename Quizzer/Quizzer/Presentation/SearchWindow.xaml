@@ -45,6 +45,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <TextBlock 
                                 Grid.Row="0"
@@ -57,6 +58,11 @@
                                 FontWeight="Bold"
                                 TextWrapping="Wrap"
                                 TextAlignment="Justify"/>
+                            <TextBlock 
+                                Grid.Row="2"
+                                TextWrapping="Wrap"
+                                TextAlignment="Justify"
+                                Text="{Binding QuizNum, StringFormat='Week: {0}'}" />
                         </Grid>
                     </StackPanel>
                 </DataTemplate>

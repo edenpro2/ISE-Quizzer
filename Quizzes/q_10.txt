@@ -174,7 +174,7 @@ $ Which statement is not true for Extreme Prototyping?
 @ Divides the development into three stages
 @ Add reactivity to the display in the second step
 
-$ What is NOT a stage in the Staged-Model of Software Lifecycle
+$ What is NOT a stage in the Staged-Model of Software Lifecycle (not to be confused with SDLC)
 @ Initial Development 
 @ Evolving
 @ Disposal*

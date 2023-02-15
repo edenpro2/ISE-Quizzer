@@ -7,7 +7,7 @@ $ In the improvement of Anti-Aliasing, it will be correct in terms of Responsibi
 $ Which of the FOLLOWING methods of generating points in a target area for a ray beam (super-sampling pattern) is the simplest to implement?
 @ Rotated grid
 @ Jittered
-@ Stochastic / Random grid*
+@ Grid - Random/Stochastic (non-random)*
 @ All the methods in the other sections are similar in their simplicity
 @ Poisson disc
 
@@ -167,9 +167,9 @@ $ Which of the image improvements that we learned that use a beam of rays (super
 @ Anti-Aliasing
 
 $ In order to implement transparency and reflection, we turned the calcColor method into a recursive method. What is not true about the stopping conditions of said recursion?
-@ An increase in the value of the cumulative attenuation coefficient of transparency and reflection above a certain limit is a stopping condition in this recursion*
-@ A decrease in the value of the cumulative attenuation coefficient of transparency and reflection below a certain limit is a stopping condition in this recursion
-@ The cumulative attenuation coefficient of transparency and reflection is multiplicative
+@ An increase in the value of the cumulative attenuation coefficient of transparency and reflection above a certain limit (maximum value) is a stopping condition in this recursion*
+@ A decrease in the value of the cumulative attenuation coefficient of transparency and reflection below a certain limit (minimum value)i s a stopping condition in this recursion
+@ The cumulative attenuation coefficient of reflection and refractions accumulates multiplicatively (by multiplication).
 @ We used two stopping conditions in this recursion
 @ We lowered the intensity of the light reaching the point depending on the material of the bodies between the point and the light source
 

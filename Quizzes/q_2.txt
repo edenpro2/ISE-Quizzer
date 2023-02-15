@@ -49,6 +49,10 @@ $ u = (-2,-5,-7) Calculate the x-coordinate value of vector û [that is - "unit 
 
 ~ -0.23
 
+$ u =(-5,1,-7) Calculate the x-coordinate value of vector û [that is - "unit vector" of u or normalized u vector] (round up to two digits after the decimal point)
+
+~ -0.58
+
 $ u = (6, 9, -2) Calculate the x-coordinate value of vector û [that is - "unit vector" of u or normalized u vector] (round up to two digits after the decimal point)
 
 ~ 0.55
@@ -78,6 +82,13 @@ Calculate the following expression (round your answer to 2 digits after the deci
 
 ~ 2613
 
+$ u = (-5, 1, -7),  w = (-1, -8, -8) 
+Calculate the following expression (round your answer to 2 digits after the decimal point): 
+[w^2 - ((u /||u||) * w)^2] * u^2
+
+~ 6866
+
+
 $ u = (6, 9 ,-2),  w = (2, -6, 3) 
 Calculate the following expression (round your answer to 2 digits after the decimal point): 
 [w^2 - ((u /||u||) * w)^2] * u^2
@@ -90,16 +101,35 @@ Calculate the following expression (round your answer to 2 digits after the deci
 
 ~ 3625
 
+$ u = (-5, 1, -7),  w = (-1, -8, -8) 
+Calculate the following expression (round your answer to 2 digits after the decimal point): 
+(u x w)^2
+
+~ 6866
+
 $ u = (6, 9 ,-2),  w = (2, -6, 3) 
 Calculate the following expression (round your answer to 2 digits after the decimal point): 
 (uxw)*u
 
 ~ 0
 
+$ u =(-5,1,-7), w =(-1,-8,-8)
+Calculate the following expression (round your answer to 2 digits after the decimal point)
+(uxw)*u
+ 
+~ 0
+ 
 $ You are given that the dot product of two vectors (each vector's length is greater than 0) is equal to 0 (zero). You are also told that the order of the vectors played a factor when we measured the angle that was between them (in other words the angle could be anywhere between 0 - 360 degrees but not including 360 degrees). What can be said about the angle between the two vectors?
 @ The angle between them is 270 degrees
 @ There is not enough information to come to any conclusion about the angle.
 @ The angle between them is 90 degrees* 
+@ The angle between them is 0 degrees
+@ The angle between them is 180 degrees
+
+$ You are given that the dot product of two vectors (each vector's length is greater than 0) is equal to 0 (zero). You are also told that the order of the vectors played a factor when we measured the angle that was between them (in other words the angle could be anywhere between 0 - 360 degrees but not including 360 degrees). What can be said about the angle between the two vectors?
+@ The angle between them is 270 degrees*
+@ There is not enough information to come to any conclusion about the angle.
+@ The angle between them is 90 degrees
 @ The angle between them is 0 degrees
 @ The angle between them is 180 degrees
 
@@ -152,11 +182,11 @@ $ Which of the decisions we made regarding the computer graphics system we start
 @ Adding an abstract class, RadialGeometry
 
 $ Which feature of system software does the Law of Demeter improve?
-@ Loоsе coupling*
-@ Low rigidity
-@ Low viscosity
-@ High cohesion
-@ Mobility - aka it improves the issue of low immobility
+@ mobility - aka it improves the issue of  low immobility
+@ low viscosity
+@ low rigidity
+@ high cohesion
+@ loоsе coupling*
 
 $ Which of the following statements about the Law of Demeter is correct in regard to the Principle of Least Knowledge?
 @ The principle of limited knowledge is concerned with hiding implementation details between the system components.

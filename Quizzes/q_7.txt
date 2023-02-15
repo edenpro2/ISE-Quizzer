@@ -236,7 +236,7 @@ $ In the Template Method design pattern, an ABSTRACT step is implemented in the 
 @ True
 @ False*
 
-$ The intensity coming from Ambient Light to an illuminated point depends on the distance between the light source and the illuminated point
+$ The intensity coming from Ambient Light to an illuminated point depends on the distance between the light source and the illuminated (lighted) point
 @ True
 @ False*
 
@@ -265,6 +265,33 @@ $ In the Light class, we have added methods for calculating the light propagatio
 @ False*
 
 $ The Non-Virtual Interface (NVI) is the main determiner of the Interface Separation Principle (ISP) by separating the client interface and the subclass interface
+@ True*
+@ False
+
+$ Light intensity coming from Directional Light depends on the distance between the light source and the lighted point
+@ True
+@ False*
+
+$ In the Light Propagation Model, the quadratic attenuation factor - kq , in the relevant light sources represents the weakening of the light intensity per unit area due to the law of conservation of energy.
+@ True*
+@ False
+
+$ What is not true about the Phong Reflectance Model?
+@ All the components of the model except glow lighting (emission) have an attenuation coefficient
+@ The model is an additive model
+@ The model depends on the result of the light propagation model from a light source to the point for which the calculation is performed
+@ The reflection of light from external lighting sources (directional/point/spot) in the model is broken down into two components - specular and diffusive
+@ The model is applied recursively in order to calculate the effect of local effects*
+
+$ In the Simple Phong Reflectance Model, for calculation effects from point, spot and directional light, it is important to know the exact type of light source
+@ True
+@ False*
+
+$ In the Phong model, it is mandatory to calculate separately for the diffusive and specular component the intensity of the light that has reached the point for which the calculation is performed (Il)
+@ True
+@ False*
+
+$ For the diffusive component of the Phong model, we need the directional vector from the light source to the point of which the calculation is performed
 @ True*
 @ False
 

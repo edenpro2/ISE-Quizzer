@@ -90,7 +90,7 @@ $ Which statement is incorrect regarding the project schedule?
 @ The disadvantage of an activity table is the difficulty of identifying relationships and dependencies between activities
 @ In the Gantt [activity bar] chart, it is easy to identify whether there is flexibility in a certain activity schedule
 @ In a Gantt [activity bar] chart, you can identify unrelated activities that can be performed simultaneously
-@ In some presentation forms of the project schedule, there is no marking of milestones*
+@ In some forms of presentation of the project schedule there is no marking of milestones*
 @ The activity network diagram shows a graph of dependencies between project activities
 
 $ In project planning (creating a schedule), defining a clear endpoint that defines the end of a project activity is a necessary feature in defining a project activity

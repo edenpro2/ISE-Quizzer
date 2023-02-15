@@ -56,8 +56,8 @@ $ In the Phong Model, we add the effect of a light source if its shadow ray inte
 @ False*
 
 $ After our first implementation of unshaded, our picture was messed up. It seemed to be that the light source(s) was/were shaded in places that there should not be any shading and we see a spotted picture. This could be caused by the fact that the head of the ray was included in the list of intersection points.
-@ True*
-@ False
+@ True
+@ False*
 
 $ In the implementation of the shading, after we discovered that flat bodies lost their lighting (they appear without any light shining on them even though light is clearly hitting them), we added in the unshaded method, a test to see if the geometric body (where we found the intersection point) is flat. (The test was carried out using the FlatGeometry "marking interface" that we created especially for this test). We then said that this test is still a BAD design. What was the main drawback?
 @ Law of Demeter - LoD
@@ -181,9 +181,9 @@ $ After our first implementation of unshaded, our picture was messed up.It seeme
 @ False
 
 $ When we added the check to the function checkLocalEffects to see if the point whose color we are calculating is shaded from the light source or not, where did we add the check?
-@ Immediately AFTER checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)*
+@ Immediately AFTER checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of nxl and the sign of nxv are the same)*
 @ Immediately after we added the emission light
-@ Immediately BEFORE checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of n*l and the sign of n*v are the same)
+@ Immediately BEFORE checking that the POV (the head of the ray which we used to find the intersection point) and the light source are on the same side of the surface of the object on which the intersection point is found (aka check the sign of nxl and the sign of nxv are the same)
 @ Immediately before we added the emission light
 @ We did NOT do this check in the function calcLocalEffects
 
@@ -276,5 +276,10 @@ $ The attenuation coefficient of transparency (kT) will be 1 in a realistic pict
 $ In the Phong Model, not all the global effects we studied add a recursive calculation in the model
 @ True
 @ False*
+
+$ In our first attempt to deal with our distorted picture we moved the shadow ray's head in the direction of the normal (vector).
+@ True*
+@ False
+
 
 $

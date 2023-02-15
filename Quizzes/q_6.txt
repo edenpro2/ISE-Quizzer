@@ -165,7 +165,7 @@ $ In the Builder Design Pattern, the class’ method that returns the final obje
 @ True*
 @ False
 
-$ Essentially, how many different types of light-sensitive cells are there in the retina human eye?
+$ Essentially, how many different types of light-sensitive cells are there in the retina of the human eye?
 @ 2*
 @ 1
 @ 5
