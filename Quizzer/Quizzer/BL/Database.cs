@@ -26,8 +26,8 @@ namespace QuizApp.BL
                 foreach (var block in blocks)
                 {
                     var index = block.IndexOf('~');
-                    // if open question 
-                    if (index != -1)
+                    // if open question (and skip week 12 as it has the ~ for a git question (closed)
+                    if (index != -1 && quizNum != 12)
                     {
                         questionText = new string(block.Take(index).ToArray()).Trim();
                         trimmed = block.Remove(0, index);
