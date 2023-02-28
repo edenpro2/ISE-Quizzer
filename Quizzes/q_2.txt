@@ -1,4 +1,4 @@
-# Quiz 2
+#Quiz 2
 
 $ The Util class we developed completely resolves the side effects of floating
 point accuracy

@@ -1,4 +1,4 @@
-# Quiz 6
+#Quiz 6
 
 $ Choose the statement that best describes the Builder Pattern
 @ The Builder Pattern allows us to build an object in such a way that we can guarantee that certain

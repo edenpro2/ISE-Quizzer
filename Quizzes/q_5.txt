@@ -1,4 +1,4 @@
-# Quiz 5
+#Quiz 5
 
 $ How many equivalence partitions are in testing ray-triangle intersections (After finding the intersection with the plane containing this triangle)?
 @ 1

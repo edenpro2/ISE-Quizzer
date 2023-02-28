@@ -1,4 +1,4 @@
-# Quiz 12
+#Quiz 12
 
 $ Which of the following statements most accurately describes git commands
 @ When doing a git checkout you can move the HEAD to a different branch, however the changes that
@@ -178,4 +178,3 @@ $ Which process is not a direct part (but can be a sub-part) of the software man
 @ Project Management
 
 $ 
-
