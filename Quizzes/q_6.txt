@@ -19,8 +19,6 @@ Design)
 @ There aren’t any getters (get functions) in a PDS class
 @ PDS classes are used in order to prevent breaking the LoD (Law of Demeter) 
 
-$
-
 $ The Builder Design Pattern is a structural design pattern.
 @ True
 @ False*
