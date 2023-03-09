@@ -47,7 +47,7 @@ $ How many tests which return a point (of all kinds, according to what we have l
 @ 4
 @ 2*
 
-$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray Class, in order to remove the following code odor::
+$ After developing geometric intersections, we refactored the code and decided to create a new method getPoint(double t) in the Ray Class, in order to remove the following code odor:
 @ Rigidity
 @ Viscosity
 @ Fragility
