@@ -58,7 +58,7 @@ $ Which of the following statements about conflict resolution in Git is false
 @ You must first solve all of the commit issues before you can do a merge commit
 @ You should save the state image after conflict resolution.
 @ Problems of conflicts arise when it is updating different files that are on the same branch.*
-@ You can directoy edit the content of the components when trying to resolve conflicts.
+@ You can directly edit the content of the components when trying to resolve conflicts.
 @ Most development environments offer gui (graphical user interface ) tools to help deal with conflicts.
 
 $ A Git-based version control system (git) saves (in its data structures) the versions of software system components in their full content and not by deltas (collections of changes) as traditional version control systems do
@@ -142,12 +142,12 @@ $ What is the correct statement regarding Git commands
 @ git branch test will create a new branch named 'test' and will move the HEAD pointer to the new branch 'test'
 @ git commit updates the files from the current working directory to the remote repository
 @ After git merge, there is always a need to deal with merge conflicts that are a result of merge
-@ git rebase disconnects a certain branch from the codeline and creates a new codline with no connection to the previous codeline
+@ git rebase disconnects a certain branch from the codeline and creates a new codeline with no connection to the previous codeline
 @ git checkout target-branch-or-commit will move the HEAD pointer to the branch or a different commit, and the changes to the files in the working folder that also exist in the repository at the command destination won't be saved*
 
 $ What is a correct statement about branching and merging
 @ In merging, a new version of a software component is created by merging separate versions in the same codeline
-@ Usually, if there is no special reasoning, it is prefered not to do branching
+@ Usually, if there is no special reasoning, it is preferred not to do branching
 @ It possible to do merging, even if they didn't do branching before at all
 @ After branching, a new codeline is created from a version in the existing codeline*
 @ After branching, a dependency is created between the existing codeline and the new one

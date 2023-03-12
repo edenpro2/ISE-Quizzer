@@ -67,7 +67,7 @@ Select one:
 
 $ Which of the following classes in our framework is a Passive Data Structure (PDS)?
 @ Camera
-@ AmgientLight
+@ AmbientLight
 @ Scene*
 @ RayTracerBasic
 @ RayTracerBase

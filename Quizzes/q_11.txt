@@ -48,7 +48,7 @@ $ A Software Product Line uses the Software Reuse approach and is based on Gener
 $ Which of the claims is not a present advantage of Software Reuse
 @ Increased dependability
 @ Accelerated development
-@ Effective use of specialsts
+@ Effective use of specialists
 @ Standard compliance
 @ Decreased maintenance costs*
 
@@ -114,8 +114,8 @@ $ A disadvantage of Software Reuse can be that, sometimes, the cost and negative
 
 $ What is not part of the Dependability Means software system
 @ Reliability
-@ Saftey
-@ Availablity
+@ Safety
+@ Availability
 @ Security
 @ Usability*
 
@@ -168,7 +168,7 @@ $ Which of the following Software Reuse approaches emphasizes adapting a unified
 @ Software Product Lines and Application Frameworks
 @ Commercial-Off-the-Shelf (COTS) and Application Frameworks
 @ Software Product Lines and Enterprise Resource Planning (ERP)
-@ Application Framworks and Enterprise Resource Planning (ERP)
+@ Application Frameworks and Enterprise Resource Planning (ERP)
 @ Software Product Lines and Commercial-Off-the-Shelf (COTS)*
 
 $ Software Reuse may result in inefficient use of experts
