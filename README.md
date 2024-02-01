@@ -8,6 +8,7 @@ https://github.com/edenpro2/ISE-Quizzer/tree/master/Quizzes
 
 How to run it:
 
+* Download DotNet Framework 6.0
 * Git clone the app into a directory of your choosing, then right click on the parent directory. 
 * Now, select Properties, and de-select "read only"
 * Click on Security (tab) and then Edit -> Add -> now type EVERYONE 
